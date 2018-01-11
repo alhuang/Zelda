@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Collector : MonoBehaviour {
 
-
+	public AudioClip rupee_collection_sound_clip;
+	Inventory inventory;
 
 	// Use this for initialization
 	void Start () {
-		
+		inventory = GetComponent<Inventory>();
+		if (inventory == null)
+			Debug.LogWarning("WARNING: GameObject missing Inventory");
 	}
 	
 	// Update is called once per frame
@@ -22,8 +25,12 @@ public class Collector : MonoBehaviour {
 
 		if (other_object.tag == "rupee")
 		{
-			Debug.Log("Rupee collected!");
+			if (inventory != null)
+				inventory.AddRupees(1);
 			Destroy(other_object);
+
+			//Play sound effect
+			AudioSource.PlayClipAtPoint(rupee_collection_sound_clip, Camera.main.transform.position);
 		}
 	}
 }

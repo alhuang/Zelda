@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+	int rupee_count = 0;
+
+	public void AddRupees(int num_rupees)
+	{
+		rupee_count += num_rupees;
 	}
+
+	public int GetRupees()
+	{
+		return rupee_count;
+	}
+
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
