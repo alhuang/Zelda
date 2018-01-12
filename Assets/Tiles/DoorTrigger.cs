@@ -7,10 +7,10 @@ public class DoorTrigger : MonoBehaviour {
 	public GameObject link;
 	public GameObject camera;
 
-	private float cameraLRAmount = 16f;
-	private float cameraUDAmount = 11f;
-	private float linkLRAmount = 3f;
-	private float linkUDAmount = 3f;
+	private static float CAMERA_LR_MOVE = 16f;
+	private static float CAMERA_UD_MOVE = 11f;
+	private static float LINK_LR_MOVE = 3f;
+	private static float LINK_UD_MOVE = 3f;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +21,11 @@ public class DoorTrigger : MonoBehaviour {
 		ArrowKeyMovement arrowKey = other.GetComponent<ArrowKeyMovement> ();
 		if (arrowKey != null) { //link, not monster
 			string direction = arrowKey.GetDirection();
+
+			float cameraLRAmount = CAMERA_LR_MOVE;
+			float cameraUDAmount = CAMERA_UD_MOVE;
+			float linkLRAmount = LINK_LR_MOVE;
+			float linkUDAmount = LINK_UD_MOVE;
 
 			//get correct movement amount
 			if (direction == "South") {
