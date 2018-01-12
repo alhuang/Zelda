@@ -8,6 +8,7 @@ public class ArrowKeyMovement : MonoBehaviour {
 	public float movement_speed = 4;
 
 	private string direction = "South";
+	private bool canMove = true;
 
 
 	// Use this for initialization
@@ -17,11 +18,16 @@ public class ArrowKeyMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (!canMove)
+		{
+			rb.velocity = Vector2.zero;
+			return;
+		}
+
 		Vector2 current_input = GetInput();
 		rb.velocity = current_input * movement_speed;
 
 		string prevDirection = direction;
-		Debug.Log(current_input);
 		//save user direction
 		if (current_input [0] > 0f) {
 			direction = "East";
@@ -79,6 +85,11 @@ public class ArrowKeyMovement : MonoBehaviour {
 			vertical_input = 0.0f;
 
 		return new Vector2(horizontal_input, vertical_input);
+	}
+
+	public void SetCanMove(bool change)
+	{
+		canMove = change;
 	}
 
 	public string GetDirection()

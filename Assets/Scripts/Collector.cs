@@ -57,5 +57,9 @@ public class Collector : MonoBehaviour {
 			}
 			Destroy (other_object);
 		}
+		if (other_object.tag == "enemy")
+		{
+			Debug.Log("hit by enemy");
+		}
 	}
 }

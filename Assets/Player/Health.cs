@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour {
 
-	float health_count = 2.5f;
+	float health_count = 3f;
 	public float max_health;
 
 	public void SubtractHealth(float num_health) {
@@ -17,6 +17,11 @@ public class Health : MonoBehaviour {
 
 	public float GetHealth() {
 		return health_count;
+	}
+
+	public float GetMaxHealth()
+	{
+		return max_health;
 	}
 
 	public void AddMaxHealth(float num_health) {

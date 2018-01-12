@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 9f9b7774b0a78b0438e74ea65b5825d3
-timeCreated: 1515719477
+timeCreated: 1515778986
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,7 +11,7 @@ TextureImporter:
     21300008: NES - The Legend of Zelda - Treasures_4
     21300010: NES - The Legend of Zelda - Treasures_5
     21300012: NES - The Legend of Zelda - Treasures_6
-    21300014: NES - The Legend of Zelda - Treasures_7
+    21300014: Sword
     21300016: NES - The Legend of Zelda - Treasures_8
     21300018: NES - The Legend of Zelda - Treasures_9
     21300020: NES - The Legend of Zelda - Treasures_10
@@ -93,6 +93,7 @@ TextureImporter:
     21300172: NES - The Legend of Zelda - Treasures_86
     21300174: NES - The Legend of Zelda - Treasures_87
     21300176: Heart2
+    21300178: _Sword
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -316,24 +317,6 @@ TextureImporter:
         - {x: 10, y: -16}
         - {x: 16, y: -6}
         - {x: 16, y: 16}
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: NES - The Legend of Zelda - Treasures_7
-      rect:
-        serializedVersion: 2
-        x: 104
-        y: 88
-        width: 7
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -3.5, y: 16}
-        - {x: -3.5, y: -16}
-        - {x: 3.5, y: -16}
-        - {x: 3.5, y: 16}
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
@@ -1804,6 +1787,20 @@ TextureImporter:
         y: 104
         width: 7
         height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: _Sword
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 104
+        width: 7
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
