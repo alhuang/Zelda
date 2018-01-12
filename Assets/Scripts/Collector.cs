@@ -37,6 +37,7 @@ public class Collector : MonoBehaviour {
 		}
 		if (other_object.tag == "heart")
 		{
+			Debug.Log("hit");
 			if (inventory != null)
 				health.AddHealth(1.0f);
 			Destroy(other_object);

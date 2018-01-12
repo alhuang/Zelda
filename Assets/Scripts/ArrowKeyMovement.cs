@@ -21,19 +21,18 @@ public class ArrowKeyMovement : MonoBehaviour {
 		rb.velocity = current_input * movement_speed;
 
 		string prevDirection = direction;
-
+		Debug.Log(current_input);
 		//save user direction
-		if (current_input [0] > .5f) {
+		if (current_input [0] > 0f) {
 			direction = "East";
-		} else if (current_input [0] < -.5f) {
+		} else if (current_input [0] < 0f) {
 			direction = "West";
-		} else if (current_input [1] > .5f) {
+		} else if (current_input [1] > 0f) {
 			direction = "North";
-		} else if (current_input [1] < -.5f) {
+		} else if (current_input [1] < 0f) {
 			direction = "South";
 		}
 
-		Debug.Log (direction);
 
 		//if direction change, align link
 		if (direction != prevDirection) {
@@ -86,4 +85,6 @@ public class ArrowKeyMovement : MonoBehaviour {
 	{
 		return direction;
 	}
+
+
 }
