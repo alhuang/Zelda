@@ -5,6 +5,7 @@ using UnityEngine;
 public class CheatCode : MonoBehaviour {
 
 	public Inventory inventory;
+	public Health health;
 
 	public bool cheat = false;
 	private GameOver gameOver;
@@ -17,6 +18,7 @@ public class CheatCode : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.P)) {
 			cheat = true;
+			health.AddMaxHealth (100);
 		}
 
 		if (inventory == null) {
@@ -25,6 +27,7 @@ public class CheatCode : MonoBehaviour {
 
 		if (cheat) {
 			inventory.MaxInventory ();
+			health.AddHealth (100);
 		}
 	}
 }

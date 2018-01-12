@@ -22,4 +22,5 @@ public class EnemyDamage : MonoBehaviour {
 			linkHealth.SubtractHealth (damageAmount);
 		}
 	}
+
 }
