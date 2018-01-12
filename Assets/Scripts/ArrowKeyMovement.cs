@@ -81,4 +81,9 @@ public class ArrowKeyMovement : MonoBehaviour {
 
 		return new Vector2(horizontal_input, vertical_input);
 	}
+
+	public string GetDirection()
+	{
+		return direction;
+	}
 }

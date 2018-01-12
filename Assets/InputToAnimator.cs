@@ -5,20 +5,22 @@ using UnityEngine;
 public class InputToAnimator : MonoBehaviour {
 
 	Animator animator;
+	ArrowKeyMovement arrowKeyMovement;
 
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator>();
-
+		arrowKeyMovement = GetComponent<ArrowKeyMovement>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		animator.SetFloat("horizontal_input", Input.GetAxisRaw("Horizontal"));
 		animator.SetFloat("vertical_input", Input.GetAxisRaw("Vertical"));
-		animator.SetBool("attack", Input.GetKey(KeyCode.X));
+		if (Input.GetKeyDown(KeyCode.X))
+			StartCoroutine(AttackAnimation());
 
-		if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0 && !(Input.GetKey(KeyCode.X)))
+		if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
 		{
 			animator.speed = 0.0f;
 		}
@@ -26,5 +28,14 @@ public class InputToAnimator : MonoBehaviour {
 		{
 			animator.speed = 1.0f;
 		}
+
+		
+	}
+
+	IEnumerator AttackAnimation()
+	{
+		animator.SetBool("attack", true);
+		yield return new WaitForSeconds(.25f);
+		animator.SetBool("attack", false);
 	}
 }

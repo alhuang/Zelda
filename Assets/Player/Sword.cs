@@ -13,4 +13,9 @@ public class Sword : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.tag == "enemy")
+	}
 }
