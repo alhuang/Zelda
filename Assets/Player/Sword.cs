@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sword : MonoBehaviour {
+public class Sword : MonoBehaviour
+{
 
+	public Attack attack;
 
 	// Use this for initialization
-	void Start () {
-
+	void Start()
+	{
 	}
-	
+
 	// Update is called once per frame
-	void Update () {
+	void Update()
+	{
 		Debug.Log("Alive");
 	}
 
@@ -20,6 +23,14 @@ public class Sword : MonoBehaviour {
 		Debug.Log("onTriggerEnter");
 		if (other.gameObject.tag == "enemy")
 			Debug.Log("lower enemy hp");
+		if (other.gameObject.tag != "Link" && other.gameObject.tag != "rupee" && other.gameObject.tag != "heart")
+			Destroy(gameObject);
+	}
+
+	void OnCollisionEnter(Collider other)
+	{
+		attack.SetCanSpawnSwordProjectile(true);
+		Destroy(gameObject);
 	}
 
 }

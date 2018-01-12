@@ -90,7 +90,7 @@ public class Attack : MonoBehaviour {
 		canSpawnSwordProjectile = true;
 	}
 
-	void SetCanSpawnSwordProjectile(bool change)
+	public void SetCanSpawnSwordProjectile(bool change)
 	{
 		canSpawnSwordProjectile = change;
 	}
