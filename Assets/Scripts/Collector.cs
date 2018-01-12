@@ -7,10 +7,12 @@ public class Collector : MonoBehaviour {
 	public AudioClip rupee_collection_sound_clip;
 	public AudioClip heart_sound_clip;
 	Inventory inventory;
+	Health health;
 
 	// Use this for initialization
 	void Start () {
-		inventory = GetComponent<Inventory>();
+		inventory = GetComponent<Inventory> ();
+		health = GetComponent<Health> ();
 		if (inventory == null)
 			Debug.LogWarning("WARNING: GameObject missing Inventory");
 	}
@@ -36,7 +38,7 @@ public class Collector : MonoBehaviour {
 		if (other_object.tag == "heart")
 		{
 			if (inventory != null)
-				inventory.AddHealth(1.0f);
+				health.AddHealth(1.0f);
 			Destroy(other_object);
 
 			AudioSource.PlayClipAtPoint(rupee_collection_sound_clip, Camera.main.transform.position);

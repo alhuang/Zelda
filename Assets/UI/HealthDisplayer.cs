@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HealthDisplayer : MonoBehaviour {
 
-	public Inventory inventory;
+	public Health inventory;
 	Text textComponent;
 
 	// Use this for initialization
