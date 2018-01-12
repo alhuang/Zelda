@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 65761196946909870}
   - component: {fileID: 114469661175082930}
   - component: {fileID: 114881587688047516}
+  - component: {fileID: 114663694392843080}
+  - component: {fileID: 65512943875420764}
   m_Layer: 0
   m_Name: Stalfos_0
   m_TagString: enemy
@@ -59,7 +61,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!65 &65761196946909870
+--- !u!65 &65512943875420764
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -67,6 +69,18 @@ BoxCollider:
   m_GameObject: {fileID: 1416714456611822}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.159, y: 0.089, z: 0.2}
+  m_Center: {x: 0, y: -0.05, z: 0}
+--- !u!65 &65761196946909870
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1416714456611822}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.09, z: 0.2}
@@ -84,6 +98,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement_speed: 2
   time_between_mvmt_changes: 1
+--- !u!114 &114663694392843080
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1416714456611822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e55cb2fbd8a3434fb910aa9bf1d4328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 0.5
 --- !u!114 &114881587688047516
 MonoBehaviour:
   m_ObjectHideFlags: 1
