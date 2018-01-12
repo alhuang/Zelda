@@ -27,7 +27,7 @@ public class Inventory : MonoBehaviour {
 		health_count = Mathf.Min (max_health, health_count + num_health);
 	}
 
-	public int GetHealth() {
+	public float GetHealth() {
 		return health_count;
 	}
 

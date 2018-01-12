@@ -5,6 +5,7 @@ using UnityEngine;
 public class Collector : MonoBehaviour {
 
 	public AudioClip rupee_collection_sound_clip;
+	public AudioClip heart_sound_clip;
 	Inventory inventory;
 
 	// Use this for initialization
@@ -30,6 +31,14 @@ public class Collector : MonoBehaviour {
 			Destroy(other_object);
 
 			//Play sound effect
+			AudioSource.PlayClipAtPoint(rupee_collection_sound_clip, Camera.main.transform.position);
+		}
+		if (other_object.tag == "heart")
+		{
+			if (inventory != null)
+				inventory.AddHealth(1.0f);
+			Destroy(other_object);
+
 			AudioSource.PlayClipAtPoint(rupee_collection_sound_clip, Camera.main.transform.position);
 		}
 	}
