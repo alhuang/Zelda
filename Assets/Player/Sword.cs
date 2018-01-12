@@ -29,7 +29,7 @@ public class Sword : MonoBehaviour
 		if (other.gameObject.tag == "enemy")
 		{
 			Health enemy_hp = other.GetComponent<Health>();
-			enemy_hp.AddHealth(-1f);
+			enemy_hp.SubtractHealth(1f);
 			Debug.Log(enemy_hp.GetHealth());
 			//attack.SetCanSpawnSwordProjectile(true);
 			Destroy(gameObject);
