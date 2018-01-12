@@ -15,22 +15,28 @@ public class Sword : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		Debug.Log("Alive");
+		Vector2 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
+		if (screenPosition.y > Screen.height || screenPosition.y < 0 || screenPosition.x > Screen.width || screenPosition.x < 0)
+		{
+			//attack.SetCanSpawnSwordProjectile(true);
+			Destroy(gameObject);
+		}
 	}
 
 	void OnTriggerEnter(Collider other)
 	{
 		Debug.Log("onTriggerEnter");
 		if (other.gameObject.tag == "enemy")
-			Debug.Log("lower enemy hp");
-		if (other.gameObject.tag != "Link" && other.gameObject.tag != "rupee" && other.gameObject.tag != "heart")
+		{
+			Health enemy_hp = other.GetComponent<Health>();
+			enemy_hp.AddHealth(-1f);
+			Debug.Log(enemy_hp.GetHealth());
+			//attack.SetCanSpawnSwordProjectile(true);
 			Destroy(gameObject);
-	}
-
-	void OnCollisionEnter(Collider other)
-	{
-		attack.SetCanSpawnSwordProjectile(true);
-		Destroy(gameObject);
+		}
+			
+		//if (other.gameObject.tag != "Link" && other.gameObject.tag != "rupee" && other.gameObject.tag != "heart")
+		//	Destroy(gameObject);
 	}
 
 }
