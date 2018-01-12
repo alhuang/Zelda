@@ -18,7 +18,7 @@ public class Inventory : MonoBehaviour {
 		return rupee_count;
 	}
 
-	//Pretty sure that you only increment keys by one
+	//Pretty sure that you only ever increment keys by one
 	public void AddKey() {
 		key_count += 1;
 	}

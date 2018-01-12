@@ -6,6 +6,8 @@ TagManager:
   tags:
   - rupee
   - heart
+  - key
+  - bomb_pickup
   layers:
   - Default
   - TransparentFX

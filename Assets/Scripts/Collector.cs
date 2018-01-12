@@ -43,5 +43,18 @@ public class Collector : MonoBehaviour {
 
 			AudioSource.PlayClipAtPoint(rupee_collection_sound_clip, Camera.main.transform.position);
 		}
+		if (other_object.tag == "key") {
+			if (inventory != null) {
+				inventory.AddKey ();
+				Debug.Log ("this ran:" + inventory.GetKeys().ToString());
+			}
+			Destroy (other_object);
+		}
+		if (other_object.tag == "bomb_pickup") {
+			if (inventory != null) {
+				inventory.AddBomb ();
+			}
+			Destroy (other_object);
+		}
 	}
 }
