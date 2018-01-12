@@ -62,7 +62,9 @@ public class DoorTrigger : MonoBehaviour {
 			link.transform.position.z);
 
 		link.transform.position = linkNewPosition;
-
+		SpriteRenderer linkSR = link.GetComponent<SpriteRenderer> ();
+		linkSR.enabled = false;
+		arrowKey.SetCanMove (false);
 
 		cameraLRAmount /= panTime;
 		cameraUDAmount /= panTime;
@@ -73,5 +75,8 @@ public class DoorTrigger : MonoBehaviour {
 				camera.transform.position.z);
 			yield return new WaitForSeconds (1 / panTime);
 		}
+
+		linkSR.enabled = true;
+		arrowKey.SetCanMove (true);
 	}
 }
