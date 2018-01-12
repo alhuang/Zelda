@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 9f9b7774b0a78b0438e74ea65b5825d3
-timeCreated: 1515778986
+timeCreated: 1515797203
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -15,7 +15,7 @@ TextureImporter:
     21300016: NES - The Legend of Zelda - Treasures_8
     21300018: NES - The Legend of Zelda - Treasures_9
     21300020: NES - The Legend of Zelda - Treasures_10
-    21300022: NES - The Legend of Zelda - Treasures_11
+    21300022: Arrow
     21300024: NES - The Legend of Zelda - Treasures_12
     21300026: NES - The Legend of Zelda - Treasures_13
     21300028: NES - The Legend of Zelda - Treasures_14
@@ -94,6 +94,7 @@ TextureImporter:
     21300174: NES - The Legend of Zelda - Treasures_87
     21300176: Heart2
     21300178: _Sword
+    21300180: Arrows
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -380,13 +381,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: NES - The Legend of Zelda - Treasures_11
+      name: Arrow
       rect:
         serializedVersion: 2
         x: 154
-        y: 88
+        y: 104
         width: 5
-        height: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1800,6 +1801,20 @@ TextureImporter:
         x: 104
         y: 104
         width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Arrows
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 104
+        width: 5
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}

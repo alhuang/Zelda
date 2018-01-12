@@ -5,17 +5,22 @@ using UnityEngine;
 public class Attack : MonoBehaviour {
 
 	public GameObject sword;
+	public GameObject arrow;
+	public float arrowSpeed = 5;
 	public float swordProjectileSpeed = 5;
 	ArrowKeyMovement arrowKeyMovement;
+	Inventory inventory;
 	Health health;
 	private string direction_facing = "South";
 	private bool canSpawnSword = true;
 	private bool canSpawnSwordProjectile = true;
+	private bool canSpawnArrow = true;
 
 	// Use this for initialization
 	void Start () {
 		arrowKeyMovement = GetComponent<ArrowKeyMovement>();
 		health = GetComponent<Health>();
+		inventory = GetComponent<Inventory>();
 	}
 	
 	// Update is called once per frame
@@ -29,6 +34,10 @@ public class Attack : MonoBehaviour {
 		else if (Input.GetKeyDown(KeyCode.X) && canSpawnSword)
 		{
 			StartCoroutine("spawnSword");
+		}
+		if (Input.GetKeyDown(KeyCode.Z) && canSpawnArrow && inventory.GetRupees() > 0)
+		{
+			StartCoroutine("spawnArrow");
 		}
 	}
 
@@ -88,6 +97,35 @@ public class Attack : MonoBehaviour {
 		}
 		yield return new WaitForSeconds(1f);
 		canSpawnSwordProjectile = true;
+	}
+
+	IEnumerator spawnArrow()
+	{
+		inventory.AddRupees(-1);
+		GameObject newArrow= null;
+		canSpawnArrow = false;
+		if (direction_facing == "South")
+		{
+			newArrow = (GameObject)Instantiate(arrow, new Vector3(this.transform.position.x, this.transform.position.y - .75f), Quaternion.Euler(0f, 0f, 180f));
+			newArrow.GetComponent<Rigidbody>().velocity = new Vector2(0f, -1f) * arrowSpeed;
+		}
+		else if (direction_facing == "North")
+		{
+			newArrow = (GameObject)Instantiate(arrow, new Vector3(this.transform.position.x, this.transform.position.y + .75f), Quaternion.Euler(0f, 0f, 0f));
+			newArrow.GetComponent<Rigidbody>().velocity = new Vector2(0f, 1f) * arrowSpeed;
+		}
+		else if (direction_facing == "East")
+		{
+			newArrow = (GameObject)Instantiate(arrow, new Vector3(this.transform.position.x + .75f, this.transform.position.y), Quaternion.Euler(0f, 0f, 270f));
+			newArrow.GetComponent<Rigidbody>().velocity = new Vector2(1f, 0f) * arrowSpeed;
+		}
+		else if (direction_facing == "West")
+		{
+			newArrow = (GameObject)Instantiate(arrow, new Vector3(this.transform.position.x - .75f, this.transform.position.y), Quaternion.Euler(0f, 0f, 90f));
+			newArrow.GetComponent<Rigidbody>().velocity = new Vector2(-1f, 0f) * arrowSpeed;
+		}
+		yield return new WaitForSeconds(1f);
+		canSpawnArrow = true;
 	}
 
 	public void SetCanSpawnSwordProjectile(bool change)
