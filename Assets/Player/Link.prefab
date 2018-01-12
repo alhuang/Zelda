@@ -74,7 +74,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.9375, y: 0.5, z: 0.2}
-  m_Center: {x: 0, y: -0.25, z: 0}
+  m_Center: {x: 0, y: -0.24, z: 0}
 --- !u!95 &95063913759551402
 Animator:
   serializedVersion: 3
@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a5e81a9d25cf64da9db15774edc48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  max_health: 3
 --- !u!212 &212064665221600286
 SpriteRenderer:
   m_ObjectHideFlags: 1
