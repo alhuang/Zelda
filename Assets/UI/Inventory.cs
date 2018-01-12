@@ -5,7 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour {
 
 	int rupee_count = 0;
-	float health_count = 3f;
+	float health_count = 2.5f;
 
 	private float max_health = 3f;
 
