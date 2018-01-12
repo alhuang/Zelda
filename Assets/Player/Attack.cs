@@ -10,7 +10,7 @@ public class Attack : MonoBehaviour {
 	Health health;
 	private string direction_facing = "South";
 	private bool canSpawnSword = true;
-	bool canSpawnSwordProjectile = true;
+	private bool canSpawnSwordProjectile = true;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +21,7 @@ public class Attack : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		direction_facing = arrowKeyMovement.GetDirection();
+		Debug.Log(canSpawnSwordProjectile);
 		if (Input.GetKeyDown(KeyCode.X) && canSpawnSwordProjectile && health.GetHealth() == health.GetMaxHealth())
 		{
 			StartCoroutine("spawnSwordProjectile");
@@ -85,8 +86,7 @@ public class Attack : MonoBehaviour {
 			newSwordProjectile = (GameObject)Instantiate(sword, new Vector3(this.transform.position.x - .75f, this.transform.position.y), Quaternion.Euler(0f, 0f, 90f));
 			newSwordProjectile.GetComponent<Rigidbody>().velocity = new Vector2(-1f, 0f) * swordProjectileSpeed;
 		}
-		yield return new WaitForSeconds(.5f);
-
+		yield return new WaitForSeconds(1f);
 		canSpawnSwordProjectile = true;
 	}
 
