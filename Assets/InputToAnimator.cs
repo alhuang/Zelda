@@ -16,8 +16,9 @@ public class InputToAnimator : MonoBehaviour {
 	void Update () {
 		animator.SetFloat("horizontal_input", Input.GetAxisRaw("Horizontal"));
 		animator.SetFloat("vertical_input", Input.GetAxisRaw("Vertical"));
+		animator.SetBool("attack", Input.GetKey(KeyCode.X));
 
-		if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
+		if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0 && !(Input.GetKey(KeyCode.X)))
 		{
 			animator.speed = 0.0f;
 		}
