@@ -4,10 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - rupee
-  - heart
-  - enemy
-  - Link
+  - key
+  - bomb_pickup
   layers:
   - Default
   - TransparentFX
