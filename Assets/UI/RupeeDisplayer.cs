@@ -17,7 +17,7 @@ public class RupeeDisplayer : MonoBehaviour {
 	void Update () {
 		if (inventory != null && textComponent != null)
 		{
-			textComponent.text = inventory.GetRupees().ToString();
+			textComponent.text = "Rupees: " + inventory.GetRupees().ToString();
 		}
 	}
 }
