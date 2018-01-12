@@ -16,10 +16,12 @@ public class EnemyDamage : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (other.tag == "Link") {
-			Health linkHealth = other.GetComponent<Health> ();
+		Health linkHealth = other.GetComponent<Health> ();
 
-			linkHealth.SubtractHealth (damageAmount);
+		if (linkHealth == null) {
+			return;
 		}
+		linkHealth.SubtractHealth (damageAmount);
 	}
+
 }

@@ -16,9 +16,11 @@ public class GameOver : MonoBehaviour {
 	}
 	
 	public void EndGame() {
+		/*
 		if (cheatC.cheat) {
 			return;
 		}
+		*/
 		gameOver = true;
 		GameOverScreen.SetActive (true);
 	}
