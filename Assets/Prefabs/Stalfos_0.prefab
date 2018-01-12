@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114881587688047516}
   m_Layer: 0
   m_Name: Stalfos_0
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1416714456611822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 42.45383, y: 6.061922, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -69,8 +69,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.17, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.16, y: 0.11, z: 0.2}
+  m_Center: {x: 0, y: -0.03, z: 0}
 --- !u!114 &114469661175082930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f94ca7179a98d7c43a59dd1aae909bb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement_speed: 4
+  movement_speed: 2
 --- !u!114 &114881587688047516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -94,7 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a5e81a9d25cf64da9db15774edc48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_health: 2
+  max_health: 3
+  gameOver: {fileID: 0}
 --- !u!212 &212951786581898690
 SpriteRenderer:
   m_ObjectHideFlags: 1

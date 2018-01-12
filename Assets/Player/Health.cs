@@ -33,4 +33,17 @@ public class Health : MonoBehaviour {
 		max_health += num_health;
 	}
 
+	void Start()
+	{
+		health_count = max_health;
+	}
+
+	void Update()
+	{
+		if (health_count == 0)
+		{
+			Destroy(gameObject);
+		}
+	}
+
 }
