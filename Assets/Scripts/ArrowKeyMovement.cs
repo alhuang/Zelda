@@ -7,6 +7,9 @@ public class ArrowKeyMovement : MonoBehaviour {
 	Rigidbody rb;
 	public float movement_speed = 4;
 
+	private string direction = "South";
+
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody>();
@@ -16,6 +19,56 @@ public class ArrowKeyMovement : MonoBehaviour {
 	void Update () {
 		Vector2 current_input = GetInput();
 		rb.velocity = current_input * movement_speed;
+
+		string prevDirection = direction;
+
+		//save user direction
+		if (current_input [0] > .5f) {
+			direction = "East";
+		} else if (current_input [0] < -.5f) {
+			direction = "West";
+		} else if (current_input [1] > .5f) {
+			direction = "North";
+		} else if (current_input [1] < -.5f) {
+			direction = "South";
+		}
+
+		Debug.Log (direction);
+
+		//if direction change, align link
+		if (direction != prevDirection) {
+			if (direction == "North" || direction == "South") {
+				float positionFromCenter = (transform.position.x - Mathf.Floor (transform.position.x));
+				if (positionFromCenter < .25f) {
+					transform.position = new Vector3 (transform.position.x - positionFromCenter,
+						transform.position.y, transform.position.z);
+					
+				} else if (positionFromCenter >= .75f) {
+					transform.position = new Vector3 (transform.position.x + (1 - positionFromCenter),
+						transform.position.y, transform.position.z);
+				} else {
+					
+					float correctionAmount = .5f - positionFromCenter;
+					transform.position = new Vector3 (transform.position.x + correctionAmount,
+						transform.position.y, transform.position.z);
+				}
+			} else { //going east or west
+				float positionFromCenter = (transform.position.y - Mathf.Floor (transform.position.y));
+				if (positionFromCenter < .25f) {
+					transform.position = new Vector3 (transform.position.x,
+						transform.position.y - positionFromCenter, transform.position.z);
+
+				} else if (positionFromCenter >= .75f) {
+					transform.position = new Vector3 (transform.position.x,
+						transform.position.y + (1 - positionFromCenter), transform.position.z);
+				} else {
+
+					float correctionAmount = .5f - positionFromCenter;
+					transform.position = new Vector3 (transform.position.x,
+						transform.position.y + correctionAmount, transform.position.z);
+				}
+			}
+		}
 	}
 
 	Vector2 GetInput()
