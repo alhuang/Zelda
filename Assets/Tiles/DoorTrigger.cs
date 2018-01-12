@@ -6,7 +6,7 @@ public class DoorTrigger : MonoBehaviour {
 
 	public GameObject link;
 	public GameObject camera;
-	public float panTime = 10f;
+	public float panTime = 100f;
 
 	private static float CAMERA_LR_MOVE = 16f;
 	private static float CAMERA_UD_MOVE = 11f;

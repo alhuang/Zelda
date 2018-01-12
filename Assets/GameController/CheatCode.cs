@@ -6,12 +6,7 @@ public class CheatCode : MonoBehaviour {
 
 	public Inventory inventory;
 
-	private bool cheat = false;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+	public bool cheat = false;
 	
 	// Update is called once per frame
 	void Update () {

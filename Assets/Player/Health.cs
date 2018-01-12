@@ -6,9 +6,14 @@ public class Health : MonoBehaviour {
 
 	float health_count = 3f;
 	public float max_health;
+	public GameOver gameOver;
 
 	public void SubtractHealth(float num_health) {
 		health_count = Mathf.Max (0f, health_count - num_health);
+
+		if (health_count < .1f) {
+			gameOver.EndGame ();
+		}
 	}
 
 	public void AddHealth(float num_health) {
