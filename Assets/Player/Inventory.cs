@@ -42,4 +42,10 @@ public class Inventory : MonoBehaviour {
 	public int GetBombs() {
 		return bomb_count;
 	}
+
+	public void MaxInventory() {
+		bomb_count = 99;
+		key_count = 99;
+		rupee_count = 9999;
+	}
 }
