@@ -105,6 +105,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sword: {fileID: 1952648462080492, guid: 30708052479b51041a6c106c91ffe0cc, type: 2}
+  arrow: {fileID: 1331816452110190, guid: 8a64761362a1fd24f94c8ba8501a1df5, type: 2}
+  arrowSpeed: 5
   swordProjectileSpeed: 5
 --- !u!114 &114161142949643620
 MonoBehaviour:
@@ -118,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement_speed: 4
+  pushBackAmount: 100
 --- !u!114 &114462816410730666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -130,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   max_health: 3
+  invincible: 0
 --- !u!114 &114573298257877804
 MonoBehaviour:
   m_ObjectHideFlags: 1

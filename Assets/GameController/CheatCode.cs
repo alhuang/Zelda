@@ -18,7 +18,6 @@ public class CheatCode : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.P)) {
 			cheat = true;
-			health.AddMaxHealth (100);
 		}
 
 		if (inventory == null) {
@@ -27,7 +26,6 @@ public class CheatCode : MonoBehaviour {
 
 		if (cheat) {
 			inventory.MaxInventory ();
-			health.AddHealth (100);
 		}
 	}
 }

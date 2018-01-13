@@ -18,8 +18,11 @@ public class EnemyDamage : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (other.tag == "Link") {
 			Health linkHealth = other.GetComponent<Health> ();
-
+			if (linkHealth.invincible) {
+				return;
+			}
 			linkHealth.SubtractHealth (damageAmount);
+			StartCoroutine(other.GetComponent<ArrowKeyMovement> ().PushBack ());
 		}
 	}
 

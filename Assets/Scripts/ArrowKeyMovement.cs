@@ -5,7 +5,8 @@ using UnityEngine;
 public class ArrowKeyMovement : MonoBehaviour {
 
 	Rigidbody rb;
-	public float movement_speed = 4;
+	public float movement_speed = 4f;
+	public float pushBackAmount = 10f;
 
 	private string direction = "South";
 	private bool canMove = true;
@@ -95,6 +96,33 @@ public class ArrowKeyMovement : MonoBehaviour {
 	public string GetDirection()
 	{
 		return direction;
+	}
+
+	//when dealt damage, push back
+	public IEnumerator PushBack() {
+		float xDir = 0f;
+		float yDir = 0f;
+		if (direction == "North") {
+			yDir = -1f;
+		}
+		if (direction == "South") {
+			yDir = 1f;
+		}
+		if (direction == "East") {
+			xDir = -1f;
+		}
+		if (direction == "West") {
+			xDir = 1f;
+		}
+
+		for (int i = 0; i < 100; i++) {
+			if (rb == null) {
+				break;
+			}
+			rb.AddForce (new Vector2 (xDir, yDir) * pushBackAmount);
+			yield return new WaitForSeconds (.01f);
+		}
+
 	}
 
 
