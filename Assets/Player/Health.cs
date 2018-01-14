@@ -11,8 +11,11 @@ public class Health : MonoBehaviour {
 	private SpriteRenderer spriteRenderer;
 
 	public void SubtractHealth(float num_health) {
-		health_count = Mathf.Max (0f, health_count - num_health);
-		StartCoroutine (ShowDamage());
+		if (!invincible)
+		{
+			health_count = Mathf.Max(0f, health_count - num_health);
+			StartCoroutine(ShowDamage());
+		}
 	}
 
 	private IEnumerator ShowDamage() {

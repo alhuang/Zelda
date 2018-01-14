@@ -26,6 +26,7 @@ public class CheatCode : MonoBehaviour {
 
 		if (cheat) {
 			inventory.MaxInventory ();
+			health.SetInvincible(true);
 		}
 	}
 }
