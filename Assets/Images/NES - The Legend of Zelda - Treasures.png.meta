@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 9f9b7774b0a78b0438e74ea65b5825d3
-timeCreated: 1515797203
+timeCreated: 1515968496
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -95,6 +95,7 @@ TextureImporter:
     21300176: Heart2
     21300178: _Sword
     21300180: Arrows
+    21300182: Key
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -1815,6 +1816,20 @@ TextureImporter:
         x: 154
         y: 104
         width: 5
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Key
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 104
+        width: 8
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
