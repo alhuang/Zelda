@@ -1,11 +1,13 @@
 fileFormatVersion: 2
 guid: 4c3615e9a5b06134baea62e3069dd7c4
-timeCreated: 1515738465
+timeCreated: 1516165609
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Stalfos_0
     21300002: Stalfos_1
+    21300004: Keese
+    21300006: Keese_1
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -100,10 +102,18 @@ TextureImporter:
         width: 16
         height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 1, y: 0, z: 0, w: 1}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -8, y: 8.5}
+        - {x: -8, y: -8.5}
+        - {x: 8, y: -8.5}
+        - {x: 8, y: 8.5}
+      physicsShape:
+      - - {x: -8, y: 8.5}
+        - {x: -8, y: -8.5}
+        - {x: 8, y: -8.5}
+        - {x: 8, y: 8.5}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Stalfos_1
@@ -114,8 +124,52 @@ TextureImporter:
         width: 15
         height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 1}
+      outline:
+      - - {x: -7.5, y: 8.5}
+        - {x: -7.5, y: -8.5}
+        - {x: 7.5, y: -8.5}
+        - {x: 7.5, y: 8.5}
+      physicsShape:
+      - - {x: -7.5, y: 8.5}
+        - {x: -7.5, y: -8.5}
+        - {x: 7.5, y: -8.5}
+        - {x: 7.5, y: 8.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Keese
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 148
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 4}
+        - {x: -8, y: -4}
+        - {x: 8, y: -4}
+        - {x: 8, y: 4}
+      physicsShape:
+      - - {x: -8, y: 4}
+        - {x: -8, y: -4}
+        - {x: 8, y: -4}
+        - {x: 8, y: 4}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Keese_1
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 146
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
