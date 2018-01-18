@@ -8,9 +8,12 @@ public class Attack : MonoBehaviour {
 	public GameObject arrow;
 	public float arrowSpeed = 5;
 	public float swordProjectileSpeed = 5;
-	ArrowKeyMovement arrowKeyMovement;
-	Inventory inventory;
-	Health health;
+	public string AWeapon = "Sword";
+	public string BWeapon = "Bow";
+
+	private ArrowKeyMovement arrowKeyMovement;
+	private Inventory inventory;
+	private Health health;
 	private string direction_facing = "South";
 	private bool canSpawnSword = true;
 	private bool canSpawnSwordProjectile = true;
@@ -28,15 +31,19 @@ public class Attack : MonoBehaviour {
 		direction_facing = arrowKeyMovement.GetDirection();
 		//Debug.Log(canSpawnSwordProjectile);
 
-		if (Input.GetKeyDown(KeyCode.X) && canSpawnSwordProjectile && health.GetHealth() == health.GetMaxHealth())
+		if (Input.GetKeyDown(KeyCode.X) && canSpawnSwordProjectile &&
+			health.GetHealth() == health.GetMaxHealth() &&
+			AWeapon == "Sword")
 		{
 			StartCoroutine("spawnSwordProjectile");
 		}
-		else if (Input.GetKeyDown(KeyCode.X) && canSpawnSword)
+		else if (Input.GetKeyDown(KeyCode.X) && canSpawnSword &&
+			AWeapon == "Sword")
 		{
 			StartCoroutine("spawnSword");
 		}
-		if (Input.GetKeyDown(KeyCode.Z) && canSpawnArrow && inventory.GetRupees() > 0)
+		if (Input.GetKeyDown(KeyCode.Z) && canSpawnArrow && inventory.GetRupees() > 0 &&
+			BWeapon == "Bow")
 		{
 			StartCoroutine("spawnArrow");
 		}
@@ -132,5 +139,13 @@ public class Attack : MonoBehaviour {
 	public void SetCanSpawnSwordProjectile(bool change)
 	{
 		canSpawnSwordProjectile = change;
+	}
+
+	public void SetAWeapon(string weapon) {
+		AWeapon = weapon;
+	}
+
+	public void SetBWeapon(string weapon) {
+		BWeapon = weapon;
 	}
 }
