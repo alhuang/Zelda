@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 9f9b7774b0a78b0438e74ea65b5825d3
-timeCreated: 1516237365
+timeCreated: 1516242378
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -13,7 +13,7 @@ TextureImporter:
     21300012: NES - The Legend of Zelda - Treasures_6
     21300014: Sword
     21300016: NES - The Legend of Zelda - Treasures_8
-    21300018: NES - The Legend of Zelda - Treasures_9
+    21300018: Boomerang
     21300020: NES - The Legend of Zelda - Treasures_10
     21300022: Arrow
     21300024: NES - The Legend of Zelda - Treasures_12
@@ -342,7 +342,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: NES - The Legend of Zelda - Treasures_9
+      name: Boomerang
       rect:
         serializedVersion: 2
         x: 129
@@ -1847,7 +1847,7 @@ TextureImporter:
         width: 8
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

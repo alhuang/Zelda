@@ -153,9 +153,10 @@ public class ModifyTilePrefabs : EditorWindow {
 
         // Update tiles
         foreach (KeyValuePair<string, List<GameObject>> entry in changesToBeMade) {
-            if (entry.Key == "NULL")
-                continue;
-                
+			if (entry.Key == "NULL")
+				continue;
+			// WALL is fine. NULL is not in the dictionary...
+
             GameObject prefab = prefabDict[entry.Key];
             foreach (GameObject oldTile in entry.Value) {
                 if (oldTile == null)

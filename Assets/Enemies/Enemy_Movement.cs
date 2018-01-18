@@ -11,6 +11,7 @@ public class Enemy_Movement : MonoBehaviour {
 	float horizontal = 0f;
 	float vertical = 0f;
 	bool changeDirection = true;
+	bool canMove = true;
 	string direction = "South";
 
 	// Use this for initialization
@@ -20,7 +21,7 @@ public class Enemy_Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (changeDirection)
+		if (changeDirection && canMove)
 		{
 			StartCoroutine("Move");
 		}
@@ -108,5 +109,15 @@ public class Enemy_Movement : MonoBehaviour {
 
 		yield return new WaitForSeconds(time_between_mvmt_changes);
 		changeDirection = true;
+	}
+
+	public string GetDirection()
+	{
+		return direction;
+	}
+
+	public void SetCanMove(bool change)
+	{
+		canMove = change;
 	}
 }
