@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114881587688047516}
   - component: {fileID: 114663694392843080}
   - component: {fileID: 65512943875420764}
+  - component: {fileID: 114071590986911340}
   m_Layer: 8
   m_Name: Stalfos_0
   m_TagString: enemy
@@ -85,6 +86,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.09, z: 0.2}
   m_Center: {x: 0, y: -0.05, z: 0}
+--- !u!114 &114071590986911340
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1416714456611822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b5c227e632e5c49a3714d34f4bb782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RupeeChance: 0.25
+  KeyChance: 0
+  Rupee: {fileID: 1018371029677606, guid: 84fe1963951bbf14ab8f2a2deb65e12f, type: 2}
+  Key: {fileID: 1018371029677606, guid: deef1159118276343bc9d58292d36323, type: 2}
 --- !u!114 &114469661175082930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,6 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a5e81a9d25cf64da9db15774edc48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pushBackAmount: 10
   max_health: 2
   invincible: 0
 --- !u!212 &212951786581898690

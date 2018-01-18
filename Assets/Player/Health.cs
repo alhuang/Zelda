@@ -11,12 +11,14 @@ public class Health : MonoBehaviour {
 
 	private SpriteRenderer spriteRenderer;
 	private Rigidbody rb;
+	private DropItem dropItem;
 
 	void Start()
 	{
 		health_count = max_health;
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		rb = GetComponent<Rigidbody> ();
+		dropItem = GetComponent<DropItem> ();
 	}
 
 	public void SubtractHealth(float num_health) {
@@ -69,6 +71,10 @@ public class Health : MonoBehaviour {
 	{
 		if (health_count == 0)
 		{
+			if (dropItem != null) {
+				dropItem.dropRupee ();
+				dropItem.dropKey ();
+			}
 			Destroy(gameObject);
 		}
 	}
