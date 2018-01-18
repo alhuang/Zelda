@@ -26,9 +26,9 @@ public class EnemyDamage : MonoBehaviour {
 				float yDir = 0;
 				float zDir = 0;
 
-				float x = directionVector.x;
-				float y = directionVector.y;
-				float z = directionVector.z;
+				float x = Mathf.Abs(directionVector.x);
+				float y = Mathf.Abs(directionVector.x);
+				float z = Mathf.Abs(directionVector.x);
 
 				if (Mathf.Max (x, y, z) == x) {
 					xDir = 1f;
