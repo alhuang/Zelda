@@ -26,7 +26,8 @@ public class Attack : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		direction_facing = arrowKeyMovement.GetDirection();
-		Debug.Log(canSpawnSwordProjectile);
+		//Debug.Log(canSpawnSwordProjectile);
+
 		if (Input.GetKeyDown(KeyCode.X) && canSpawnSwordProjectile && health.GetHealth() == health.GetMaxHealth())
 		{
 			StartCoroutine("spawnSwordProjectile");
