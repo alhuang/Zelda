@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 65761196946909870}
   - component: {fileID: 114881587688047516}
   - component: {fileID: 114663694392843080}
-  - component: {fileID: 114767647390491458}
   - component: {fileID: 95601024682868404}
-  m_Layer: 0
+  - component: {fileID: 114279370157134370}
+  m_Layer: 8
   m_Name: Keese
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -90,6 +90,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114279370157134370
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1416714456611822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f94ca7179a98d7c43a59dd1aae909bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement_speed: 4
+  time_between_mvmt_changes: 1
+  is_Keese: 1
 --- !u!114 &114663694392843080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -102,19 +116,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 0.5
---- !u!114 &114767647390491458
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1416714456611822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42cd2070406714a4680053c3a5fa3d76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movement_speed: 4
-  time_between_mvmt_changes: 1
 --- !u!114 &114881587688047516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a5e81a9d25cf64da9db15774edc48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_health: 3
+  max_health: 1
   invincible: 0
 --- !u!212 &212951786581898690
 SpriteRenderer:

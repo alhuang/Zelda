@@ -7,6 +7,7 @@ public class Enemy_Movement : MonoBehaviour {
 	Rigidbody rb;
 	public float movement_speed = 4;
 	public float time_between_mvmt_changes = 1;
+	public bool is_Keese = false;
 	float horizontal = 0f;
 	float vertical = 0f;
 	bool changeDirection = true;
@@ -31,7 +32,7 @@ public class Enemy_Movement : MonoBehaviour {
 		horizontal = Random.Range(-1, 2);
 		vertical = Random.Range(-1, 2);
 
-		if (Mathf.Abs(horizontal) > 0.0f)
+		if (Mathf.Abs(horizontal) > 0.0f && !is_Keese)
 			vertical = 0.0f;
 
 		Vector2 current_input = new Vector2(horizontal, vertical);

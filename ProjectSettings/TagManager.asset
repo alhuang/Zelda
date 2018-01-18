@@ -6,6 +6,10 @@ TagManager:
   tags:
   - key
   - bomb_pickup
+  - Link
+  - rupee
+  - heart
+  - enemy
   layers:
   - Default
   - TransparentFX
@@ -15,7 +19,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Enemy
   - 
   - 
   - 

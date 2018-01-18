@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 9f9b7774b0a78b0438e74ea65b5825d3
-timeCreated: 1515968496
+timeCreated: 1516237365
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -96,6 +96,7 @@ TextureImporter:
     21300178: _Sword
     21300180: Arrows
     21300182: Key
+    21300184: Bomb
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -1831,6 +1832,20 @@ TextureImporter:
         y: 104
         width: 8
         height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bomb
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 106
+        width: 8
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

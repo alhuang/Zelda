@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114881587688047516}
   - component: {fileID: 114663694392843080}
   - component: {fileID: 65512943875420764}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stalfos_0
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement_speed: 2
   time_between_mvmt_changes: 1
+  is_Keese: 0
 --- !u!114 &114663694392843080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -121,7 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a5e81a9d25cf64da9db15774edc48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_health: 3
+  max_health: 2
+  invincible: 0
 --- !u!212 &212951786581898690
 SpriteRenderer:
   m_ObjectHideFlags: 1
