@@ -122,7 +122,6 @@ public class ArrowKeyMovement : MonoBehaviour {
 			rb.AddForce (new Vector2 (xDir, yDir) * pushBackAmount);
 			yield return new WaitForSeconds (.01f);
 		}
-
 	}
 
 
