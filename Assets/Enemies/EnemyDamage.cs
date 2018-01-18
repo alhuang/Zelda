@@ -20,8 +20,10 @@ public class EnemyDamage : MonoBehaviour {
 			Health linkHealth = other.GetComponent<Health> ();
 			if (!linkHealth.invincible)
 			{
+				Vector3 direction = (other.transform.position -
+					this.transform.position).normalized;
 				linkHealth.SubtractHealth(damageAmount);
-				StartCoroutine(other.GetComponent<ArrowKeyMovement>().PushBack());
+				StartCoroutine(other.GetComponent<Health>().PushBackDir(direction));
 			}
 		}
 	}
