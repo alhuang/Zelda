@@ -5,10 +5,19 @@ using UnityEngine;
 public class Health : MonoBehaviour {
 
 	float health_count = 3f;
+	public float pushBackAmount = 100f;
 	public float max_health;
 	public bool invincible = false;
 
 	private SpriteRenderer spriteRenderer;
+	private Rigidbody rb;
+
+	void Start()
+	{
+		health_count = max_health;
+		spriteRenderer = GetComponent<SpriteRenderer> ();
+		rb = GetComponent<Rigidbody> ();
+	}
 
 	public void SubtractHealth(float num_health) {
 		if (!invincible)
@@ -56,17 +65,21 @@ public class Health : MonoBehaviour {
 		invincible = toggle;
 	}
 
-	void Start()
-	{
-		health_count = max_health;
-		spriteRenderer = GetComponent<SpriteRenderer> ();
-	}
-
 	void Update()
 	{
 		if (health_count == 0)
 		{
 			Destroy(gameObject);
+		}
+	}
+
+	public IEnumerator PushBackDir(Vector3 direction) {
+		for (int i = 0; i < 100; i++) {
+			if (rb == null) {
+				break;
+			}
+			rb.AddForce (direction * pushBackAmount);
+			yield return new WaitForSeconds (.01f);
 		}
 	}
 

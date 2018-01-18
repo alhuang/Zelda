@@ -43,7 +43,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291686514725514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.454, y: 2.041, z: 0}
+  m_LocalPosition: {x: 39.453514, y: 2.7863874, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -120,7 +120,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement_speed: 4
-  pushBackAmount: 100
 --- !u!114 &114462816410730666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -132,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a5e81a9d25cf64da9db15774edc48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pushBackAmount: 50
   max_health: 3
   invincible: 0
 --- !u!114 &114573298257877804
