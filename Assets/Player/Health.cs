@@ -5,7 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour {
 
 	float health_count = 3f;
-	public float pushBackAmount = 10f;
+	public float pushBackAmount = 100f;
 	public float max_health;
 	public bool invincible = false;
 
