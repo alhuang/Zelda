@@ -27,15 +27,18 @@ public class EnemyDamage : MonoBehaviour {
 				float zDir = 0;
 
 				float x = Mathf.Abs(directionVector.x);
-				float y = Mathf.Abs(directionVector.x);
-				float z = Mathf.Abs(directionVector.x);
+				float y = Mathf.Abs(directionVector.y);
 
-				if (Mathf.Max (x, y, z) == x) {
+				if (Mathf.Max (x, y) == x) {
 					xDir = 1f;
-				} else if (Mathf.Max (x, y, z) == y) {
-					yDir = 1f;
+					if (directionVector.x < 0) {
+						xDir *= -1;
+					}
 				} else {
-					zDir = 1f;
+					yDir = 1f;
+					if (directionVector.y < 0) {
+						yDir *= -1;
+					}
 				}
 
 				Vector3 direction = new Vector3 (xDir, yDir, zDir);
