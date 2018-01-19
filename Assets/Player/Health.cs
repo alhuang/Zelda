@@ -8,6 +8,7 @@ public class Health : MonoBehaviour {
 	public float pushBackAmount = 100f;
 	public float max_health;
 	public bool invincible = false;
+	public HealthDisplayer healthUI;
 
 	private SpriteRenderer spriteRenderer;
 	private Rigidbody rb;
@@ -26,6 +27,9 @@ public class Health : MonoBehaviour {
 		{
 			health_count = Mathf.Max(0f, health_count - num_health);
 			StartCoroutine(ShowDamage());
+			if (this.tag == "Link") {
+				healthUI.updateHealth (health_count);
+			}
 		}
 	}
 
@@ -48,6 +52,9 @@ public class Health : MonoBehaviour {
 
 	public void AddHealth(float num_health) {
 		health_count = Mathf.Min (max_health, health_count + num_health);
+		if (this.tag == "Link") {
+			healthUI.updateHealth (health_count);
+		}
 	}
 
 	public float GetHealth() {

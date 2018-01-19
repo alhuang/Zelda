@@ -5,20 +5,41 @@ using UnityEngine.UI;
 
 public class HealthDisplayer : MonoBehaviour {
 
-	public Health inventory;
-	Text textComponent;
+	public GameObject[] hearts;
+	public Sprite emptyHeart;
+	public Sprite halfHeart;
+	public Sprite fullHeart;
+	public GameOver gameOver;
+
 
 	// Use this for initialization
 	void Start () {
-		textComponent = GetComponent<Text>();
+		updateHealth (3f);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (inventory != null && textComponent != null)
-		{
-			textComponent.text = "Health: " + 
-				inventory.GetHealth().ToString();
+
+	public void updateHealth(float curHealth) {
+		//fill up all hearts before curHealth
+		for (int i = 0; i < curHealth; ++i) {
+			hearts [i].GetComponent<Image> ().sprite = fullHeart;
+		}
+
+		//check if there's half a heart to insert
+		//then fill up rest of hearts
+		float halfLocation = (float) Mathf.Floor (curHealth);
+		if (curHealth - halfLocation > .1f) {
+			hearts [(int)halfLocation].GetComponent<Image> ().sprite = halfHeart;
+			for (int i = (int)halfLocation + 1; i < hearts.Length; i++) {
+				hearts [i].GetComponent<Image> ().sprite = emptyHeart;
+			}
+		} else {
+			for (int i = (int)halfLocation; i < hearts.Length; i++) {
+				hearts [i].GetComponent<Image> ().sprite = emptyHeart;
+			}
+		}
+
+
+		if (curHealth < .4f) {
+			gameOver.EndGame ();
 		}
 	}
 }
