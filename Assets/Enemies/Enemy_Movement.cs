@@ -23,7 +23,6 @@ public class Enemy_Movement : MonoBehaviour {
 	void Update () {
 		if (changeDirection && canMove)
 		{
-			Debug.Log("Starting Move Coroutine");
 			StartCoroutine("Move");
 		}
 		if (!canMove)

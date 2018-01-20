@@ -6,10 +6,12 @@ public class Attack : MonoBehaviour {
 
 	public GameObject sword;
 	public GameObject arrow;
+	GameObject boomerang;
 	public float arrowSpeed = 5;
 	public float swordProjectileSpeed = 5;
+	public float boomerang_speed = 5;
 	public string AWeapon = "Sword";
-	public string BWeapon = "Bow";
+	public string BWeapon = "Boomerang";
 
 	private ArrowKeyMovement arrowKeyMovement;
 	private Inventory inventory;
@@ -18,12 +20,15 @@ public class Attack : MonoBehaviour {
 	private bool canSpawnSword = true;
 	private bool canSpawnSwordProjectile = true;
 	private bool canSpawnArrow = true;
+	private bool canSpawnBoomerang = true;
 
 	// Use this for initialization
 	void Start () {
 		arrowKeyMovement = GetComponent<ArrowKeyMovement>();
 		health = GetComponent<Health>();
 		inventory = GetComponent<Inventory>();
+		boomerang = GetComponentInChildren<Boomerang>().gameObject;
+		boomerang.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -46,6 +51,11 @@ public class Attack : MonoBehaviour {
 			BWeapon == "Bow")
 		{
 			StartCoroutine("spawnArrow");
+		}
+		else if (Input.GetKeyDown(KeyCode.Z) && canSpawnBoomerang && BWeapon == "Boomerang")
+		{
+			Debug.Log("Boomerang Coroutine");
+			StartCoroutine(spawnBoomerang());
 		}
 	}
 
@@ -134,6 +144,38 @@ public class Attack : MonoBehaviour {
 		}
 		yield return new WaitForSeconds(1f);
 		canSpawnArrow = true;
+	}
+
+	IEnumerator spawnBoomerang()
+	{
+		boomerang.GetComponent<Boomerang>().SetCurrentPosition(this.transform.position);
+		arrowKeyMovement.SetCanMove(false);
+		canSpawnBoomerang = false;
+		boomerang.SetActive(true);
+		if (direction_facing == "South")
+		{
+			boomerang.transform.localPosition = new Vector3(0f, -0.25f);
+			boomerang.GetComponent<Rigidbody>().velocity = new Vector2(0f, -1f) * boomerang_speed;
+		}
+		else if (direction_facing == "North")
+		{
+			boomerang.transform.localPosition = new Vector3(0f, 0.25f);
+			boomerang.GetComponent<Rigidbody>().velocity = new Vector2(0f, 1f) * boomerang_speed;
+		}
+		else if (direction_facing == "East")
+		{
+			boomerang.transform.localPosition = new Vector3(0.25f, 0f);
+			boomerang.GetComponent<Rigidbody>().velocity = new Vector2(1f, 0f) * boomerang_speed;
+		}
+		else if (direction_facing == "West")
+		{
+			boomerang.transform.localPosition = new Vector3(-0.25f, 0f);
+			boomerang.GetComponent<Rigidbody>().velocity = new Vector2(-1f, 0f) * boomerang_speed;
+		}
+
+		yield return new WaitForSeconds(1f);
+		canSpawnBoomerang = true;
+
 	}
 
 	public void SetCanSpawnSwordProjectile(bool change)
