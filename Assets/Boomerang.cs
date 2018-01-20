@@ -36,13 +36,22 @@ public class Boomerang : MonoBehaviour {
 			Debug.Log("Start position:" + start_position.ToString());
 			Debug.Log("Current position:" + currentPosition.ToString());
 			Debug.Log(returning.ToString());
-			enemyMovement.SetCanMove(true);
+			if (enemyMovement != null)
+			{
+				enemyMovement.SetCanMove(true);
+			}
+			else
+			{
+				GetComponentInParent<ArrowKeyMovement>().SetCanMove(true);
+			}
+			returning = false;
 			gameObject.SetActive(false);
 		}
 
 		if (!returning && (currentPosition.x <= start_position.x - distance || currentPosition.x >= start_position.x + distance ||
 			currentPosition.y <= start_position.y - distance || currentPosition.y >= start_position.y + distance))
 		{
+			Debug.Log("returning");
 			rb.velocity = -rb.velocity;
 			returning = true;
 		}
