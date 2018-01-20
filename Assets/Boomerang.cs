@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Boomerang : MonoBehaviour {
 
+	GameObject parent;
 	Vector3 start_position;
 	Rigidbody rb;
 	public float distance = 5f;
 	bool returning = false;
+	Enemy_Movement enemyMovement;
 
 	// Use this for initialization
 	void Start () {
 		start_position = transform.position;
 		rb = GetComponent<Rigidbody>();
+		enemyMovement = GetComponentInParent<Enemy_Movement>();
 	}
 	
 	// Update is called once per frame
@@ -33,7 +36,8 @@ public class Boomerang : MonoBehaviour {
 			Debug.Log("Start position:" + start_position.ToString());
 			Debug.Log("Current position:" + currentPosition.ToString());
 			Debug.Log(returning.ToString());
-			Destroy(gameObject);
+			enemyMovement.SetCanMove(true);
+			gameObject.SetActive(false);
 		}
 
 		if (!returning && (currentPosition.x <= start_position.x - distance || currentPosition.x >= start_position.x + distance ||
@@ -54,10 +58,15 @@ public class Boomerang : MonoBehaviour {
 			Health enemy_hp = other.GetComponent<Health>();
 			enemy_hp.SubtractHealth(1f);
 			Debug.Log(enemy_hp.GetHealth());
-			Destroy(gameObject);
+			// Destroy(gameObject);
 		}
 
 		//if (other.gameObject.tag != "Link" && other.gameObject.tag != "rupee" && other.gameObject.tag != "heart")
 		//	Destroy(gameObject);
+	}
+
+	public void SetCurrentPosition(Vector3 position)
+	{
+		start_position = position;
 	}
 }
