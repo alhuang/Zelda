@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour {
 
-	int rupee_count = 0;
-	int key_count = 0;
-	int bomb_count = 0;
+	public int rupee_count = 0;
+	public int key_count = 0;
+	public int bomb_count = 0;
+
+	public RupeeDisplayer rupeeDisplayer;
+	public KeyDisplayer keyDisplayer;
+	public BombDisplayer bombDisplayer;
 
 	public void AddRupees(int num_rupees)
 	{

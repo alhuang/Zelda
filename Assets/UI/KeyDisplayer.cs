@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class KeyDisplayer : MonoBehaviour {
-
-	public Inventory inventory;
 	Text textComponent;
 
 	// Use this for initialization
@@ -13,11 +11,7 @@ public class KeyDisplayer : MonoBehaviour {
 		textComponent = GetComponent<Text>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		if (inventory != null && textComponent != null)
-		{
-			textComponent.text = "Keys: " + inventory.GetKeys().ToString();
-		}
+	void updateKeys(int amount) {
+		textComponent.text = amount.ToString()
 	}
 }

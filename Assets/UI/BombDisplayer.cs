@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class BombDisplayer : MonoBehaviour {
 
-	public Inventory inventory;
 	Text textComponent;
 
 	// Use this for initialization
@@ -13,11 +12,7 @@ public class BombDisplayer : MonoBehaviour {
 		textComponent = GetComponent<Text>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		if (inventory != null && textComponent != null)
-		{
-			textComponent.text = "Bombs: " + inventory.GetBombs().ToString();
-		}
+	void updateKeys(int amount) {
+		textComponent.text = amount.ToString()
 	}
 }
