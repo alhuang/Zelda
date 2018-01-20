@@ -11,7 +11,7 @@ public class KeyDisplayer : MonoBehaviour {
 		textComponent = GetComponent<Text>();
 	}
 	
-	void updateKeys(int amount) {
-		textComponent.text = amount.ToString()
+	public void UpdateKeys(int amount) {
+		textComponent.text = amount.ToString ();
 	}
 }

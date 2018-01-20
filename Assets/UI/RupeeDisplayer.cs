@@ -12,7 +12,7 @@ public class RupeeDisplayer : MonoBehaviour {
 		textComponent = GetComponent<Text>();
 	}
 
-	public void updateRupees(int amount) {
+	public void UpdateRupees(int amount) {
 		textComponent.text = amount.ToString ();
 	}
 }

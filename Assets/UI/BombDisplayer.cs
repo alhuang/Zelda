@@ -12,7 +12,7 @@ public class BombDisplayer : MonoBehaviour {
 		textComponent = GetComponent<Text>();
 	}
 	
-	void updateKeys(int amount) {
-		textComponent.text = amount.ToString()
+	public void UpdateBombs(int amount) {
+		textComponent.text = amount.ToString ();
 	}
 }
