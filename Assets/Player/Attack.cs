@@ -12,6 +12,7 @@ public class Attack : MonoBehaviour {
 	public float boomerang_speed = 5;
 	public string AWeapon = "Sword";
 	public string BWeapon = "Boomerang";
+	//Boomerang, Arrow, Bomb
 
 	private ArrowKeyMovement arrowKeyMovement;
 	private Inventory inventory;
@@ -19,8 +20,7 @@ public class Attack : MonoBehaviour {
 	private string direction_facing = "South";
 	private bool canSpawnSword = true;
 	private bool canSpawnSwordProjectile = true;
-	private bool canSpawnArrow = true;
-	private bool canSpawnBoomerang = true;
+	private bool canSpawnBattack = true;
 
 	// Use this for initialization
 	void Start () {
@@ -47,14 +47,13 @@ public class Attack : MonoBehaviour {
 		{
 			StartCoroutine("spawnSword");
 		}
-		if (Input.GetKeyDown(KeyCode.Z) && canSpawnArrow && inventory.GetRupees() > 0 &&
+		if (Input.GetKeyDown(KeyCode.Z) && canSpawnBattack && inventory.GetRupees() > 0 &&
 			BWeapon == "Bow")
 		{
 			StartCoroutine("spawnArrow");
 		}
-		else if (Input.GetKeyDown(KeyCode.Z) && canSpawnBoomerang && BWeapon == "Boomerang")
+		else if (Input.GetKeyDown(KeyCode.Z) && canSpawnBattack && BWeapon == "Boomerang")
 		{
-			Debug.Log("Boomerang Coroutine");
 			StartCoroutine(spawnBoomerang());
 		}
 	}
@@ -121,7 +120,7 @@ public class Attack : MonoBehaviour {
 	{
 		inventory.AddRupees(-1);
 		GameObject newArrow= null;
-		canSpawnArrow = false;
+		canSpawnBattack = false;
 		if (direction_facing == "South")
 		{
 			newArrow = (GameObject)Instantiate(arrow, new Vector3(this.transform.position.x, this.transform.position.y - .75f), Quaternion.Euler(0f, 0f, 180f));
@@ -143,14 +142,14 @@ public class Attack : MonoBehaviour {
 			newArrow.GetComponent<Rigidbody>().velocity = new Vector2(-1f, 0f) * arrowSpeed;
 		}
 		yield return new WaitForSeconds(1f);
-		canSpawnArrow = true;
+		canSpawnBattack = true;
 	}
 
 	IEnumerator spawnBoomerang()
 	{
 		boomerang.GetComponent<Boomerang>().SetCurrentPosition(this.transform.position);
 		arrowKeyMovement.SetCanMove(false);
-		canSpawnBoomerang = false;
+		canSpawnBattack = false;
 		boomerang.SetActive(true);
 		if (direction_facing == "South")
 		{
@@ -174,7 +173,7 @@ public class Attack : MonoBehaviour {
 		}
 
 		yield return new WaitForSeconds(1f);
-		canSpawnBoomerang = true;
+		canSpawnBattack = true;
 
 	}
 
