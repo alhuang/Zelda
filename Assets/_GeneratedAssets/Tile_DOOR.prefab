@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4573052845596890}
   - component: {fileID: 212868582805370766}
+  - component: {fileID: 114670587880478454}
   m_Layer: 0
   m_Name: Tile_DOOR
   m_TagString: Untagged
@@ -40,6 +41,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114670587880478454
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1403324775896460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b313bce8ac9872140b6e82e83cd5e261, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  link: {fileID: 0}
+  camera: {fileID: 0}
+  topMapUI: {fileID: 0}
+  panTime: 100
 --- !u!212 &212868582805370766
 SpriteRenderer:
   m_ObjectHideFlags: 1
