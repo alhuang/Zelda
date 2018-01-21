@@ -45,6 +45,7 @@ public class EnemyDamage : MonoBehaviour {
 
 				linkHealth.SubtractHealth(damageAmount);
 				StartCoroutine(other.GetComponent<Health>().PushBackDir(direction));
+				StartCoroutine(other.GetComponent<InputToAnimator>().StopAnimations(1f));
 			}
 		}
 	}
