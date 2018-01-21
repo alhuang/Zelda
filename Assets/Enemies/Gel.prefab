@@ -24,9 +24,11 @@ GameObject:
   - component: {fileID: 54928918780482118}
   - component: {fileID: 65947445828418048}
   - component: {fileID: 114475531438064196}
-  m_Layer: 0
+  - component: {fileID: 65230040734216756}
+  - component: {fileID: 114922237940454078}
+  m_Layer: 8
   m_Name: Gel
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1769457112351510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.983784, y: 4.038624, z: 0}
+  m_LocalPosition: {x: 42, y: 4, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -59,6 +61,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!65 &65230040734216756
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1769457112351510}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 0.2, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65947445828418048
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -98,6 +112,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement_speed: 3
+--- !u!114 &114922237940454078
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1769457112351510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e55cb2fbd8a3434fb910aa9bf1d4328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 0.5
 --- !u!212 &212452983569448918
 SpriteRenderer:
   m_ObjectHideFlags: 1
