@@ -40,7 +40,32 @@ public class GelMovement : MonoBehaviour {
 
 		yield return new WaitForSeconds(1f / movement_speed);
 		rb.velocity = Vector2.zero;
+		AdjustPosition();
 		yield return new WaitForSeconds(1f);
 		isMoving = false;
+	}
+
+	void AdjustPosition()
+	{
+		float x = transform.position.x;
+		float y = transform.position.y;
+		if (x % 1 >= 0.5)
+		{
+			x = Mathf.Ceil(x);
+		}
+		else
+		{
+			x = Mathf.Floor(x);
+		}
+		if (y % 1 >= 0.5)
+		{
+			y = Mathf.Ceil(y);
+		}
+		else
+		{
+			y = Mathf.Floor(y);
+		}
+
+		transform.position = new Vector3(x, y);
 	}
 }
