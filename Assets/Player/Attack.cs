@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Attack : MonoBehaviour {
 
@@ -11,8 +12,12 @@ public class Attack : MonoBehaviour {
 	public float swordProjectileSpeed = 5;
 	public float boomerang_speed = 5;
 	public string AWeapon = "Sword";
-	public string BWeapon = "Boomerang";
-	//Boomerang, Arrow, Bomb
+	public string BWeapon;
+	public Sprite[] UISprites;
+	public GameObject WeaponUI;
+	public bool hasBow = false;
+	public bool hasBoomerang = false;
+	//Bow, Boomerang, Bomb
 
 	private ArrowKeyMovement arrowKeyMovement;
 	private Inventory inventory;
@@ -21,6 +26,7 @@ public class Attack : MonoBehaviour {
 	private bool canSpawnSword = true;
 	private bool canSpawnSwordProjectile = true;
 	private bool canSpawnBattack = true;
+	private string[] weapons;
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +35,12 @@ public class Attack : MonoBehaviour {
 		inventory = GetComponent<Inventory>();
 		boomerang = GetComponentInChildren<Boomerang>().gameObject;
 		boomerang.SetActive(false);
+
+		weapons = new string[3];
+		weapons [0] = "Bow";
+		weapons [1] = "Boomerang";
+		weapons [2] = "Bomb";
+		BWeapon = "";
 	}
 	
 	// Update is called once per frame
@@ -47,14 +59,31 @@ public class Attack : MonoBehaviour {
 		{
 			StartCoroutine("spawnSword");
 		}
-		if (Input.GetKeyDown(KeyCode.Z) && canSpawnBattack && inventory.GetRupees() > 0 &&
-			BWeapon == "Bow")
-		{
-			StartCoroutine("spawnArrow");
-		}
-		else if (Input.GetKeyDown(KeyCode.Z) && canSpawnBattack && BWeapon == "Boomerang")
-		{
-			StartCoroutine(spawnBoomerang());
+		if (Input.GetKeyDown (KeyCode.Z) && canSpawnBattack && inventory.GetRupees () > 0 &&
+			BWeapon == weapons [0]) {
+			StartCoroutine ("spawnArrow");
+		} else if (Input.GetKeyDown (KeyCode.Z) && canSpawnBattack && BWeapon == weapons [1]) {
+			StartCoroutine (spawnBoomerang ());
+
+		//2, 3, 4 used to switch B weapons
+		//2 = bow, 3 = boomerang, 4 = bomb
+		//update equipped
+		//change sprite on top
+		} else if (Input.GetKeyDown (KeyCode.Alpha2)) {
+			if (hasBow) {
+				SetBWeapon (weapons [0]);
+				WeaponUI.GetComponent<Image> ().sprite = UISprites [0];
+			}
+		} else if (Input.GetKeyDown (KeyCode.Alpha3)) {
+			if (hasBoomerang) {
+				SetBWeapon (weapons [1]);
+				WeaponUI.GetComponent<Image> ().sprite = UISprites [1];
+			}
+		} else if (Input.GetKeyDown (KeyCode.Alpha4)) {
+			if (inventory.GetBombs () > 0) {
+				SetBWeapon (weapons [2]);
+				WeaponUI.GetComponent<Image> ().sprite = UISprites [2];
+			}
 		}
 	}
 

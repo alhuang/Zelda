@@ -40,12 +40,12 @@ public class Inventory : MonoBehaviour {
 
 	public void AddBomb() {
 		bomb_count += 1;
-		bombDisplayer.UpdateBombs (key_count);
+		bombDisplayer.UpdateBombs (bomb_count);
 	}
 
 	public void RemoveBomb() {
 		bomb_count -= 1;
-		bombDisplayer.UpdateBombs (key_count);
+		bombDisplayer.UpdateBombs (bomb_count);
 	}
 
 	public int GetBombs() {
