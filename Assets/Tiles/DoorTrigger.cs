@@ -6,12 +6,15 @@ public class DoorTrigger : MonoBehaviour {
 
 	public GameObject link;
 	public GameObject camera;
+	public GameObject topMapUI;
 	public float panTime = 100f;
 
 	private static float CAMERA_LR_MOVE = 16f;
 	private static float CAMERA_UD_MOVE = 11f;
 	private static float LINK_LR_MOVE = 3f;
 	private static float LINK_UD_MOVE = 3f;
+	private static float MAP_LR_MOVE = 44f / 3f;
+	private static float MAP_UD_MOVE = 17f / 3f;
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +35,8 @@ public class DoorTrigger : MonoBehaviour {
 		float cameraUDAmount = CAMERA_UD_MOVE;
 		float linkLRAmount = LINK_LR_MOVE;
 		float linkUDAmount = LINK_UD_MOVE;
+		float mapLRAmount = MAP_LR_MOVE;
+		float mapUDAmount = MAP_UD_MOVE;
 
 		//get correct movement amount
 		if (direction == "South") {
@@ -40,20 +45,30 @@ public class DoorTrigger : MonoBehaviour {
 
 			linkLRAmount = 0f;
 			linkUDAmount *= -1;
+
+			mapLRAmount = 0f;
+			mapUDAmount *= -1;
 		} else if (direction == "North") {
 			cameraLRAmount = 0f;
 
 			linkLRAmount = 0f;
+
+			mapLRAmount = 0f;
 		} else if (direction == "West") {
 			cameraLRAmount *= -1f;
 			cameraUDAmount = 0f;
 
 			linkLRAmount *= -1f;
 			linkUDAmount = 0f;
+
+			mapLRAmount *= -1f;
+			mapUDAmount = 0f;
 		} else {
 			cameraUDAmount = 0f;
 
 			linkUDAmount = 0f;
+
+			mapUDAmount = 0f;
 		}
 
 		Vector3 linkNewPosition = new Vector3 (
@@ -65,6 +80,8 @@ public class DoorTrigger : MonoBehaviour {
 		SpriteRenderer linkSR = link.GetComponent<SpriteRenderer> ();
 		linkSR.enabled = false;
 		arrowKey.SetCanMove (false);
+
+		topMapUI.transform.position += new Vector3 (mapLRAmount, mapUDAmount, 0f);
 
 		cameraLRAmount /= panTime;
 		cameraUDAmount /= panTime;
