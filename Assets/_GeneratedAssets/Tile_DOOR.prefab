@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114670587880478454}
   - component: {fileID: 65978905556090030}
   - component: {fileID: 65039288836760852}
+  - component: {fileID: 65033910974605400}
   m_Layer: 0
   m_Name: Tile_DOOR
   m_TagString: Untagged
@@ -43,6 +44,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65033910974605400
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1403324775896460}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65039288836760852
 BoxCollider:
   m_ObjectHideFlags: 1
