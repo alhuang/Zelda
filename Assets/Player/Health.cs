@@ -6,6 +6,8 @@ public class Health : MonoBehaviour {
 
 	float health_count = 3f;
 	public float pushBackAmount = 100f;
+	public float damageTime = 1f;
+	public float damageFlashFreq = 5f;
 	public float max_health;
 	public bool invincible = false;
 	public HealthDisplayer healthUI;
@@ -34,7 +36,6 @@ public class Health : MonoBehaviour {
 	}
 
 	private IEnumerator ShowDamage() {
-		spriteRenderer.color = Color.red;
 		invincible = true;
 
 		ArrowKeyMovement AKM = GetComponent<ArrowKeyMovement> ();
@@ -42,8 +43,13 @@ public class Health : MonoBehaviour {
 			AKM.SetCanMove (false);
 		}
 
-		yield return new WaitForSeconds (1f);
-		spriteRenderer.color = Color.white;
+		for (int i = 0; i < damageFlashFreq; ++i) {
+			spriteRenderer.color = Color.red;
+			yield return new WaitForSeconds (damageTime / damageFlashFreq);
+			spriteRenderer.color = Color.white;
+			yield return new WaitForSeconds (damageTime / damageFlashFreq);
+		}
+
 		invincible = false;
 		if (AKM != null) {
 			AKM.SetCanMove (true);
@@ -81,6 +87,7 @@ public class Health : MonoBehaviour {
 			if (dropItem != null) {
 				dropItem.dropRupee ();
 				dropItem.dropKey ();
+				dropItem.dropHeart ();
 			}
 			Destroy(gameObject);
 		}
