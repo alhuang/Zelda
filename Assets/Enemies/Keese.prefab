@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 95601024682868404}
   - component: {fileID: 114279370157134370}
   - component: {fileID: 65048035991483846}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Keese
   m_TagString: enemy
   m_Icon: {fileID: 0}
