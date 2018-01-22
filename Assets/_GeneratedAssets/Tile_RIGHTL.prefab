@@ -9,17 +9,17 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1204192994064160}
+  m_RootGameObject: {fileID: 1310099801895054}
   m_IsPrefabParent: 1
---- !u!1 &1204192994064160
+--- !u!1 &1310099801895054
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4461591779015774}
-  - component: {fileID: 212649701622252350}
+  - component: {fileID: 4884052839403808}
+  - component: {fileID: 212326518427884676}
   m_Layer: 0
   m_Name: Tile_RIGHTL
   m_TagString: Untagged
@@ -27,12 +27,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4461591779015774
+--- !u!4 &4884052839403808
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1204192994064160}
+  m_GameObject: {fileID: 1310099801895054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,12 +40,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &212649701622252350
+--- !u!212 &212326518427884676
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1204192994064160}
+  m_GameObject: {fileID: 1310099801895054}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
