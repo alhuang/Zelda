@@ -7,12 +7,12 @@ public class Attack : MonoBehaviour {
 
 	public GameObject sword;
 	public GameObject arrow;
-	GameObject boomerang;
+	public GameObject boomerang;
 	public float arrowSpeed = 5;
 	public float swordProjectileSpeed = 5;
 	public float boomerang_speed = 5;
 	public string AWeapon = "Sword";
-	public string BWeapon;
+	public string BWeapon = "";
 	public Sprite[] UISprites;
 	public GameObject WeaponUI;
 	public bool hasBow = false;
@@ -33,14 +33,14 @@ public class Attack : MonoBehaviour {
 		arrowKeyMovement = GetComponent<ArrowKeyMovement>();
 		health = GetComponent<Health>();
 		inventory = GetComponent<Inventory>();
-		boomerang = GetComponentInChildren<Boomerang>().gameObject;
-		boomerang.SetActive(false);
+		//boomerang = GetComponentInChildren<Boomerang>().gameObject;
+		//boomerang.SetActive(false);
 
 		weapons = new string[3];
 		weapons [0] = "Bow";
 		weapons [1] = "Boomerang";
 		weapons [2] = "Bomb";
-		BWeapon = "";
+		//BWeapon = "";
 	}
 	
 	// Update is called once per frame
@@ -63,6 +63,7 @@ public class Attack : MonoBehaviour {
 			BWeapon == weapons [0]) {
 			StartCoroutine ("spawnArrow");
 		} else if (Input.GetKeyDown (KeyCode.Z) && canSpawnBattack && BWeapon == weapons [1]) {
+			Debug.Log("Boomerang");
 			StartCoroutine (spawnBoomerang ());
 
 		//2, 3, 4 used to switch B weapons
@@ -176,34 +177,57 @@ public class Attack : MonoBehaviour {
 
 	IEnumerator spawnBoomerang()
 	{
-		boomerang.GetComponent<Boomerang>().SetCurrentPosition(this.transform.position);
-		arrowKeyMovement.SetCanMove(false);
+
+		//boomerang.GetComponent<Boomerang>().SetCurrentPosition(this.transform.position);
+		//arrowKeyMovement.SetCanMove(false);
+		GameObject newBoomerang = null;
 		canSpawnBattack = false;
-		boomerang.SetActive(true);
+		//boomerang.SetActive(true);
 		if (direction_facing == "South")
 		{
-			boomerang.transform.localPosition = new Vector3(0f, -0.25f);
-			boomerang.GetComponent<Rigidbody>().velocity = new Vector2(0f, -1f) * boomerang_speed;
+			newBoomerang = (GameObject)Instantiate(boomerang, new Vector3(this.transform.position.x, this.transform.position.y - .25f), Quaternion.Euler(0f, 0f, 180f));
+			//boomerang.transform.localPosition = new Vector3(0f, -0.25f);
+			newBoomerang.GetComponent<Rigidbody>().velocity = new Vector2(0f, -1f) * boomerang_speed;
 		}
 		else if (direction_facing == "North")
 		{
-			boomerang.transform.localPosition = new Vector3(0f, 0.25f);
-			boomerang.GetComponent<Rigidbody>().velocity = new Vector2(0f, 1f) * boomerang_speed;
+			newBoomerang = (GameObject)Instantiate(boomerang, new Vector3(this.transform.position.x, this.transform.position.y + .25f), Quaternion.Euler(0f, 0f, 180f));
+			//boomerang.transform.localPosition = new Vector3(0f, 0.25f);
+			newBoomerang.GetComponent<Rigidbody>().velocity = new Vector2(0f, 1f) * boomerang_speed;
 		}
 		else if (direction_facing == "East")
 		{
-			boomerang.transform.localPosition = new Vector3(0.25f, 0f);
-			boomerang.GetComponent<Rigidbody>().velocity = new Vector2(1f, 0f) * boomerang_speed;
+			newBoomerang = (GameObject)Instantiate(boomerang, new Vector3(this.transform.position.x + .25f, this.transform.position.y), Quaternion.Euler(0f, 0f, 180f));
+			//boomerang.transform.localPosition = new Vector3(0.25f, 0f);
+			newBoomerang.GetComponent<Rigidbody>().velocity = new Vector2(1f, 0f) * boomerang_speed;
 		}
 		else if (direction_facing == "West")
 		{
-			boomerang.transform.localPosition = new Vector3(-0.25f, 0f);
-			boomerang.GetComponent<Rigidbody>().velocity = new Vector2(-1f, 0f) * boomerang_speed;
+			newBoomerang = (GameObject)Instantiate(boomerang, new Vector3(this.transform.position.x - .25f, this.transform.position.y), Quaternion.Euler(0f, 0f, 180f));
+			//boomerang.transform.localPosition = new Vector3(-0.25f, 0f);
+			newBoomerang.GetComponent<Rigidbody>().velocity = new Vector2(-1f, 0f) * boomerang_speed;
 		}
+		newBoomerang.GetComponent<Boomerang>().SetLink(true);
+		newBoomerang.GetComponent<Boomerang>().speed = boomerang_speed;
+		StartCoroutine(sendPositionToBoomerang(newBoomerang));
+		yield return null;
 
-		yield return new WaitForSeconds(1f);
+	}
+
+	IEnumerator sendPositionToBoomerang(GameObject boom)
+	{
+		while (boom != null)
+		{
+			boom.GetComponent<Boomerang>().SetReturnPosition(this.transform.position);
+			yield return null;
+		}
 		canSpawnBattack = true;
 
+	}
+
+	public void SetCanSpawnBAttack(bool change)
+	{
+		canSpawnBattack = change;
 	}
 
 	public void SetCanSpawnSwordProjectile(bool change)
