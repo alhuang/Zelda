@@ -92,6 +92,11 @@ public class ArrowKeyMovement : MonoBehaviour {
 		canMove = change;
 	}
 
+	public bool GetCanMove()
+	{
+		return canMove;
+	}
+
 	public string GetDirection()
 	{
 		return direction;

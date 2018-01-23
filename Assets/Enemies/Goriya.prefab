@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 114792776409533146}
   - component: {fileID: 54264511190693894}
   - component: {fileID: 65635485118025776}
+  - component: {fileID: 114590406993991584}
+  - component: {fileID: 114829250649744860}
   m_Layer: 8
   m_Name: Goriya
   m_TagString: Untagged
@@ -56,7 +58,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1316180014019764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.06, y: 0.02, z: 0}
+  m_LocalPosition: {x: 24.001814, y: 4.9860115, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 4488697066236102}
@@ -131,6 +133,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 5
   speed: 5
+--- !u!114 &114590406993991584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1316180014019764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9a5e81a9d25cf64da9db15774edc48b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushBackAmount: 100
+  max_health: 3
+  invincible: 0
+  healthUI: {fileID: 0}
 --- !u!114 &114678471377729528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,6 +175,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boomerang_speed: 5
   time_between_attacks: 5
+--- !u!114 &114829250649744860
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1316180014019764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b5c227e632e5c49a3714d34f4bb782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RupeeChance: 0.25
+  KeyChance: 0
+  Rupee: {fileID: 1018371029677606, guid: 84fe1963951bbf14ab8f2a2deb65e12f, type: 2}
+  Key: {fileID: 1018371029677606, guid: deef1159118276343bc9d58292d36323, type: 2}
 --- !u!212 &212111568330528352
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -235,7 +267,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300008, guid: 4c3615e9a5b06134baea62e3069dd7c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
