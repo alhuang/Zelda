@@ -44,7 +44,7 @@ public class EnemyDamage : MonoBehaviour {
 				Vector3 direction = new Vector3 (xDir, yDir, zDir);
 
 				linkHealth.SubtractHealth(damageAmount);
-				StartCoroutine(other.GetComponent<Health>().PushBackDir(direction));
+				other.GetComponent<Health>().callPushBackDir(direction);
 				StartCoroutine(other.GetComponent<InputToAnimator>().StopAnimations(1f));
 			}
 		}

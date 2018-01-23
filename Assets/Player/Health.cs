@@ -103,4 +103,7 @@ public class Health : MonoBehaviour {
 		}
 	}
 
+	public void callPushBackDir(Vector3 direction) {
+		StartCoroutine (PushBackDir (direction));
+	}
 }
