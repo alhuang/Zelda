@@ -5,7 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour {
 
 	float health_count = 3f;
-	public float pushBackAmount = 100f;
+	public float pushBackAmount = 500f;
 	public float damageTime = 1f;
 	public float damageFlashFreq = 5f;
 	public float max_health;
@@ -93,13 +93,34 @@ public class Health : MonoBehaviour {
 		}
 	}
 
-	public IEnumerator PushBackDir(Vector3 direction) {
-		for (int i = 0; i < 100; i++) {
+	public IEnumerator PushBackDir(Vector3 directionVector) {
+		float xDir = 0;
+		float yDir = 0;
+		float zDir = 0;
+
+		float x = Mathf.Abs(directionVector.x);
+		float y = Mathf.Abs(directionVector.y);
+
+		if (Mathf.Max (x, y) == x) {
+			xDir = 1f;
+			if (directionVector.x < 0) {
+				xDir *= -1;
+			}
+		} else {
+			yDir = 1f;
+			if (directionVector.y < 0) {
+				yDir *= -1;
+			}
+		}
+
+		Vector3 direction = new Vector3 (xDir, yDir, zDir);
+
+		for (int i = 0; i < 10; i++) {
 			if (rb == null) {
 				break;
 			}
 			rb.AddForce (direction * pushBackAmount);
-			yield return new WaitForSeconds (.01f);
+			yield return null;
 		}
 	}
 
