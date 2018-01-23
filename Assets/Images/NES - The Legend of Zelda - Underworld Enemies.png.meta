@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 4c3615e9a5b06134baea62e3069dd7c4
-timeCreated: 1516594504
+timeCreated: 1516675259
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,6 +11,8 @@ TextureImporter:
     21300008: Goriya
     21300010: Gel
     21300012: Beam
+    21300014: Wallmaster
+    21300016: Wallmaster2
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -212,6 +214,34 @@ TextureImporter:
         y: 99
         width: 8
         height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Wallmaster
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 120
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Wallmaster2
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 120
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

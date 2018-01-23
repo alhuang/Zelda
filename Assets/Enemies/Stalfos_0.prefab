@@ -102,7 +102,7 @@ MonoBehaviour:
   HeartChance: 0.1
   Rupee: {fileID: 1018371029677606, guid: 84fe1963951bbf14ab8f2a2deb65e12f, type: 2}
   Key: {fileID: 1018371029677606, guid: deef1159118276343bc9d58292d36323, type: 2}
-  Heart: {fileID: 1881820970224738, guid: a9694edca34e4084abaf69e53d48dc07, type: 2}
+  Heart: {fileID: 0}
 --- !u!114 &114469661175082930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f94ca7179a98d7c43a59dd1aae909bb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement_speed: 2
+  movement_speed: 1
   time_between_mvmt_changes: 1
   is_Keese: 0
 --- !u!114 &114663694392843080
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a5e81a9d25cf64da9db15774edc48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushBackAmount: 50
+  pushBackAmount: 10
   damageTime: 1
   damageFlashFreq: 5
   max_health: 2

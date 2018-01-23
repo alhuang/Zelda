@@ -42,6 +42,10 @@ public class Enemy_Movement : MonoBehaviour {
 		changeDirection = false;
 		horizontal = Random.Range(-1, 2);
 		vertical = Random.Range(-1, 2);
+		if (horizontal == 0 && vertical == 0)
+		{
+			vertical = 1;
+		}
 
 		if (Mathf.Abs(horizontal) > 0.0f && !is_Keese)
 			vertical = 0.0f;
@@ -74,13 +78,13 @@ public class Enemy_Movement : MonoBehaviour {
 			if (direction == "North" || direction == "South")
 			{
 				float positionFromCenter = (transform.position.x - Mathf.Floor(transform.position.x));
-				if (positionFromCenter < .25f)
+				if (positionFromCenter < .5f)
 				{
 					transform.position = new Vector3(transform.position.x - positionFromCenter,
 						transform.position.y, transform.position.z);
 
 				}
-				else if (positionFromCenter >= .75f)
+				else if (positionFromCenter >= .5f)
 				{
 					transform.position = new Vector3(transform.position.x + (1 - positionFromCenter),
 						transform.position.y, transform.position.z);
@@ -88,7 +92,7 @@ public class Enemy_Movement : MonoBehaviour {
 				else
 				{
 
-					float correctionAmount = .5f - positionFromCenter;
+					float correctionAmount = 1f - positionFromCenter;
 					transform.position = new Vector3(transform.position.x + correctionAmount,
 						transform.position.y, transform.position.z);
 				}
@@ -96,13 +100,13 @@ public class Enemy_Movement : MonoBehaviour {
 			else
 			{ //going east or west
 				float positionFromCenter = (transform.position.y - Mathf.Floor(transform.position.y));
-				if (positionFromCenter < .25f)
+				if (positionFromCenter < .5f)
 				{
 					transform.position = new Vector3(transform.position.x,
 						transform.position.y - positionFromCenter, transform.position.z);
 
 				}
-				else if (positionFromCenter >= .75f)
+				else if (positionFromCenter >= .5f)
 				{
 					transform.position = new Vector3(transform.position.x,
 						transform.position.y + (1 - positionFromCenter), transform.position.z);
@@ -110,7 +114,7 @@ public class Enemy_Movement : MonoBehaviour {
 				else
 				{
 
-					float correctionAmount = .5f - positionFromCenter;
+					float correctionAmount = 1f - positionFromCenter;
 					transform.position = new Vector3(transform.position.x,
 						transform.position.y + correctionAmount, transform.position.z);
 				}
@@ -120,6 +124,7 @@ public class Enemy_Movement : MonoBehaviour {
 		yield return new WaitForSeconds(time_between_mvmt_changes);
 		changeDirection = true;
 	}
+
 
 	public string GetDirection()
 	{
