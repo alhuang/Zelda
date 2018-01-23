@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class PushableTile : MonoBehaviour {
 	public Vector3 directionToPush;
-	public float pushAmount = .05f;
+	public float pushAmount = 1f;
 	public GameObject unlockDoor;
 	public Sprite newSprite;
 
-	private Vector3 finalLocation;
+	private Vector3 startingLocation;
 	private BoxCollider triggerBox;
 
 	// Use this for initialization
 	void Start () {
-		finalLocation = transform.position + directionToPush;
+		startingLocation = transform.position;
 
 		BoxCollider[] boxes = GetComponents<BoxCollider> ();
 		foreach(BoxCollider box in boxes) {
@@ -29,12 +29,14 @@ public class PushableTile : MonoBehaviour {
 
 			//if pushed one block, then remove collider
 			//and unlock door
-			if (Mathf.Abs (transform.position.x - finalLocation.x) < pushAmount &&
-				Mathf.Abs (transform.position.y - finalLocation.y) < pushAmount) {
+			if (Mathf.Abs (transform.position.x - startingLocation.x) > 1f ||
+				Mathf.Abs (transform.position.y - startingLocation.y) > 1f) {
 				triggerBox.enabled = false;
 
-				unlockDoor.GetComponent<SpriteRenderer> ().sprite = newSprite;
-				unlockDoor.GetComponent<BoxCollider> ().enabled = false;
+				if (unlockDoor != null) {
+					unlockDoor.GetComponent<SpriteRenderer> ().sprite = newSprite;
+					unlockDoor.GetComponent<BoxCollider> ().enabled = false;
+				}
 			}
 		}
 	}

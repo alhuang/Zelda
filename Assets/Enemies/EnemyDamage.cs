@@ -22,29 +22,9 @@ public class EnemyDamage : MonoBehaviour {
 			{
 				Vector3 directionVector = (other.transform.position -
 					this.transform.position).normalized;
-				float xDir = 0;
-				float yDir = 0;
-				float zDir = 0;
-
-				float x = Mathf.Abs(directionVector.x);
-				float y = Mathf.Abs(directionVector.y);
-
-				if (Mathf.Max (x, y) == x) {
-					xDir = 1f;
-					if (directionVector.x < 0) {
-						xDir *= -1;
-					}
-				} else {
-					yDir = 1f;
-					if (directionVector.y < 0) {
-						yDir *= -1;
-					}
-				}
-
-				Vector3 direction = new Vector3 (xDir, yDir, zDir);
 
 				linkHealth.SubtractHealth(damageAmount);
-				StartCoroutine(other.GetComponent<Health>().PushBackDir(direction));
+				other.GetComponent<Health>().callPushBackDir(directionVector);
 				StartCoroutine(other.GetComponent<InputToAnimator>().StopAnimations(1f));
 			}
 		}

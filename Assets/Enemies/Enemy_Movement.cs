@@ -18,6 +18,10 @@ public class Enemy_Movement : MonoBehaviour {
 	void Start () {
 		rb = GetComponent<Rigidbody>();
 	}
+
+	public float GetMovementSpeed() {
+		return movement_speed;
+	}
 	
 	// Update is called once per frame
 	void Update () {

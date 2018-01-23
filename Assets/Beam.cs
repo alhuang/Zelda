@@ -28,8 +28,12 @@ public class Beam : MonoBehaviour {
 		if (other.gameObject.tag == "Link")
 		{
 			//StartCoroutine(other.gameObject.GetComponent<Health>().PushBackDir((this.transform.position - other.gameObject.transform.position).normalized));
-			Destroy(gameObject);
+			Invoke("destroySelf", .1f);
 		}
+	}
+
+	void destroySelf() {
+		Destroy (gameObject);
 	}
 
 	IEnumerator speedUp()
