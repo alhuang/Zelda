@@ -24,8 +24,8 @@ TagManager:
   - Pillar
   - Keese
   - Boomerang
-  - 
-  - 
+  - Background
+  - Foreground
   - 
   - 
   - 
@@ -46,4 +46,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3980688123
+    locked: 0
+  - name: Foreground
+    uniqueID: 684950329
     locked: 0
