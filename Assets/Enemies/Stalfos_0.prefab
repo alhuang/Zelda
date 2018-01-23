@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a5e81a9d25cf64da9db15774edc48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushBackAmount: 500
+  pushBackAmount: 50
   damageTime: 1
   damageFlashFreq: 5
   max_health: 2

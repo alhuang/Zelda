@@ -133,6 +133,7 @@ public class Attack : MonoBehaviour {
 			newSwordProjectile = (GameObject)Instantiate(sword, new Vector3(this.transform.position.x, this.transform.position.y - .75f), Quaternion.Euler(0f, 0f, 180f));
 			StartCoroutine(animator.StopAnimations(.5f));
 			yield return new WaitForSeconds(.5f);
+			if(newSwordProjectile != null) 
 			newSwordProjectile.GetComponent<Rigidbody>().velocity = new Vector2(0f, -1f) * swordProjectileSpeed;
 		}
 		else if (direction_facing == "North")
@@ -140,6 +141,7 @@ public class Attack : MonoBehaviour {
 			newSwordProjectile = (GameObject)Instantiate(sword, new Vector3(this.transform.position.x, this.transform.position.y + .75f), Quaternion.Euler(0f, 0f, 0f));
 			StartCoroutine(animator.StopAnimations(.5f));
 			yield return new WaitForSeconds(.5f);
+			if(newSwordProjectile != null) 
 			newSwordProjectile.GetComponent<Rigidbody>().velocity = new Vector2(0f, 1f) * swordProjectileSpeed;
 		}
 		else if (direction_facing == "East")
@@ -147,6 +149,7 @@ public class Attack : MonoBehaviour {
 			newSwordProjectile = (GameObject)Instantiate(sword, new Vector3(this.transform.position.x + .75f, this.transform.position.y), Quaternion.Euler(0f, 0f, 270f));
 			StartCoroutine(animator.StopAnimations(.5f));
 			yield return new WaitForSeconds(.5f);
+			if(newSwordProjectile != null) 
 			newSwordProjectile.GetComponent<Rigidbody>().velocity = new Vector2(1f, 0f) * swordProjectileSpeed;
 		}
 		else if (direction_facing == "West")
@@ -154,6 +157,7 @@ public class Attack : MonoBehaviour {
 			newSwordProjectile = (GameObject)Instantiate(sword, new Vector3(this.transform.position.x - .75f, this.transform.position.y), Quaternion.Euler(0f, 0f, 90f));
 			StartCoroutine(animator.StopAnimations(.5f));
 			yield return new WaitForSeconds(.5f);
+			if(newSwordProjectile != null) 
 			newSwordProjectile.GetComponent<Rigidbody>().velocity = new Vector2(-1f, 0f) * swordProjectileSpeed;
 		}
 		arrowKeyMovement.SetCanMove(true);

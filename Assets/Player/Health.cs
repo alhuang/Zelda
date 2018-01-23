@@ -125,6 +125,8 @@ public class Health : MonoBehaviour {
 	}
 
 	public void callPushBackDir(Vector3 direction) {
+		Debug.Log ("callPushBackDir");
+		Debug.Log (direction);
 		StartCoroutine (PushBackDir (direction));
 	}
 }

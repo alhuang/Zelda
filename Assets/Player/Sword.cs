@@ -31,7 +31,7 @@ public class Sword : MonoBehaviour
 			Health enemy_hp = other.GetComponent<Health>();
 			enemy_hp.SubtractHealth(1f);
 			enemy_hp.callPushBackDir (-(transform.position -
-			other.transform.position).normalized);
+				other.transform.position).normalized);
 			Debug.Log(enemy_hp.GetHealth());
 			//attack.SetCanSpawnSwordProjectile(true);
 			Destroy(gameObject);
