@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 95601024682868404}
   - component: {fileID: 114279370157134370}
   - component: {fileID: 65048035991483846}
+  - component: {fileID: 114217147228975780}
   m_Layer: 11
   m_Name: Keese
   m_TagString: enemy
@@ -103,6 +104,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114217147228975780
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1416714456611822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b5c227e632e5c49a3714d34f4bb782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RupeeChance: 0.25
+  KeyChance: 0
+  Rupee: {fileID: 1018371029677606, guid: 84fe1963951bbf14ab8f2a2deb65e12f, type: 2}
+  Key: {fileID: 1018371029677606, guid: deef1159118276343bc9d58292d36323, type: 2}
 --- !u!114 &114279370157134370
 MonoBehaviour:
   m_ObjectHideFlags: 1

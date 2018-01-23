@@ -22,9 +22,12 @@ public class InputToAnimator : MonoBehaviour {
 			if (Input.GetKeyDown (KeyCode.X))
 				StartCoroutine (AttackAnimation ());
 
-			if (Input.GetAxisRaw ("Horizontal") == 0 && Input.GetAxisRaw ("Vertical") == 0) {
+			if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
+			{
 				animator.speed = 0.0f;
-			} else {
+			}
+			else
+			{
 				animator.speed = 1.0f;
 			}
 		}

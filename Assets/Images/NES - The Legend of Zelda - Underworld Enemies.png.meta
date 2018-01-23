@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 4c3615e9a5b06134baea62e3069dd7c4
-timeCreated: 1516497538
+timeCreated: 1516594504
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -10,6 +10,7 @@ TextureImporter:
     21300006: Keese_1
     21300008: Goriya
     21300010: Gel
+    21300012: Beam
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -197,6 +198,20 @@ TextureImporter:
         y: 147
         width: 8
         height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beam
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 99
+        width: 8
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

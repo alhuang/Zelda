@@ -22,6 +22,7 @@ public class Attack : MonoBehaviour {
 	private ArrowKeyMovement arrowKeyMovement;
 	private Inventory inventory;
 	private Health health;
+	private InputToAnimator animator;
 	private string direction_facing = "South";
 	private bool canSpawnSword = true;
 	private bool canSpawnSwordProjectile = true;
@@ -33,6 +34,7 @@ public class Attack : MonoBehaviour {
 		arrowKeyMovement = GetComponent<ArrowKeyMovement>();
 		health = GetComponent<Health>();
 		inventory = GetComponent<Inventory>();
+		animator = GetComponent<InputToAnimator>();
 		//boomerang = GetComponentInChildren<Boomerang>().gameObject;
 		//boomerang.SetActive(false);
 
@@ -93,6 +95,7 @@ public class Attack : MonoBehaviour {
 		Debug.Log("Spawning sword");
 		GameObject newSword = null;
 		canSpawnSword = false;
+		canSpawnSwordProjectile = false;
 		if (direction_facing == "South")
 		{
 			newSword = Instantiate(sword, new Vector3(this.transform.position.x, this.transform.position.y - .75f), Quaternion.Euler(0f, 0f, 180f));
@@ -110,6 +113,7 @@ public class Attack : MonoBehaviour {
 			newSword = Instantiate(sword, new Vector3(this.transform.position.x - .75f, this.transform.position.y), Quaternion.Euler(0f, 0f, 90f));
 		}
 		arrowKeyMovement.SetCanMove(false);
+		StartCoroutine(animator.StopAnimations(.5f));
 		yield return new WaitForSeconds(.5f);
 
 		Destroy(newSword);
@@ -122,28 +126,42 @@ public class Attack : MonoBehaviour {
 		Debug.Log("Spawning sword projectile");
 		GameObject newSwordProjectile = null;
 		canSpawnSwordProjectile = false;
+		canSpawnSword = false;
+		arrowKeyMovement.SetCanMove(false);
 		if (direction_facing == "South")
 		{
 			newSwordProjectile = (GameObject)Instantiate(sword, new Vector3(this.transform.position.x, this.transform.position.y - .75f), Quaternion.Euler(0f, 0f, 180f));
+			StartCoroutine(animator.StopAnimations(.5f));
+			yield return new WaitForSeconds(.5f);
 			newSwordProjectile.GetComponent<Rigidbody>().velocity = new Vector2(0f, -1f) * swordProjectileSpeed;
 		}
 		else if (direction_facing == "North")
 		{
 			newSwordProjectile = (GameObject)Instantiate(sword, new Vector3(this.transform.position.x, this.transform.position.y + .75f), Quaternion.Euler(0f, 0f, 0f));
+			StartCoroutine(animator.StopAnimations(.5f));
+			yield return new WaitForSeconds(.5f);
 			newSwordProjectile.GetComponent<Rigidbody>().velocity = new Vector2(0f, 1f) * swordProjectileSpeed;
 		}
 		else if (direction_facing == "East")
 		{
 			newSwordProjectile = (GameObject)Instantiate(sword, new Vector3(this.transform.position.x + .75f, this.transform.position.y), Quaternion.Euler(0f, 0f, 270f));
+			StartCoroutine(animator.StopAnimations(.5f));
+			yield return new WaitForSeconds(.5f);
 			newSwordProjectile.GetComponent<Rigidbody>().velocity = new Vector2(1f, 0f) * swordProjectileSpeed;
 		}
 		else if (direction_facing == "West")
 		{
 			newSwordProjectile = (GameObject)Instantiate(sword, new Vector3(this.transform.position.x - .75f, this.transform.position.y), Quaternion.Euler(0f, 0f, 90f));
+			StartCoroutine(animator.StopAnimations(.5f));
+			yield return new WaitForSeconds(.5f);
 			newSwordProjectile.GetComponent<Rigidbody>().velocity = new Vector2(-1f, 0f) * swordProjectileSpeed;
 		}
+		arrowKeyMovement.SetCanMove(true);
+		yield return new WaitForSeconds(.5f);
+		canSpawnSword = true;
 		yield return new WaitForSeconds(1f);
 		canSpawnSwordProjectile = true;
+		
 	}
 
 	IEnumerator spawnArrow()
@@ -183,7 +201,24 @@ public class Attack : MonoBehaviour {
 		GameObject newBoomerang = null;
 		canSpawnBattack = false;
 		//boomerang.SetActive(true);
-		if (direction_facing == "South")
+		if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.UpArrow))
+		{
+			newBoomerang = (GameObject)Instantiate(boomerang, new Vector3(this.transform.position.x - .25f, this.transform.position.y + .25f), Quaternion.Euler(0f, 0f, 180f));
+			newBoomerang.GetComponent<Rigidbody>().velocity = new Vector2(-1f, 1f) * boomerang_speed;
+		} else if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.DownArrow))
+		{
+			newBoomerang = (GameObject)Instantiate(boomerang, new Vector3(this.transform.position.x - .25f, this.transform.position.y - .25f), Quaternion.Euler(0f, 0f, 180f));
+			newBoomerang.GetComponent<Rigidbody>().velocity = new Vector2(-1f, -1f) * boomerang_speed;
+		} else if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.UpArrow))
+		{
+			newBoomerang = (GameObject)Instantiate(boomerang, new Vector3(this.transform.position.x + .25f, this.transform.position.y + .25f), Quaternion.Euler(0f, 0f, 180f));
+			newBoomerang.GetComponent<Rigidbody>().velocity = new Vector2(1f, 1f) * boomerang_speed;
+		} else if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.DownArrow))
+		{
+			newBoomerang = (GameObject)Instantiate(boomerang, new Vector3(this.transform.position.x + .25f, this.transform.position.y - .25f), Quaternion.Euler(0f, 0f, 180f));
+			newBoomerang.GetComponent<Rigidbody>().velocity = new Vector2(1f, -1f) * boomerang_speed;
+		}
+		else if (direction_facing == "South")
 		{
 			newBoomerang = (GameObject)Instantiate(boomerang, new Vector3(this.transform.position.x, this.transform.position.y - .25f), Quaternion.Euler(0f, 0f, 180f));
 			//boomerang.transform.localPosition = new Vector3(0f, -0.25f);

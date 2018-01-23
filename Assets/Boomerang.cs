@@ -46,12 +46,13 @@ public class Boomerang : MonoBehaviour {
 			{
 				enemyMovement.SetCanMove(true);
 				gameObject.SetActive(false);
+				returning = false;
 			}
 			else
 			{
-				Destroy(gameObject);
+				//Destroy(gameObject);
 			}
-			returning = false;
+			//returning = false;
 
 			
 		}
@@ -72,7 +73,7 @@ public class Boomerang : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		Debug.Log("onTriggerEnter");
+		Debug.Log(other.gameObject.tag);
 		if (other.gameObject.tag == "Link" && !Link)
 		{
 			Health enemy_hp = other.GetComponent<Health>();
@@ -84,6 +85,11 @@ public class Boomerang : MonoBehaviour {
 		{
 			returning = true;
 			rb.velocity = -rb.velocity;
+		}
+		if (returning && other.gameObject.tag == "Link" && Link)
+		{
+			Destroy(gameObject);
+			returning = false;
 		}
 
 
