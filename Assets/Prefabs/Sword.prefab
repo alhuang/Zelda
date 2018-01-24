@@ -82,6 +82,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: {fileID: 114066966114730402, guid: 35763c0df81b17846adf83f489d0de6d, type: 2}
+  smallBoom: {fileID: 21300000, guid: db793f9b27ad47b429e6439ebd23df06, type: 3}
+  bigBoom: {fileID: 21300000, guid: d8fcd11b321ebb04ca3385e6e8ffb425, type: 3}
 --- !u!212 &212515781767627034
 SpriteRenderer:
   m_ObjectHideFlags: 1

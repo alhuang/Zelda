@@ -8,6 +8,8 @@ public class AquamentusMovement : MonoBehaviour {
 	public float speed = 0.5f;
 	public float beam_speed = .5f;
 	public GameObject beam;
+	public AudioClip RoarBeamsSound;
+
 	Rigidbody rb;
 	bool move = true;
 	bool attacking = false;
@@ -41,6 +43,7 @@ public class AquamentusMovement : MonoBehaviour {
 	IEnumerator Attack()
 	{
 		attacking = true;
+		//AudioSource.PlayClipAtPoint(RoarBeamsSound, Camera.main.transform.position);
 		GameObject beam1 = (GameObject)Instantiate(beam, new Vector3(this.transform.position.x, this.transform.position.y + .25f), Quaternion.identity);
 		GameObject beam2 = (GameObject)Instantiate(beam, new Vector3(this.transform.position.x, this.transform.position.y + .25f), Quaternion.identity);
 		GameObject beam3 = (GameObject)Instantiate(beam, new Vector3(this.transform.position.x, this.transform.position.y + .25f), Quaternion.identity);

@@ -119,6 +119,9 @@ MonoBehaviour:
   max_health: 3
   invincible: 0
   healthUI: {fileID: 0}
+  PlayerHurt: {fileID: 0}
+  DeadAudio: {fileID: 8300000, guid: e93cad8f27c22cb42b7bacba5ed55124, type: 3}
+  DeadBoss: {fileID: 0}
 --- !u!212 &212562981264488970
 SpriteRenderer:
   m_ObjectHideFlags: 1

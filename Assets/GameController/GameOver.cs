@@ -27,6 +27,7 @@ public class GameOver : MonoBehaviour {
 		gameOver = true;
 		GameOverScreen.SetActive (true);
 		camera.GetComponent<AudioSource> ().clip = EndGameSound;
+		camera.GetComponent<AudioSource> ().Play ();
 	}
 
 	void Update() {
