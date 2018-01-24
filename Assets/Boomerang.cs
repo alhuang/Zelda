@@ -30,7 +30,7 @@ public class Boomerang : MonoBehaviour {
 		Vector3 currentPosition = this.transform.position;
 		//Debug.Log(start_position.ToString());
 
-		if (screenPosition.y > Screen.height || screenPosition.y < 0 || screenPosition.x > Screen.width || screenPosition.x < 0)
+		if (screenPosition.y > Screen.height - 80 || screenPosition.y < 15 || screenPosition.x > Screen.width - 15 || screenPosition.x < 15)
 		{
 			rb.velocity = -rb.velocity;
 
