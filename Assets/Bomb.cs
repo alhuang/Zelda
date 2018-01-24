@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour {
 
+	public AudioClip bombexplosion;
 	public Sprite explosion;
 	bool exploded = false;
 	public float detonationTime = 1f;
@@ -38,6 +39,7 @@ public class Bomb : MonoBehaviour {
 
 	IEnumerator Explode()
 	{
+		AudioSource.PlayClipAtPoint(bombexplosion, Camera.main.transform.position);
 		yield return new WaitForSeconds(detonationTime);
 		exploded = true;
 		this.GetComponent<SpriteRenderer>().sprite = explosion;

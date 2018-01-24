@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UnlockLR : MonoBehaviour {
 	public GameObject door;
-
+	public AudioClip doorOpen;
 	public Sprite sprite;
 
 	void OnTriggerEnter(Collider other) {
@@ -17,6 +17,7 @@ public class UnlockLR : MonoBehaviour {
 					return;
 				}
 
+				AudioSource.PlayClipAtPoint(doorOpen, Camera.main.transform.position);
 				//use a key, change the tiles of the door, delete self
 				linkventory.RemoveKey ();
 

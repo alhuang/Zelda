@@ -66,5 +66,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftDoor: {fileID: 0}
   RightDoor: {fileID: 0}
+  doorOpen: {fileID: 8300000, guid: c6f6e2d416a8ebe46a70f677ec808de0, type: 3}
   LDSprite: {fileID: 21300184, guid: cf72b4af22c01b94491bbc16def92f43, type: 3}
   RDSprite: {fileID: 21300186, guid: cf72b4af22c01b94491bbc16def92f43, type: 3}

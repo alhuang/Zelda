@@ -42,7 +42,7 @@ public class Collector : MonoBehaviour {
 				health.AddHealth(1.0f);
 			Destroy(other_object);
 
-			AudioSource.PlayClipAtPoint(rupee_collection_sound_clip, Camera.main.transform.position);
+			AudioSource.PlayClipAtPoint(heart_sound_clip, Camera.main.transform.position);
 		}
 		if (other_object.tag == "key") {
 			if (inventory != null) {
@@ -56,6 +56,7 @@ public class Collector : MonoBehaviour {
 				inventory.AddBomb ();
 			}
 			Destroy (other_object);
+			AudioSource.PlayClipAtPoint(rupee_collection_sound_clip, Camera.main.transform.position);
 		}
 		if (other_object.tag == "enemy")
 		{
