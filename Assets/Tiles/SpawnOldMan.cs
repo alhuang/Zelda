@@ -10,7 +10,7 @@ public class SpawnOldMan : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		if (other.tag == "Link")
-			Invoke ("StartAnimation", 1f);
+			Invoke ("StartAnimation", 1.5f);
 	}
 
 	private void StartAnimation() {
