@@ -9,7 +9,7 @@ public class ArrowKeyMovement : MonoBehaviour {
 
 	private string direction = "South";
 	private bool canMove = true;
-
+	public bool ignoreControls = false;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +18,8 @@ public class ArrowKeyMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (ignoreControls)
+			return;
 		if (!canMove)
 		{
 			rb.velocity = Vector2.zero;

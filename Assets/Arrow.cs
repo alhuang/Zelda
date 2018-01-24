@@ -27,7 +27,7 @@ public class Arrow : MonoBehaviour {
 		if (other.gameObject.tag == "enemy")
 		{
 			Health enemy_hp = other.GetComponent<Health>();
-			enemy_hp.SubtractHealth(1f);
+			enemy_hp.SubtractHealth(2f);
 			Debug.Log(enemy_hp.GetHealth());
 			//attack.SetCanSpawnSwordProjectile(true);
 			Destroy(gameObject);

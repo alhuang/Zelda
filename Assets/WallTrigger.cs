@@ -74,9 +74,8 @@ public class WallTrigger : MonoBehaviour {
 		}
 
 
-
 		Vector2 spawnPosition = new Vector2(x, y);
-		GameObject newHand = (GameObject)Instantiate(hand, spawnPosition, Quaternion.identity);
+		GameObject newHand = (GameObject)Instantiate(hand, spawnPosition, rotation);
 		newHand.GetComponent<Wallmaster>().startMove(move1, move2);
 
 		while (newHand != null)
