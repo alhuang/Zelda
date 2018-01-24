@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 65230040734216756}
   - component: {fileID: 114922237940454078}
   - component: {fileID: 114569146066482550}
+  - component: {fileID: 95417483448028018}
   m_Layer: 8
   m_Name: Gel
   m_TagString: enemy
@@ -86,6 +87,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &95417483448028018
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1769457112351510}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 154bc6c7516f574489fed4299db2f834, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114475531438064196
 MonoBehaviour:
   m_ObjectHideFlags: 1

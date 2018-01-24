@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: 9da874acf40a2a942bc5011fa04c57d7
-timeCreated: 1516591459
+timeCreated: 1516772711
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Aquamentus
+    21300002: Aquamentus_1
+    21300004: Aquamentus_2
+    21300006: Aquamentus_3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -97,6 +100,48 @@ TextureImporter:
         x: 4
         y: 311
         width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Aquamentus_1
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 311
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Aquamentus_2
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 311
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Aquamentus_3
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 311
+        width: 25
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}

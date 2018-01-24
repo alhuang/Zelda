@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 4c3615e9a5b06134baea62e3069dd7c4
-timeCreated: 1516749786
+timeCreated: 1516772466
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -14,6 +14,8 @@ TextureImporter:
     21300014: Wallmaster
     21300016: Wallmaster2
     21300018: BladeTrap
+    21300020: Gel_1
+    21300022: Goriya_1
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -257,6 +259,34 @@ TextureImporter:
         y: 120
         width: 16
         height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Gel_1
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 147
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Goriya_1
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 121
+        width: 13
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

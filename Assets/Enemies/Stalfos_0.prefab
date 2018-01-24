@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114663694392843080}
   - component: {fileID: 65512943875420764}
   - component: {fileID: 114071590986911340}
+  - component: {fileID: 95952469695772014}
   m_Layer: 8
   m_Name: Stalfos_0
   m_TagString: enemy
@@ -86,6 +87,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.15963021, z: 0.2}
   m_Center: {x: 0, y: -0.009977913, z: 0}
+--- !u!95 &95952469695772014
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1416714456611822}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5ffc8b91ba40fa142b67c989cc5b0d46, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114071590986911340
 MonoBehaviour:
   m_ObjectHideFlags: 1

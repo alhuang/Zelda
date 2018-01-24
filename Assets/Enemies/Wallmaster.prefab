@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 65343817142720364}
   - component: {fileID: 114990983778788988}
   - component: {fileID: 114257050363814744}
+  - component: {fileID: 95428211883351616}
   m_Layer: 0
   m_Name: Wallmaster
   m_TagString: enemy
@@ -72,6 +73,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.14, y: 0.15, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &95428211883351616
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1176731087709020}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d4e1dd3419b42d44891a2bc835a77749, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114257050363814744
 MonoBehaviour:
   m_ObjectHideFlags: 1
