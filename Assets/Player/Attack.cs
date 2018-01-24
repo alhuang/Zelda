@@ -29,6 +29,7 @@ public class Attack : MonoBehaviour {
 	private bool canSpawnSwordProjectile = true;
 	private bool canSpawnBattack = true;
 	private string[] weapons;
+	private Animator anim;
 
 	// Use this for initialization
 	void Start () {
@@ -38,6 +39,7 @@ public class Attack : MonoBehaviour {
 		animator = GetComponent<InputToAnimator>();
 		//boomerang = GetComponentInChildren<Boomerang>().gameObject;
 		//boomerang.SetActive(false);
+		anim = GetComponent<Animator>();
 
 		weapons = new string[3];
 		weapons [0] = "Bow";
@@ -112,7 +114,7 @@ public class Attack : MonoBehaviour {
 		Debug.Log("Spawning sword");
 		GameObject newSword = null;
 		canSpawnSword = false;
-		canSpawnSwordProjectile = false;
+		//canSpawnSwordProjectile = false;
 		if (direction_facing == "South")
 		{
 			newSword = Instantiate(sword, new Vector3(this.transform.position.x, this.transform.position.y - .75f), Quaternion.Euler(0f, 0f, 180f));
@@ -130,8 +132,9 @@ public class Attack : MonoBehaviour {
 			newSword = Instantiate(sword, new Vector3(this.transform.position.x - .75f, this.transform.position.y), Quaternion.Euler(0f, 0f, 90f));
 		}
 		arrowKeyMovement.SetCanMove(false);
-		StartCoroutine(animator.StopAnimations(.5f));
+		anim.enabled = false;
 		yield return new WaitForSeconds(.5f);
+		anim.enabled = true;
 
 		Destroy(newSword);
 		arrowKeyMovement.SetCanMove(true);
@@ -148,7 +151,7 @@ public class Attack : MonoBehaviour {
 		if (direction_facing == "South")
 		{
 			newSwordProjectile = (GameObject)Instantiate(sword, new Vector3(this.transform.position.x, this.transform.position.y - .75f), Quaternion.Euler(0f, 0f, 180f));
-			StartCoroutine(animator.StopAnimations(.5f));
+			anim.enabled = false;
 			yield return new WaitForSeconds(.5f);
 			if(newSwordProjectile != null) 
 			newSwordProjectile.GetComponent<Rigidbody>().velocity = new Vector2(0f, -1f) * swordProjectileSpeed;
@@ -156,7 +159,7 @@ public class Attack : MonoBehaviour {
 		else if (direction_facing == "North")
 		{
 			newSwordProjectile = (GameObject)Instantiate(sword, new Vector3(this.transform.position.x, this.transform.position.y + .75f), Quaternion.Euler(0f, 0f, 0f));
-			StartCoroutine(animator.StopAnimations(.5f));
+			anim.enabled = false;
 			yield return new WaitForSeconds(.5f);
 			if(newSwordProjectile != null) 
 			newSwordProjectile.GetComponent<Rigidbody>().velocity = new Vector2(0f, 1f) * swordProjectileSpeed;
@@ -164,7 +167,7 @@ public class Attack : MonoBehaviour {
 		else if (direction_facing == "East")
 		{
 			newSwordProjectile = (GameObject)Instantiate(sword, new Vector3(this.transform.position.x + .75f, this.transform.position.y), Quaternion.Euler(0f, 0f, 270f));
-			StartCoroutine(animator.StopAnimations(.5f));
+			anim.enabled = false;
 			yield return new WaitForSeconds(.5f);
 			if(newSwordProjectile != null) 
 			newSwordProjectile.GetComponent<Rigidbody>().velocity = new Vector2(1f, 0f) * swordProjectileSpeed;
@@ -172,11 +175,12 @@ public class Attack : MonoBehaviour {
 		else if (direction_facing == "West")
 		{
 			newSwordProjectile = (GameObject)Instantiate(sword, new Vector3(this.transform.position.x - .75f, this.transform.position.y), Quaternion.Euler(0f, 0f, 90f));
-			StartCoroutine(animator.StopAnimations(.5f));
+			anim.enabled = false;
 			yield return new WaitForSeconds(.5f);
 			if(newSwordProjectile != null) 
 			newSwordProjectile.GetComponent<Rigidbody>().velocity = new Vector2(-1f, 0f) * swordProjectileSpeed;
 		}
+		anim.enabled = true;
 		arrowKeyMovement.SetCanMove(true);
 		yield return new WaitForSeconds(.5f);
 		canSpawnSword = true;
