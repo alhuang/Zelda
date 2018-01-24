@@ -30,7 +30,7 @@ GameObject:
   - component: {fileID: 95469565874974690}
   m_Layer: 8
   m_Name: Goriya
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a5e81a9d25cf64da9db15774edc48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushBackAmount: 100
+  pushBackAmount: 10
   damageTime: 0.3
   damageFlashFreq: 5
   max_health: 3
