@@ -180,7 +180,11 @@ public class Attack : MonoBehaviour {
 		arrowKeyMovement.SetCanMove(true);
 		yield return new WaitForSeconds(.5f);
 		canSpawnSword = true;
-		yield return new WaitForSeconds(1f);
+		while (newSwordProjectile != null)
+		{
+			yield return null;
+		}
+		//yield return new WaitForSeconds(1f);
 		canSpawnSwordProjectile = true;
 		
 	}

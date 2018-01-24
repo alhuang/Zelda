@@ -16,7 +16,7 @@ public class Sword : MonoBehaviour
 	void Update()
 	{
 		Vector2 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
-		if (screenPosition.y > Screen.height || screenPosition.y < 0 || screenPosition.x > Screen.width || screenPosition.x < 0)
+		if (screenPosition.y > Screen.height - 80 || screenPosition.y < 15 || screenPosition.x > Screen.width - 15 || screenPosition.x < 15)
 		{
 			//attack.SetCanSpawnSwordProjectile(true);
 			Destroy(gameObject);
