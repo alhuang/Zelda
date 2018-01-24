@@ -43,7 +43,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291686514725514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.453514, y: 2.7863874, z: 0}
+  m_LocalPosition: {x: 39.8, y: 1.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -107,15 +107,19 @@ MonoBehaviour:
   sword: {fileID: 1952648462080492, guid: 30708052479b51041a6c106c91ffe0cc, type: 2}
   arrow: {fileID: 1331816452110190, guid: 8a64761362a1fd24f94c8ba8501a1df5, type: 2}
   boomerang: {fileID: 1674104065718708, guid: 7cc0605eaf125604189fb124fe79ac06, type: 2}
+  bomb: {fileID: 1186924291309972, guid: a6c67dd008ad7f54485c484314af1397, type: 2}
   arrowSpeed: 5
   swordProjectileSpeed: 5
   boomerang_speed: 5
   AWeapon: Sword
   BWeapon: Boomerang
-  UISprites: []
+  UISprites:
+  - {fileID: 21300000, guid: f64db4def58d02541a6d80ea0b7e7a58, type: 3}
+  - {fileID: 21300018, guid: 9f9b7774b0a78b0438e74ea65b5825d3, type: 3}
+  - {fileID: 21300184, guid: 9f9b7774b0a78b0438e74ea65b5825d3, type: 3}
   WeaponUI: {fileID: 0}
-  hasBow: 1
-  hasBoomerang: 1
+  hasBow: 0
+  hasBoomerang: 0
 --- !u!114 &114161142949643620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -128,6 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement_speed: 4
+  ignoreControls: 0
 --- !u!114 &114462816410730666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,8 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a5e81a9d25cf64da9db15774edc48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushBackAmount: 50
-  damageTime: 1
+  pushBackAmount: 500
+  damageTime: 0.2
   damageFlashFreq: 5
   max_health: 3
   invincible: 0

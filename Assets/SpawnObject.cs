@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnObject : MonoBehaviour {
 
 	public GameObject obj;
+	public Vector2 spawnPosition;
 	private bool objSpawned = false;
 	// Use this for initialization
 	void Start () {
@@ -13,11 +14,12 @@ public class SpawnObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Transform[] ts = GetComponentsInChildren<Transform>();
+		Health[] ts = GetComponentsInChildren<Health>();
+		Debug.Log(ts.Length);
 		if (ts.Length == 0 && !objSpawned)
 		{
-			Debug.Log("Spawned key");
-			Instantiate(obj, this.transform.position, Quaternion.identity);
+			//Debug.Log("Spawned key");
+			Instantiate(obj, spawnPosition, Quaternion.identity);
 			objSpawned = true;
 		}
 	}
