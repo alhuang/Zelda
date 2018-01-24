@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 54416528569911436}
   - component: {fileID: 114895016945540114}
   - component: {fileID: 65041026216150538}
+  - component: {fileID: 65952390663347652}
+  - component: {fileID: 114011917379989766}
   m_Layer: 0
   m_Name: BladeTrap
   m_TagString: Untagged
@@ -37,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1517374353446230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.95, y: 2.93, z: 0}
+  m_LocalPosition: {x: -3.8, y: -1.71, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -56,7 +58,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!65 &65041026216150538
 BoxCollider:
@@ -68,8 +70,32 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
+  m_Size: {x: 0.155, y: 0.155, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65952390663347652
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1517374353446230}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114011917379989766
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1517374353446230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e55cb2fbd8a3434fb910aa9bf1d4328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 0.5
 --- !u!114 &114895016945540114
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -81,10 +107,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40218aee8f49f1e4296938da9fd47d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rayCastOne: {x: 0, y: 0, z: 0}
-  rayCastTwo: {x: 0, y: 0, z: 0}
-  movement_speed: 5
-  speedIncrease: 1.5
+  rayCastOne: {x: 11.5, y: 0, z: 0}
+  rayCastTwo: {x: 0, y: 6.5, z: 0}
+  movement_speed: 3
+  speedIncrease: 1.2
 --- !u!212 &212765153235950394
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -2180,23 +2180,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 857a52b5f55d3c54ea7b94ba92c9278f, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &535499775 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1517374353446230, guid: 2b8226cd0c07fd844a9fbb1e5801f6a1,
-    type: 2}
-  m_PrefabInternal: {fileID: 1495716083}
---- !u!65 &535499781
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 535499775}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &541045553
 Prefab:
   m_ObjectHideFlags: 0
@@ -6225,56 +6208,6 @@ Prefab:
     - target: {fileID: 4544191224196528, guid: 2b8226cd0c07fd844a9fbb1e5801f6a1, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114895016945540114, guid: 2b8226cd0c07fd844a9fbb1e5801f6a1,
-        type: 2}
-      propertyPath: rayCastOne.x
-      value: 11.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114895016945540114, guid: 2b8226cd0c07fd844a9fbb1e5801f6a1,
-        type: 2}
-      propertyPath: rayCastTwo.y
-      value: 6.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 54416528569911436, guid: 2b8226cd0c07fd844a9fbb1e5801f6a1,
-        type: 2}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 54416528569911436, guid: 2b8226cd0c07fd844a9fbb1e5801f6a1,
-        type: 2}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 54416528569911436, guid: 2b8226cd0c07fd844a9fbb1e5801f6a1,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 65041026216150538, guid: 2b8226cd0c07fd844a9fbb1e5801f6a1,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 0.155
-      objectReference: {fileID: 0}
-    - target: {fileID: 65041026216150538, guid: 2b8226cd0c07fd844a9fbb1e5801f6a1,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 0.155
-      objectReference: {fileID: 0}
-    - target: {fileID: 114895016945540114, guid: 2b8226cd0c07fd844a9fbb1e5801f6a1,
-        type: 2}
-      propertyPath: movement_speed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114895016945540114, guid: 2b8226cd0c07fd844a9fbb1e5801f6a1,
-        type: 2}
-      propertyPath: speedIncrease
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114895016945540114, guid: 2b8226cd0c07fd844a9fbb1e5801f6a1,
-        type: 2}
-      propertyPath: rayCastTwo.z
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b8226cd0c07fd844a9fbb1e5801f6a1, type: 2}
