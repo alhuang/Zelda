@@ -65,4 +65,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 0}
+  doorOpen: {fileID: 8300000, guid: c6f6e2d416a8ebe46a70f677ec808de0, type: 3}
   sprite: {fileID: 21300096, guid: cf72b4af22c01b94491bbc16def92f43, type: 3}
