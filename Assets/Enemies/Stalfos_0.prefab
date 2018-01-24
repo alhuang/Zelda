@@ -103,8 +103,8 @@ MonoBehaviour:
   BombChance: 0
   Rupee: {fileID: 1018371029677606, guid: 84fe1963951bbf14ab8f2a2deb65e12f, type: 2}
   Key: {fileID: 1018371029677606, guid: deef1159118276343bc9d58292d36323, type: 2}
-  Heart: {fileID: 0}
-  Bomb: {fileID: 0}
+  Heart: {fileID: 1881820970224738, guid: a9694edca34e4084abaf69e53d48dc07, type: 2}
+  Bomb: {fileID: 1018371029677606, guid: e3c8e43543330484f940cc5e2b047ee0, type: 2}
 --- !u!114 &114469661175082930
 MonoBehaviour:
   m_ObjectHideFlags: 1

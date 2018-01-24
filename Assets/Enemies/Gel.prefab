@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114475531438064196}
   - component: {fileID: 65230040734216756}
   - component: {fileID: 114922237940454078}
+  - component: {fileID: 114569146066482550}
   m_Layer: 8
   m_Name: Gel
   m_TagString: enemy
@@ -97,9 +98,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackAmount: 100
+  damageTime: 1
+  damageFlashFreq: 5
   max_health: 1
   invincible: 0
   healthUI: {fileID: 0}
+--- !u!114 &114569146066482550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1769457112351510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b5c227e632e5c49a3714d34f4bb782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RupeeChance: 0.25
+  KeyChance: 0
+  HeartChance: 0.1
+  BombChance: 0
+  Rupee: {fileID: 1018371029677606, guid: 84fe1963951bbf14ab8f2a2deb65e12f, type: 2}
+  Key: {fileID: 1018371029677606, guid: deef1159118276343bc9d58292d36323, type: 2}
+  Heart: {fileID: 1881820970224738, guid: a9694edca34e4084abaf69e53d48dc07, type: 2}
+  Bomb: {fileID: 1018371029677606, guid: e3c8e43543330484f940cc5e2b047ee0, type: 2}
 --- !u!114 &114587971203582648
 MonoBehaviour:
   m_ObjectHideFlags: 1
