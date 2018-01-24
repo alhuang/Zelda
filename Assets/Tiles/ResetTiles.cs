@@ -18,6 +18,7 @@ public class ResetTiles : MonoBehaviour {
 	void OnTriggerEnter() {
 		for (int i = 0; i < pushableTiles.Length; i++) {
 			pushableTiles [i].position = locations [i];
+			pushableTiles [i].GetComponent<PushableTile> ().pushed = false;
 		}
 	}
 }

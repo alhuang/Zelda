@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PushableTile : MonoBehaviour {
-	public float pushAmount = 1f;
 	public GameObject unlockDoor;
 	public Sprite newSprite;
+	public bool pushed = false;
 	//public string moveDirection = "";
 
 	private Vector3 startingLocation;
@@ -19,8 +19,7 @@ public class PushableTile : MonoBehaviour {
 		if (other.tag == "Link") {
 			//if pushed one block, then remove collider
 			//and unlock door
-			if (Mathf.Abs (transform.position.x - startingLocation.x) > .99f ||
-			    Mathf.Abs (transform.position.y - startingLocation.y) > .99f) {
+			if (pushed) {
 
 
 			} else { //push block
@@ -46,13 +45,23 @@ public class PushableTile : MonoBehaviour {
 					directionToPush.x = -1f;
 				}
 
-				this.transform.position += directionToPush * pushAmount;
+				StartCoroutine (pushDoor (directionToPush));
 
-				if (unlockDoor != null) {
-					unlockDoor.GetComponent<SpriteRenderer> ().sprite = newSprite;
-					unlockDoor.GetComponent<BoxCollider> ().enabled = false;
-				}
 			}
+		}
+	}
+
+	IEnumerator pushDoor(Vector3 direction) {
+		pushed = true;
+
+		for (int i = 0; i < 20; ++i) {
+			transform.position += direction / 20f;
+			yield return null;
+		}
+
+		if (unlockDoor != null) {
+			unlockDoor.GetComponent<SpriteRenderer> ().sprite = newSprite;
+			unlockDoor.GetComponent<BoxCollider> ().enabled = false;
 		}
 	}
 }
