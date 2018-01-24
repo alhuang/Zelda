@@ -283,6 +283,7 @@ public class Attack : MonoBehaviour {
 
 	IEnumerator Bomb()
 	{
+		inventory.RemoveBomb();
 		canSpawnBattack = false;
 		GameObject newBomb = null;
 		if (direction_facing == "South")
