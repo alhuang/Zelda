@@ -66,6 +66,7 @@ public class Health : MonoBehaviour {
 		if (this.tag == "Link") {
 			healthUI.updateHealth (health_count);
 		}
+		Debug.Log(health_count);
 	}
 
 	public float GetHealth() {

@@ -63,11 +63,11 @@ public class Attack : MonoBehaviour {
 			StartCoroutine("spawnSword");
 		}
 		if (Input.GetKeyDown(KeyCode.Z) && canSpawnBattack && inventory.GetRupees() > 0 &&
-			BWeapon == weapons[0])
+			BWeapon == weapons[0] && hasBow)
 		{
 			StartCoroutine("spawnArrow");
 		}
-		else if (Input.GetKeyDown(KeyCode.Z) && canSpawnBattack && BWeapon == weapons[1])
+		else if (Input.GetKeyDown(KeyCode.Z) && canSpawnBattack && BWeapon == weapons[1] && hasBoomerang)
 		{
 			Debug.Log("Boomerang");
 			StartCoroutine(spawnBoomerang());
