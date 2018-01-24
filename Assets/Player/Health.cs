@@ -12,6 +12,8 @@ public class Health : MonoBehaviour {
 	public bool invincible = false;
 	public HealthDisplayer healthUI;
 	public AudioClip PlayerHurt;
+	public AudioClip DeadAudio;
+	public AudioClip DeadBoss;
 
 	private SpriteRenderer spriteRenderer;
 	private Rigidbody rb;
@@ -92,6 +94,12 @@ public class Health : MonoBehaviour {
 				dropItem.dropKey ();
 				dropItem.dropHeart ();
 				dropItem.dropBomb ();
+			}
+
+			if (GetComponent<AquamentusMovement> () != null) {
+				AudioSource.PlayClipAtPoint (DeadBoss, Camera.main.transform.position);
+			} else {
+				AudioSource.PlayClipAtPoint (DeadAudio, Camera.main.transform.position);
 			}
 			Destroy(gameObject);
 		}
