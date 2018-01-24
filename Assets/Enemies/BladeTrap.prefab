@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 212765153235950394}
   - component: {fileID: 54416528569911436}
   - component: {fileID: 114895016945540114}
-  - component: {fileID: 65041026216150538}
-  - component: {fileID: 65952390663347652}
   - component: {fileID: 114011917379989766}
+  - component: {fileID: 135377101925805292}
+  - component: {fileID: 135122193939418840}
   m_Layer: 0
   m_Name: BladeTrap
   m_TagString: Untagged
@@ -60,30 +60,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!65 &65041026216150538
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1517374353446230}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.155, y: 0.155, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65952390663347652
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1517374353446230}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114011917379989766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,6 +87,30 @@ MonoBehaviour:
   rayCastTwo: {x: 0, y: 6.5, z: 0}
   movement_speed: 3
   speedIncrease: 1.2
+--- !u!135 &135122193939418840
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1517374353446230}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.081
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &135377101925805292
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1517374353446230}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.08
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &212765153235950394
 SpriteRenderer:
   m_ObjectHideFlags: 1
