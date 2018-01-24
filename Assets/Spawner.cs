@@ -47,7 +47,7 @@ public class Spawner : MonoBehaviour {
 		spriteRenderer.sprite = null;
 		yield return new WaitForSeconds (1.5f);
 		spriteRenderer.sprite = bigCloud; 
-		yield return new WaitForSeconds (.75f);
+		yield return new WaitForSeconds (.8f);
 		spriteRenderer.sprite = middleCloud; 
 		yield return new WaitForSeconds (.1f);
 		spriteRenderer.sprite = littleCloud; 
