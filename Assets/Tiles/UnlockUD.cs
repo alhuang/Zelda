@@ -11,6 +11,9 @@ public class UnlockUD : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		if (other.tag == "Link") {
+			if (other.GetComponent<ArrowKeyMovement> ().GetDirection () != "North") {
+				return;
+			}
 			Inventory linkventory = other.GetComponent<Inventory> ();
 			if (linkventory.GetKeys () < 1) {
 				return;
@@ -21,8 +24,10 @@ public class UnlockUD : MonoBehaviour {
 
 			LeftDoor.GetComponent<SpriteRenderer> ().sprite = LDSprite;
 			RightDoor.GetComponent<SpriteRenderer> ().sprite = RDSprite;
-			LeftDoor.GetComponent<BoxCollider> ().enabled = false;
-			RightDoor.GetComponent<BoxCollider> ().enabled = false;
+			LeftDoor.GetComponent<BoxCollider> ().center = new Vector3(-.25f, 0, 0);
+			LeftDoor.GetComponent<BoxCollider> ().size = new Vector3(.5f, 0, 0);
+			RightDoor.GetComponent<BoxCollider> ().center = new Vector3(.25f, 0, 0);
+			RightDoor.GetComponent<BoxCollider> ().size = new Vector3(.5f, 0, 0);
 
 			Destroy (gameObject);
 

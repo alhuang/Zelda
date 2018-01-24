@@ -9,19 +9,23 @@ public class UnlockLR : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		if (other.tag == "Link") {
-			Inventory linkventory = other.GetComponent<Inventory> ();
-			if (linkventory.GetKeys () < 1) {
-				return;
+			if (other.GetComponent<ArrowKeyMovement> ().GetDirection () == "West" ||
+			   other.GetComponent<ArrowKeyMovement> ().GetDirection () == "East") {
+
+				Inventory linkventory = other.GetComponent<Inventory> ();
+				if (linkventory.GetKeys () < 1) {
+					return;
+				}
+
+				//use a key, change the tiles of the door, delete self
+				linkventory.RemoveKey ();
+
+				door.GetComponent<SpriteRenderer> ().sprite = sprite;
+				door.GetComponent<BoxCollider> ().center = new Vector3 (0, .25f, 0);
+				door.GetComponent<BoxCollider> ().center = new Vector3 (0, .5f, 0);
+
+				Destroy (gameObject);
 			}
-
-			//use a key, change the tiles of the door, delete self
-			linkventory.RemoveKey();
-
-			door.GetComponent<SpriteRenderer> ().sprite = sprite;
-			door.GetComponent<BoxCollider> ().enabled = false;
-
-			Destroy (gameObject);
-
 		}
 	}
 }
