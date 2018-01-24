@@ -88,6 +88,7 @@ public class Health : MonoBehaviour {
 				dropItem.dropRupee ();
 				dropItem.dropKey ();
 				dropItem.dropHeart ();
+				dropItem.dropBomb ();
 			}
 			Destroy(gameObject);
 		}
