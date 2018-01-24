@@ -20,8 +20,8 @@ public class MovingBladesMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.DrawRay (transform.position, rayCastOne, Color.green);
-		Debug.DrawRay (transform.position, rayCastTwo, Color.red);
+		//Debug.DrawRay (transform.position, rayCastOne, Color.green);
+		//Debug.DrawRay (transform.position, rayCastTwo, Color.red);
 		RaycastHit other;
 		RaycastHit other2;
 
