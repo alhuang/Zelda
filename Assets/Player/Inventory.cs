@@ -11,6 +11,12 @@ public class Inventory : MonoBehaviour {
 	public RupeeDisplayer rupeeDisplayer;
 	public KeyDisplayer keyDisplayer;
 	public BombDisplayer bombDisplayer;
+	Attack attack;
+
+	void Start()
+	{
+		attack = GetComponent<Attack>();
+	}
 
 	public void AddRupees(int num_rupees)
 	{
@@ -59,5 +65,7 @@ public class Inventory : MonoBehaviour {
 		bombDisplayer.UpdateBombs (key_count);
 		keyDisplayer.UpdateKeys (key_count);
 		rupeeDisplayer.UpdateRupees (rupee_count);
+		attack.hasBoomerang = true;
+		attack.hasBow = true;
 	}
 }
