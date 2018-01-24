@@ -8,6 +8,7 @@ public class Attack : MonoBehaviour {
 	public GameObject sword;
 	public GameObject arrow;
 	public GameObject boomerang;
+	public GameObject bomb;
 	public float arrowSpeed = 5;
 	public float swordProjectileSpeed = 5;
 	public float boomerang_speed = 5;
@@ -61,31 +62,47 @@ public class Attack : MonoBehaviour {
 		{
 			StartCoroutine("spawnSword");
 		}
-		if (Input.GetKeyDown (KeyCode.Z) && canSpawnBattack && inventory.GetRupees () > 0 &&
-			BWeapon == weapons [0]) {
-			StartCoroutine ("spawnArrow");
-		} else if (Input.GetKeyDown (KeyCode.Z) && canSpawnBattack && BWeapon == weapons [1]) {
+		if (Input.GetKeyDown(KeyCode.Z) && canSpawnBattack && inventory.GetRupees() > 0 &&
+			BWeapon == weapons[0])
+		{
+			StartCoroutine("spawnArrow");
+		}
+		else if (Input.GetKeyDown(KeyCode.Z) && canSpawnBattack && BWeapon == weapons[1])
+		{
 			Debug.Log("Boomerang");
-			StartCoroutine (spawnBoomerang ());
+			StartCoroutine(spawnBoomerang());
 
-		//2, 3, 4 used to switch B weapons
-		//2 = bow, 3 = boomerang, 4 = bomb
-		//update equipped
-		//change sprite on top
-		} else if (Input.GetKeyDown (KeyCode.Alpha2)) {
-			if (hasBow) {
-				SetBWeapon (weapons [0]);
-				WeaponUI.GetComponent<Image> ().sprite = UISprites [0];
+			//2, 3, 4 used to switch B weapons
+			//2 = bow, 3 = boomerang, 4 = bomb
+			//update equipped
+			//change sprite on top
+		}
+		else if (Input.GetKeyDown(KeyCode.Z) && canSpawnBattack && BWeapon == weapons[2] && inventory.GetBombs() > 0)
+		{
+			StartCoroutine(Bomb());
+		}
+		else if (Input.GetKeyDown(KeyCode.Alpha2))
+		{
+			if (hasBow)
+			{
+				SetBWeapon(weapons[0]);
+				WeaponUI.GetComponent<Image>().sprite = UISprites[0];
 			}
-		} else if (Input.GetKeyDown (KeyCode.Alpha3)) {
-			if (hasBoomerang) {
-				SetBWeapon (weapons [1]);
-				WeaponUI.GetComponent<Image> ().sprite = UISprites [1];
+		}
+		else if (Input.GetKeyDown(KeyCode.Alpha3))
+		{
+			if (hasBoomerang)
+			{
+				SetBWeapon(weapons[1]);
+				WeaponUI.GetComponent<Image>().sprite = UISprites[1];
 			}
-		} else if (Input.GetKeyDown (KeyCode.Alpha4)) {
-			if (inventory.GetBombs () > 0) {
-				SetBWeapon (weapons [2]);
-				WeaponUI.GetComponent<Image> ().sprite = UISprites [2];
+		}
+		else if (Input.GetKeyDown(KeyCode.Alpha4))
+		{
+			if (inventory.GetBombs() > 0)
+			{
+				SetBWeapon(weapons[2]);
+				WeaponUI.GetComponent<Image>().sprite = UISprites[2];
 			}
 		}
 	}
@@ -262,6 +279,33 @@ public class Attack : MonoBehaviour {
 		}
 		canSpawnBattack = true;
 
+	}
+
+	IEnumerator Bomb()
+	{
+		canSpawnBattack = false;
+		GameObject newBomb = null;
+		if (direction_facing == "South")
+		{
+			newBomb = (GameObject)Instantiate(bomb, new Vector3(this.transform.position.x, this.transform.position.y - 1f), Quaternion.identity);
+		}
+		else if (direction_facing == "North")
+		{
+			newBomb = (GameObject)Instantiate(bomb, new Vector3(this.transform.position.x, this.transform.position.y + 1f), Quaternion.identity);
+		}
+		else if (direction_facing == "East")
+		{
+			newBomb = (GameObject)Instantiate(bomb, new Vector3(this.transform.position.x + 1f, this.transform.position.y), Quaternion.identity);
+		}
+		else if (direction_facing == "West")
+		{
+			newBomb = (GameObject)Instantiate(bomb, new Vector3(this.transform.position.x - 1f, this.transform.position.y), Quaternion.identity);
+		}
+		while (newBomb != null)
+		{
+			yield return null;
+		}
+		canSpawnBattack = true;
 	}
 
 	public void SetCanSpawnBAttack(bool change)
