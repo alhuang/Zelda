@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aec684c55f2ef243b468ccc714f861a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BoomSound: {fileID: 8300000, guid: f29f270ebd7a8b347894a085fcc8c7ec, type: 3}
 --- !u!212 &212035129234826492
 SpriteRenderer:
   m_ObjectHideFlags: 1

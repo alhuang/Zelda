@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOverScreen: {fileID: 0}
+  EndGameSound: {fileID: 8300000, guid: 4b0008e242905c349ad875a21dd6ac28, type: 3}
 --- !u!114 &114813648491442438
 MonoBehaviour:
   m_ObjectHideFlags: 1

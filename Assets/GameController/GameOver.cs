@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour {
 	public GameObject GameOverScreen;
+	public Camera camera;
+	public AudioClip EndGameSound;
+
 
 	private CheatCode cheatC;
 	private bool gameOver = false;
@@ -23,6 +26,7 @@ public class GameOver : MonoBehaviour {
 		*/
 		gameOver = true;
 		GameOverScreen.SetActive (true);
+		camera.GetComponent<AudioSource> ().clip = EndGameSound;
 	}
 
 	void Update() {
