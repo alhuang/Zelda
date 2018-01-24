@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackAmount: 10
-  damageTime: 1
+  damageTime: 0.3
   damageFlashFreq: 5
   max_health: 2
   invincible: 0

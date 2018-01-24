@@ -145,6 +145,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackAmount: 100
+  damageTime: 0.3
+  damageFlashFreq: 5
   max_health: 3
   invincible: 0
   healthUI: {fileID: 0}
@@ -159,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f94ca7179a98d7c43a59dd1aae909bb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement_speed: 4
+  movement_speed: 2
   time_between_mvmt_changes: 1
   is_Keese: 0
 --- !u!114 &114792776409533146
@@ -188,8 +190,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RupeeChance: 0.25
   KeyChance: 0
+  HeartChance: 0.1
   Rupee: {fileID: 1018371029677606, guid: 84fe1963951bbf14ab8f2a2deb65e12f, type: 2}
   Key: {fileID: 1018371029677606, guid: deef1159118276343bc9d58292d36323, type: 2}
+  Heart: {fileID: 0}
 --- !u!212 &212111568330528352
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -108,8 +108,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a5e81a9d25cf64da9db15774edc48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushBackAmount: 100
-  max_health: 7
+  pushBackAmount: 0
+  damageTime: 0.3
+  damageFlashFreq: 5
+  max_health: 6
   invincible: 0
   healthUI: {fileID: 0}
 --- !u!114 &114390009201796064
