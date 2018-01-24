@@ -6,6 +6,7 @@ public class SpawnObject : MonoBehaviour {
 
 	public GameObject obj;
 	public Vector2 spawnPosition;
+	public AudioClip discovery;
 	private bool objSpawned = false;
 	// Use this for initialization
 	void Start () {
@@ -15,12 +16,11 @@ public class SpawnObject : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Health[] ts = GetComponentsInChildren<Health>();
-		Debug.Log(ts.Length);
 		if (ts.Length == 0 && !objSpawned)
 		{
-			//Debug.Log("Spawned key");
 			Instantiate(obj, spawnPosition, Quaternion.identity);
 			objSpawned = true;
+			AudioSource.PlayClipAtPoint(discovery, Camera.main.transform.position);
 		}
 	}
 }

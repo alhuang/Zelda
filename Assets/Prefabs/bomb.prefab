@@ -65,6 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7251e85eb72cf6c43a5b08a09334662a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bombexplosion: {fileID: 8300000, guid: ecc9cbb0c728db044bac82a579911a7a, type: 3}
   explosion: {fileID: 21300804, guid: 589a5ebf154ceeb4fb23f8bca2aa4457, type: 3}
   detonationTime: 1
   damage: 4

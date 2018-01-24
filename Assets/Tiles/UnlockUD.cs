@@ -5,6 +5,7 @@ using UnityEngine;
 public class UnlockUD : MonoBehaviour {
 	public GameObject LeftDoor;
 	public GameObject RightDoor;
+	public AudioClip doorOpen;
 
 	public Sprite LDSprite;
 	public Sprite RDSprite;
@@ -19,6 +20,7 @@ public class UnlockUD : MonoBehaviour {
 				return;
 			}
 
+			AudioSource.PlayClipAtPoint(doorOpen, Camera.main.transform.position);
 			//use a key, change the tiles of the door, delete self
 			linkventory.RemoveKey();
 
