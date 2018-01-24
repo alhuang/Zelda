@@ -6,6 +6,7 @@ public class Wallmaster : MonoBehaviour {
 
 	//Rigidbody rb;
 	//public GameObject camera;
+	public GameObject topMapUI;
 	Transform camera;
 
 	// Use this for initialization
@@ -116,6 +117,7 @@ public class Wallmaster : MonoBehaviour {
 		other.transform.position = new Vector3(39.5f, 1.5f);
 		other.GetComponent<Collider>().enabled = true;
 		other.gameObject.GetComponent<ArrowKeyMovement>().ignoreControls = false;
+		topMapUI.transform.position = new Vector2(-262f, -66f);
 		Destroy(gameObject);
 	}
 }
