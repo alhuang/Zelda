@@ -7,6 +7,9 @@ public class Sword : MonoBehaviour
 
 	public Attack attack;
 
+	public Sprite smallBoom;
+	public Sprite bigBoom;
+
 	// Use this for initialization
 	void Start()
 	{
@@ -19,7 +22,7 @@ public class Sword : MonoBehaviour
 		if (screenPosition.y > Screen.height - 80 || screenPosition.y < 15 || screenPosition.x > Screen.width - 15 || screenPosition.x < 15)
 		{
 			//attack.SetCanSpawnSwordProjectile(true);
-			Destroy(gameObject);
+			StartCoroutine(DestroySelf());
 		}
 	}
 
@@ -34,11 +37,21 @@ public class Sword : MonoBehaviour
 				other.transform.position).normalized);
 			Debug.Log(enemy_hp.GetHealth());
 			//attack.SetCanSpawnSwordProjectile(true);
-			Destroy(gameObject);
+			StartCoroutine(DestroySelf());
 		}
 			
 		//if (other.gameObject.tag != "Link" && other.gameObject.tag != "rupee" && other.gameObject.tag != "heart")
 		//	Destroy(gameObject);
+	}
+
+	IEnumerator DestroySelf() {
+		GetComponent<SpriteRenderer> ().sprite = smallBoom;
+		yield return new WaitForSeconds (.1f);
+		GetComponent<SpriteRenderer> ().sprite = bigBoom;
+		yield return new WaitForSeconds (.1f);
+
+
+		Destroy (gameObject);
 	}
 
 }

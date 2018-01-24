@@ -114,6 +114,9 @@ MonoBehaviour:
   max_health: 6
   invincible: 0
   healthUI: {fileID: 0}
+  PlayerHurt: {fileID: 0}
+  DeadAudio: {fileID: 0}
+  DeadBoss: {fileID: 8300000, guid: 5f39722eb58647341b43a23d840ab407, type: 3}
 --- !u!114 &114390009201796064
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,6 +132,7 @@ MonoBehaviour:
   speed: 0.5
   beam_speed: 0.5
   beam: {fileID: 1847221984208278, guid: 602e24d2786556648a431f5ae0537693, type: 2}
+  RoarBeamsSound: {fileID: 8300000, guid: 8a7a914bd1679d24ba72e5ffc7c9aca9, type: 3}
 --- !u!212 &212982181099524870
 SpriteRenderer:
   m_ObjectHideFlags: 1
