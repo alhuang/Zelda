@@ -5,6 +5,7 @@ using UnityEngine;
 public class LockDoors : MonoBehaviour {
 	public Sprite newSprite;
 	public GameObject door;
+	public AudioClip doorOpenSound;
 
 	private Sprite oldSprite;
 
@@ -19,6 +20,8 @@ public class LockDoors : MonoBehaviour {
 			door.GetComponent<BoxCollider> ().center = new Vector3(0, .25f, 0);
 			door.GetComponent<BoxCollider> ().size = new Vector3(1, .5f, 1);
 			door.GetComponent<SpriteRenderer> ().sprite = oldSprite;
+			AudioSource.PlayClipAtPoint(doorOpenSound, Camera.main.transform.position);
+
 			Destroy (gameObject);
 		}
 	}
