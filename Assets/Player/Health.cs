@@ -11,6 +11,7 @@ public class Health : MonoBehaviour {
 	public float max_health;
 	public bool invincible = false;
 	public HealthDisplayer healthUI;
+	public AudioClip PlayerHurt;
 
 	private SpriteRenderer spriteRenderer;
 	private Rigidbody rb;
@@ -31,6 +32,8 @@ public class Health : MonoBehaviour {
 			StartCoroutine(ShowDamage());
 			if (this.tag == "Link") {
 				healthUI.updateHealth (health_count);
+				AudioSource.PlayClipAtPoint (PlayerHurt, Camera.main.transform.position);
+
 			}
 		}
 	}

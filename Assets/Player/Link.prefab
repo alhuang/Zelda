@@ -150,6 +150,7 @@ MonoBehaviour:
   max_health: 3
   invincible: 0
   healthUI: {fileID: 0}
+  PlayerHurt: {fileID: 8300000, guid: 486f80d8388aeea46a4e57f6a8d7cfe5, type: 3}
 --- !u!114 &114573298257877804
 MonoBehaviour:
   m_ObjectHideFlags: 1
