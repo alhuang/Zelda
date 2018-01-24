@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour {
 	private Transform[] enemyPos;
 	private SpriteRenderer[] enemySprites;
+	private Animator[] animators;
 	private Vector2[] locations;
 	private Sprite[] sprites;
 	private bool setLocBool;
@@ -32,6 +33,8 @@ public class Spawner : MonoBehaviour {
 			Debug.Log (enemyPos.Length);
 			sprites [i] = enemySprites [i].sprite;
 		}
+
+		animators = GetComponentsInChildren<Animator> ();
 	}
 
 	//activate all enemies
@@ -40,7 +43,11 @@ public class Spawner : MonoBehaviour {
 			for (int i = 0; i < enemyPos.Length; i++) {
 				if (enemyPos [i] != null) {
 					//enemyPos [i].position = locations [i];
-					StartCoroutine (SpawnEnemies(enemySprites[i], sprites[i]));
+					Animator anim = null;
+					if (animators.Length > i) {
+						anim = animators [i];
+					}
+					StartCoroutine (SpawnEnemies(enemySprites[i], sprites[i], anim));
 					StartCoroutine (SetLocations(enemyPos[i], locations[i]));
 				}
 			}
@@ -57,7 +64,11 @@ public class Spawner : MonoBehaviour {
 	}
 
 	IEnumerator SpawnEnemies(SpriteRenderer spriteRenderer,
-								Sprite sprite) {
+		Sprite sprite, Animator anim) {
+		if (anim != null) {
+			anim.enabled = false;
+		}
+
 		spriteRenderer.sprite = null;
 		yield return new WaitForSeconds (1.5f);
 		spriteRenderer.sprite = bigCloud; 
@@ -67,6 +78,10 @@ public class Spawner : MonoBehaviour {
 		spriteRenderer.sprite = littleCloud; 
 		yield return new WaitForSeconds (.1f);
 		spriteRenderer.sprite = sprite; 
+
+		if (anim != null) {
+			anim.enabled = true;
+		}
 
 		setLocBool = false;
 	}
