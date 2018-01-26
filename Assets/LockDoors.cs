@@ -13,16 +13,19 @@ public class LockDoors : MonoBehaviour {
 		oldSprite = door.GetComponent<SpriteRenderer> ().sprite;
 	}
 
-	void Update() {
-		Health[] ts = GetComponentsInChildren<Health>();
-		if (ts.Length == 0)
+	void OnTriggerStay(Collider other) {
+		if (other.tag == "Link")
 		{
-			door.GetComponent<BoxCollider> ().center = new Vector3(0, .25f, 0);
-			door.GetComponent<BoxCollider> ().size = new Vector3(1, .5f, 1);
-			door.GetComponent<SpriteRenderer> ().sprite = oldSprite;
-			AudioSource.PlayClipAtPoint(doorOpenSound, Camera.main.transform.position);
+			Health[] ts = GetComponentsInChildren<Health>();
+			if (ts.Length == 0)
+			{
+				door.GetComponent<BoxCollider>().center = new Vector3(0, .25f, 0);
+				door.GetComponent<BoxCollider>().size = new Vector3(1, .5f, 1);
+				door.GetComponent<SpriteRenderer>().sprite = oldSprite;
+				AudioSource.PlayClipAtPoint(doorOpenSound, Camera.main.transform.position);
 
-			Destroy (gameObject);
+				Destroy(gameObject);
+			}
 		}
 	}
 

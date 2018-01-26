@@ -26,16 +26,64 @@ public class GelMovement : MonoBehaviour {
 		
 	}
 
+	void OnEnable()
+	{
+		rb = GetComponent<Rigidbody>();
+		StartCoroutine(Move());
+	}
+
 	IEnumerator Move()
 	{
 		isMoving = true;
-		horizontal = Random.Range(-1, 2);
-		vertical = Random.Range(-1, 2);
+		//horizontal = Random.Range(-1, 2);
+		//vertical = Random.Range(-1, 2);
 
-		if (Mathf.Abs(horizontal) > 0.0f)
-			vertical = 0.0f;
+		//if (Mathf.Abs(horizontal) > 0.0f)
+		//	vertical = 0.0f;
 
-		Vector2 current_input = new Vector2(horizontal, vertical);
+		Vector2 current_input = Vector2.zero;
+		string direction = "South";
+
+
+		Hashtable raycasts = new Hashtable();
+		raycasts["East"] = Physics.Raycast(transform.position, transform.right, .6f, LayerMask.NameToLayer("EnemyMovementRayCasts"));
+		raycasts["South"] = Physics.Raycast(transform.position, -transform.up, .6f, LayerMask.NameToLayer("EnemyMovementRayCasts"));
+		raycasts["West"] = Physics.Raycast(transform.position, -transform.right, .6f, LayerMask.NameToLayer("EnemyMovementRayCasts"));
+		raycasts["North"] = Physics.Raycast(transform.position, transform.up, .6f, LayerMask.NameToLayer("EnemyMovementRayCasts"));
+		string nextDirection = GetNextDirection();
+		bool directionOk = false;
+		while (!directionOk)
+		{
+			if ((bool)raycasts[nextDirection])
+			{
+				nextDirection = GetNextDirection();
+			}
+			else
+			{
+				directionOk = true;
+			}
+		}
+
+
+		if (nextDirection == "East")
+		{
+			current_input = new Vector2(1, 0);
+		}
+		else if (nextDirection == "South")
+		{
+			current_input = new Vector2(0, -1);
+		}
+		else if (nextDirection == "West")
+		{
+			current_input = new Vector2(-1, 0);
+		}
+		else
+		{
+			current_input = new Vector2(0, 1);
+		}
+		direction = nextDirection;
+
+		//Vector2 current_input = new Vector2(horizontal, vertical);
 		rb.velocity = current_input * movement_speed;
 
 		yield return new WaitForSeconds(1f / movement_speed);
@@ -68,4 +116,23 @@ public class GelMovement : MonoBehaviour {
 
 		transform.position = new Vector3(x, y);
 	}
+
+	string GetNextDirection()
+	{
+		int rand = Random.Range(0, 4);
+		if (rand == 0)
+		{
+			return "East";
+		}
+		else if (rand == 1)
+		{
+			return "South";
+		}
+		else if (rand == 2)
+		{
+			return "West";
+		}
+		return "North";
+	}
+
 }

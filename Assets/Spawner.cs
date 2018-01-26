@@ -24,7 +24,6 @@ public class Spawner : MonoBehaviour {
 				j++;
 			}
 		}
-
 		enemySprites = GetComponentsInChildren<SpriteRenderer> ();
 		locations = new Vector2[enemyPos.Length];
 		sprites = new Sprite[enemyPos.Length];
@@ -35,6 +34,12 @@ public class Spawner : MonoBehaviour {
 		}
 
 		animators = GetComponentsInChildren<Animator> ();
+
+		foreach (Transform enemy in enemyPos)
+		{
+			enemy.gameObject.SetActive(false);
+		}
+
 	}
 
 	//activate all enemies
@@ -42,6 +47,7 @@ public class Spawner : MonoBehaviour {
 		if (other.tag == "Link") {
 			for (int i = 0; i < enemyPos.Length; i++) {
 				if (enemyPos [i] != null) {
+					enemyPos[i].gameObject.SetActive(true);
 					//enemyPos [i].position = locations [i];
 					Animator anim = null;
 					if (animators.Length > i) {
@@ -52,6 +58,21 @@ public class Spawner : MonoBehaviour {
 				}
 			}
 		}
+	}
+
+	void OnTriggerExit(Collider other)
+	{
+		if (other.tag == "Link")
+		{
+			foreach (Transform enemy in enemyPos)
+			{
+				if (enemy != null)
+				{
+					enemy.gameObject.SetActive(false);
+				}
+			}
+		}
+
 	}
 
 	//spaghetti code
@@ -77,7 +98,8 @@ public class Spawner : MonoBehaviour {
 		yield return new WaitForSeconds (.1f);
 		spriteRenderer.sprite = littleCloud; 
 		yield return new WaitForSeconds (.1f);
-		spriteRenderer.sprite = sprite; 
+		spriteRenderer.sprite = sprite;
+
 
 		if (anim != null) {
 			anim.enabled = true;

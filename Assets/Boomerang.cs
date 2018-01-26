@@ -19,7 +19,7 @@ public class Boomerang : MonoBehaviour {
 		start_position = transform.position;
 		return_position = transform.position;
 		rb = GetComponent<Rigidbody>();
-		enemyMovement = GetComponentInParent<Enemy_Movement>();
+		//enemyMovement = GetComponentInParent<Enemy_Movement>();
 		//attack = GetComponent<Attack>();
 	}
 	
@@ -42,15 +42,16 @@ public class Boomerang : MonoBehaviour {
 			Debug.Log("Start position:" + start_position.ToString());
 			Debug.Log("Current position:" + currentPosition.ToString());
 			Debug.Log(returning.ToString());
+			if (!Link)
+			{
+				Destroy(gameObject);
+			}
 			if (enemyMovement != null)
 			{
-				enemyMovement.SetCanMove(true);
-				gameObject.SetActive(false);
+				//enemyMovement.SetCanMove(true);
+				//gameObject.SetActive(false);
 				returning = false;
-			}
-			else
-			{
-				//Destroy(gameObject);
+				Destroy(gameObject);
 			}
 			//returning = false;
 

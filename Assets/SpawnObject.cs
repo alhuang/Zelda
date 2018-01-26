@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class SpawnObject : MonoBehaviour {
 
-	public GameObject obj;
+	public GameObject obj = null;
 	public Vector2 spawnPosition;
-	public AudioClip discovery;
+	public AudioClip discovery = null;
 	private bool objSpawned = false;
 	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+	void OnTriggerStay(Collider other)
+	{
 		Health[] ts = GetComponentsInChildren<Health>();
 		if (ts.Length == 0 && !objSpawned)
 		{
@@ -22,5 +19,6 @@ public class SpawnObject : MonoBehaviour {
 			objSpawned = true;
 			AudioSource.PlayClipAtPoint(discovery, Camera.main.transform.position);
 		}
+
 	}
 }

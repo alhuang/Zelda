@@ -32,6 +32,12 @@ public class AquamentusMovement : MonoBehaviour {
 
 	}
 
+	void OnEnable()
+	{
+		rb = GetComponent<Rigidbody>();
+		StartCoroutine(Move());
+	}
+
 	IEnumerator Move()
 	{
 		move = false;

@@ -37,6 +37,12 @@ public class Enemy_Movement : MonoBehaviour {
 		}
 	}
 
+	void OnEnable()
+	{
+		rb = GetComponent<Rigidbody>();
+		StartCoroutine(Move());
+	}
+
 	IEnumerator Move()
 	{
 		changeDirection = false;
