@@ -6,6 +6,7 @@ public class ArrowKeyMovement : MonoBehaviour {
 
 	Rigidbody rb;
 	public float movement_speed = 4f;
+	public bool reverseEverything = false;
 
 	private string direction = "South";
 	private bool canMove = true;
@@ -27,7 +28,13 @@ public class ArrowKeyMovement : MonoBehaviour {
 		}
 
 		Vector2 current_input = GetInput();
+
+		//allows for reversing of direction
+		current_input = reverseDirection (current_input);
+
 		rb.velocity = current_input * movement_speed;
+
+
 
 		string prevDirection = direction;
 		//save user direction
@@ -40,7 +47,6 @@ public class ArrowKeyMovement : MonoBehaviour {
 		} else if (current_input [1] < 0f) {
 			direction = "South";
 		}
-
 
 		//if direction change, align link
 		if (direction != prevDirection) {
@@ -106,6 +112,12 @@ public class ArrowKeyMovement : MonoBehaviour {
 
 
 
-
+	private Vector3 reverseDirection(Vector3 oldDir) {
+		if (reverseEverything) {
+			return -oldDir;
+		} else {
+			return oldDir;
+		}
+	}
 
 }
