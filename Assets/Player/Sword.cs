@@ -37,7 +37,8 @@ public class Sword : MonoBehaviour
 				other.transform.position).normalized);
 			Debug.Log(enemy_hp.GetHealth());
 			//attack.SetCanSpawnSwordProjectile(true);
-			StartCoroutine(DestroySelf());
+			//StartCoroutine(DestroySelf());
+			Destroy(gameObject);
 		}
 			
 		//if (other.gameObject.tag != "Link" && other.gameObject.tag != "rupee" && other.gameObject.tag != "heart")
@@ -45,6 +46,7 @@ public class Sword : MonoBehaviour
 	}
 
 	IEnumerator DestroySelf() {
+		GetComponent<Rigidbody> ().velocity = Vector3.zero;
 		GetComponent<SpriteRenderer> ().sprite = smallBoom;
 		yield return new WaitForSeconds (.1f);
 		GetComponent<SpriteRenderer> ().sprite = bigBoom;
