@@ -40,37 +40,80 @@ public class Enemy_Movement : MonoBehaviour {
 	IEnumerator Move()
 	{
 		changeDirection = false;
-		horizontal = Random.Range(-1, 2);
-		vertical = Random.Range(-1, 2);
-		if (horizontal == 0 && vertical == 0)
+		Vector2 current_input = Vector2.zero;
+		if (is_Keese)
 		{
-			vertical = 1;
+			horizontal = Random.Range(-1, 2);
+			vertical = Random.Range(-1, 2);
+			current_input = new Vector2(horizontal, vertical);
+			if (current_input[0] > 0f)
+			{
+				direction = "East";
+			}
+			else if (current_input[0] < 0f)
+			{
+				direction = "West";
+			}
+			else if (current_input[1] > 0f)
+			{
+				direction = "North";
+			}
+			else if (current_input[1] < 0f)
+			{
+				direction = "South";
+			}
+		}
+		else
+		{
+
+			//if (Mathf.Abs(horizontal) > 0.0f && !is_Keese)
+			//	vertical = 0.0f;
+
+
+			Hashtable raycasts = new Hashtable();
+			raycasts["East"] = Physics.Raycast(transform.position, transform.right, .6f, LayerMask.NameToLayer("EnemyMovementRayCasts"));
+			raycasts["South"] = Physics.Raycast(transform.position, -transform.up, .6f, LayerMask.NameToLayer("EnemyMovementRayCasts"));
+			raycasts["West"] = Physics.Raycast(transform.position, -transform.right, .6f, LayerMask.NameToLayer("EnemyMovementRayCasts"));
+			raycasts["North"] = Physics.Raycast(transform.position, transform.up, .6f, LayerMask.NameToLayer("EnemyMovementRayCasts"));
+			string nextDirection = GetNextDirection();
+			bool directionOk = false;
+			while (!directionOk)
+			{
+				if ((bool)raycasts[nextDirection])
+				{
+					nextDirection = GetNextDirection();
+				}
+				else
+				{
+					directionOk = true;
+				}
+			}
+
+
+			if (nextDirection == "East")
+			{
+				current_input = new Vector2(1, 0);
+			}
+			else if (nextDirection == "South")
+			{
+				current_input = new Vector2(0, -1);
+			}
+			else if (nextDirection == "West")
+			{
+				current_input = new Vector2(-1, 0);
+			}
+			else
+			{
+				current_input = new Vector2(0, 1);
+			}
+			direction = nextDirection;
 		}
 
-		if (Mathf.Abs(horizontal) > 0.0f && !is_Keese)
-			vertical = 0.0f;
-
-		Vector2 current_input = new Vector2(horizontal, vertical);
+		//Vector2 current_input = new Vector2(horizontal, vertical);
 		rb.velocity = current_input * movement_speed;
 		string prevDirection = direction;
-		//save user direction
-		if (current_input[0] > 0f)
-		{
-			direction = "East";
-		}
-		else if (current_input[0] < 0f)
-		{
-			direction = "West";
-		}
-		else if (current_input[1] > 0f)
-		{
-			direction = "North";
-		}
-		else if (current_input[1] < 0f)
-		{
-			direction = "South";
-		}
-
+		
+		
 
 		//if direction change, align enemy
 		if (direction != prevDirection)
@@ -123,6 +166,24 @@ public class Enemy_Movement : MonoBehaviour {
 
 		yield return new WaitForSeconds(time_between_mvmt_changes);
 		changeDirection = true;
+	}
+
+	string GetNextDirection()
+	{
+		int rand = Random.Range(0, 4);
+		if (rand == 0)
+		{
+			return "East";
+		}
+		else if (rand == 1)
+		{
+			return "South";
+		}
+		else if (rand == 2)
+		{
+			return "West";
+		}
+		return "North";
 	}
 
 
