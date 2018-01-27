@@ -12,12 +12,15 @@ public class SpawnObject : MonoBehaviour {
 
 	void OnTriggerStay(Collider other)
 	{
-		Health[] ts = GetComponentsInChildren<Health>();
-		if (ts.Length == 0 && !objSpawned)
+		if (other.tag == "Link")
 		{
-			Instantiate(obj, spawnPosition, Quaternion.identity);
-			objSpawned = true;
-			AudioSource.PlayClipAtPoint(discovery, Camera.main.transform.position);
+			Health[] ts = GetComponentsInChildren<Health>();
+			if (ts.Length == 0 && !objSpawned)
+			{
+				Instantiate(obj, spawnPosition, Quaternion.identity);
+				objSpawned = true;
+				AudioSource.PlayClipAtPoint(discovery, Camera.main.transform.position);
+			}
 		}
 
 	}

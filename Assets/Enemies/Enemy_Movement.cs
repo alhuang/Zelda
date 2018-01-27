@@ -45,6 +45,7 @@ public class Enemy_Movement : MonoBehaviour {
 
 	IEnumerator Move()
 	{
+		string prevDirection = direction;
 		changeDirection = false;
 		Vector2 current_input = Vector2.zero;
 		if (is_Keese)
@@ -117,10 +118,11 @@ public class Enemy_Movement : MonoBehaviour {
 
 		//Vector2 current_input = new Vector2(horizontal, vertical);
 		rb.velocity = current_input * movement_speed;
-		string prevDirection = direction;
-		
 		
 
+
+		Debug.Log(transform.position.ToString());
+		Debug.Log("L: " + transform.localPosition.ToString());
 		//if direction change, align enemy
 		if (direction != prevDirection)
 		{
