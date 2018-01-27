@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114829250649744860}
   - component: {fileID: 65736823178582022}
   - component: {fileID: 95469565874974690}
+  - component: {fileID: 114877966199399070}
   m_Layer: 8
   m_Name: Goriya
   m_TagString: enemy
@@ -171,6 +172,17 @@ MonoBehaviour:
   Key: {fileID: 1018371029677606, guid: deef1159118276343bc9d58292d36323, type: 2}
   Heart: {fileID: 1881820970224738, guid: a9694edca34e4084abaf69e53d48dc07, type: 2}
   Bomb: {fileID: 1018371029677606, guid: e3c8e43543330484f940cc5e2b047ee0, type: 2}
+--- !u!114 &114877966199399070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1316180014019764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2799da78b224d65489426156d10ca041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212428802336379024
 SpriteRenderer:
   m_ObjectHideFlags: 1
