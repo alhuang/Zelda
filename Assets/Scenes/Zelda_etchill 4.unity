@@ -15750,7 +15750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrow: {fileID: 1331816452110190, guid: 680f6d794f2b11e4db619d0e07251283, type: 2}
-  arrowSpeed: 5
+  arrowSpeed: 10
 --- !u!114 &1618737711 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114462816410730666, guid: 35763c0df81b17846adf83f489d0de6d,
