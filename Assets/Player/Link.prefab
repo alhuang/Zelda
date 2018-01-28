@@ -43,7 +43,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291686514725514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.8, y: 1.9, z: 0}
+  m_LocalPosition: {x: 39.52, y: 2.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -108,8 +108,8 @@ MonoBehaviour:
   arrow: {fileID: 1331816452110190, guid: 8a64761362a1fd24f94c8ba8501a1df5, type: 2}
   boomerang: {fileID: 1674104065718708, guid: 7cc0605eaf125604189fb124fe79ac06, type: 2}
   bomb: {fileID: 1186924291309972, guid: a6c67dd008ad7f54485c484314af1397, type: 2}
-  arrowSpeed: 5
-  swordProjectileSpeed: 9
+  arrowSpeed: 7
+  swordProjectileSpeed: 7
   boomerang_speed: 5
   AWeapon: Sword
   BWeapon: Boomerang
@@ -152,7 +152,7 @@ MonoBehaviour:
   invincible: 0
   healthUI: {fileID: 0}
   PlayerHurt: {fileID: 8300000, guid: 486f80d8388aeea46a4e57f6a8d7cfe5, type: 3}
-  DeadAudio: {fileID: 0}
+  DeadAudio: {fileID: 8300000, guid: e93cad8f27c22cb42b7bacba5ed55124, type: 3}
   DeadBoss: {fileID: 0}
 --- !u!114 &114573298257877804
 MonoBehaviour:
