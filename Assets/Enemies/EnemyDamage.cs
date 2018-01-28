@@ -15,7 +15,7 @@ public class EnemyDamage : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter(Collider other) {
+	void OnTriggerStay(Collider other) {
 		if (other.tag == "Link") {
 			Health linkHealth = other.GetComponent<Health> ();
 			if (!linkHealth.invincible)
