@@ -109,7 +109,7 @@ MonoBehaviour:
   boomerang: {fileID: 1674104065718708, guid: 7cc0605eaf125604189fb124fe79ac06, type: 2}
   bomb: {fileID: 1186924291309972, guid: a6c67dd008ad7f54485c484314af1397, type: 2}
   arrowSpeed: 5
-  swordProjectileSpeed: 5
+  swordProjectileSpeed: 9
   boomerang_speed: 5
   AWeapon: Sword
   BWeapon: Boomerang
@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement_speed: 4
+  reverseEverything: 0
   ignoreControls: 0
 --- !u!114 &114462816410730666
 MonoBehaviour:
@@ -151,6 +152,8 @@ MonoBehaviour:
   invincible: 0
   healthUI: {fileID: 0}
   PlayerHurt: {fileID: 8300000, guid: 486f80d8388aeea46a4e57f6a8d7cfe5, type: 3}
+  DeadAudio: {fileID: 0}
+  DeadBoss: {fileID: 0}
 --- !u!114 &114573298257877804
 MonoBehaviour:
   m_ObjectHideFlags: 1
