@@ -83,16 +83,14 @@ public class Enemy_Movement : MonoBehaviour {
 			raycasts["West"] = Physics.Raycast(transform.position, -transform.right, .6f, LayerMask.NameToLayer("EnemyMovementRayCasts"));
 			raycasts["North"] = Physics.Raycast(transform.position, transform.up, .6f, LayerMask.NameToLayer("EnemyMovementRayCasts"));
 			string nextDirection = GetNextDirection();
-			bool directionOk = false;
-			while (!directionOk)
-			{
+			for (int i = 0; i < 100; i++) {
 				if ((bool)raycasts[nextDirection])
 				{
 					nextDirection = GetNextDirection();
 				}
 				else
 				{
-					directionOk = true;
+					i = 100;
 				}
 			}
 
