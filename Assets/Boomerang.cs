@@ -19,6 +19,8 @@ public class Boomerang : MonoBehaviour {
 		start_position = transform.position;
 		return_position = transform.position;
 		rb = GetComponent<Rigidbody>();
+		StartCoroutine(SpinAnimation());
+		//StartCoroutine(SlowDown());
 		//enemyMovement = GetComponentInParent<Enemy_Movement>();
 		//attack = GetComponent<Attack>();
 	}
@@ -72,6 +74,30 @@ public class Boomerang : MonoBehaviour {
 		}
 	}
 
+	IEnumerator SlowDown()
+	{
+		//rb.velocity = Vector3.Lerp(rb.velocity * 0f, rb.velocity, 1.0f - 10 * Time.deltaTime);
+		//yield return null;
+		rb.velocity = rb.velocity * 0.8f;
+		yield return new WaitForSeconds(0.1f);
+		rb.velocity = rb.velocity * 0.8f;
+		yield return new WaitForSeconds(0.1f);
+		rb.velocity = rb.velocity * 0.8f;
+		yield return new WaitForSeconds(0.1f);
+		rb.velocity = rb.velocity * 0.8f;
+		yield return new WaitForSeconds(0.1f);
+		rb.velocity = rb.velocity * 0.8f;
+	}
+
+	IEnumerator SpinAnimation()
+	{
+		while (true)
+		{
+			transform.Rotate(0f, 0f, 90f);
+			yield return new WaitForSeconds(0.1f);
+		}
+	}
+
 	void OnTriggerEnter(Collider other)
 	{
 		Debug.Log(other.gameObject.tag);
@@ -86,6 +112,12 @@ public class Boomerang : MonoBehaviour {
 		{
 			returning = true;
 			rb.velocity = -rb.velocity;
+			if (other.gameObject.name.Contains("Keese") || other.gameObject.name.Contains("Gel"))
+			{
+				Health enemy_hp = other.GetComponent<Health>();
+				enemy_hp.SubtractHealth(1f);
+			}
+
 		}
 		if (returning && other.gameObject.tag == "Link" && Link)
 		{

@@ -45,6 +45,7 @@ public class Enemy_Movement : MonoBehaviour {
 
 	IEnumerator Move()
 	{
+		string prevDirection = direction;
 		changeDirection = false;
 		Vector2 current_input = Vector2.zero;
 		if (is_Keese)
@@ -98,28 +99,35 @@ public class Enemy_Movement : MonoBehaviour {
 
 			if (nextDirection == "East")
 			{
+				horizontal = 1f;
+				vertical = 0f;
 				current_input = new Vector2(1, 0);
 			}
 			else if (nextDirection == "South")
 			{
+				vertical = -1f;
+				horizontal = 0f;
 				current_input = new Vector2(0, -1);
 			}
 			else if (nextDirection == "West")
 			{
+				horizontal = -1f;
+				vertical = 0f;
 				current_input = new Vector2(-1, 0);
 			}
 			else
 			{
+				vertical = 1f;
+				horizontal = 0f;
 				current_input = new Vector2(0, 1);
 			}
 			direction = nextDirection;
 		}
-
 		//Vector2 current_input = new Vector2(horizontal, vertical);
 		rb.velocity = current_input * movement_speed;
-		string prevDirection = direction;
 		
-		
+
+
 
 		//if direction change, align enemy
 		if (direction != prevDirection)
@@ -201,5 +209,15 @@ public class Enemy_Movement : MonoBehaviour {
 	public void SetCanMove(bool change)
 	{
 		canMove = change;
+	}
+
+	public float GetHorizontal()
+	{
+		return horizontal;
+	}
+
+	public float GetVertical()
+	{
+		return vertical;
 	}
 }

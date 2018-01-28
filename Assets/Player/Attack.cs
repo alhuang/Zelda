@@ -133,7 +133,7 @@ public class Attack : MonoBehaviour {
 		}
 		arrowKeyMovement.SetCanMove(false);
 		anim.enabled = false;
-		yield return new WaitForSeconds(.5f);
+		yield return new WaitForSeconds(.3f);
 		anim.enabled = true;
 
 		Destroy(newSword);
@@ -152,7 +152,7 @@ public class Attack : MonoBehaviour {
 		{
 			newSwordProjectile = (GameObject)Instantiate(sword, new Vector3(this.transform.position.x, this.transform.position.y - .75f), Quaternion.Euler(0f, 0f, 180f));
 			anim.enabled = false;
-			yield return new WaitForSeconds(.5f);
+			yield return new WaitForSeconds(.3f);
 			if(newSwordProjectile != null) 
 			newSwordProjectile.GetComponent<Rigidbody>().velocity = new Vector2(0f, -1f) * swordProjectileSpeed;
 		}
@@ -160,7 +160,7 @@ public class Attack : MonoBehaviour {
 		{
 			newSwordProjectile = (GameObject)Instantiate(sword, new Vector3(this.transform.position.x, this.transform.position.y + .75f), Quaternion.Euler(0f, 0f, 0f));
 			anim.enabled = false;
-			yield return new WaitForSeconds(.5f);
+			yield return new WaitForSeconds(.3f);
 			if(newSwordProjectile != null) 
 			newSwordProjectile.GetComponent<Rigidbody>().velocity = new Vector2(0f, 1f) * swordProjectileSpeed;
 		}
@@ -168,7 +168,7 @@ public class Attack : MonoBehaviour {
 		{
 			newSwordProjectile = (GameObject)Instantiate(sword, new Vector3(this.transform.position.x + .75f, this.transform.position.y), Quaternion.Euler(0f, 0f, 270f));
 			anim.enabled = false;
-			yield return new WaitForSeconds(.5f);
+			yield return new WaitForSeconds(.3f);
 			if(newSwordProjectile != null) 
 			newSwordProjectile.GetComponent<Rigidbody>().velocity = new Vector2(1f, 0f) * swordProjectileSpeed;
 		}
@@ -176,7 +176,7 @@ public class Attack : MonoBehaviour {
 		{
 			newSwordProjectile = (GameObject)Instantiate(sword, new Vector3(this.transform.position.x - .75f, this.transform.position.y), Quaternion.Euler(0f, 0f, 90f));
 			anim.enabled = false;
-			yield return new WaitForSeconds(.5f);
+			yield return new WaitForSeconds(.3f);
 			if(newSwordProjectile != null) 
 			newSwordProjectile.GetComponent<Rigidbody>().velocity = new Vector2(-1f, 0f) * swordProjectileSpeed;
 		}
