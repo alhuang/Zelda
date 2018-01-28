@@ -7,13 +7,6 @@ public class PushableTile : MonoBehaviour {
 	public Sprite newSprite;
 	public bool pushed = false;
 	//public string moveDirection = "";
-
-	private Vector3 startingLocation;
-
-	// Use this for initialization
-	void Start () {
-		startingLocation = transform.position;
-	}
 		
 	void OnTriggerStay (Collider other) {
 		if (other.tag == "Link") {
