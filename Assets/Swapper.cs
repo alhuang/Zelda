@@ -26,19 +26,20 @@ public class Swapper : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 		Debug.Log("onTriggerEnter");
-		if (other.gameObject.tag == "enemy")
-		{
+		if (other.gameObject.tag == "enemy") {
 			if (collided) {
 				return;
 			}
 			collided = true;
 
 			SwapLocations (other);
-			Health enemy_hp = other.GetComponent<Health>();
-			enemy_hp.SubtractHealth(1f);
-			Debug.Log(enemy_hp.GetHealth());
+			Health enemy_hp = other.GetComponent<Health> ();
+			enemy_hp.SubtractHealth (1f);
+			Debug.Log (enemy_hp.GetHealth ());
 			//attack.SetCanSpawnSwordProjectile(true);
-			Destroy(gameObject);
+			Destroy (gameObject);
+		} else if (other.gameObject.tag == "SwapperStopper") {
+			Destroy (gameObject);
 		}
 
 		//if (other.gameObject.tag != "Link" && other.gameObject.tag != "rupee" && other.gameObject.tag != "heart")
