@@ -10,7 +10,7 @@ public class UnlockUD : MonoBehaviour {
 	public Sprite LDSprite;
 	public Sprite RDSprite;
 
-	void OnTriggerEnter(Collider other) {
+	void OnTriggerStay(Collider other) {
 		if (other.tag == "Link") {
 			if (other.GetComponent<ArrowKeyMovement> ().GetDirection () != "North") {
 				return;

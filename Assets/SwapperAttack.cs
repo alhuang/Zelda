@@ -33,9 +33,11 @@ public class SwapperAttack : MonoBehaviour {
 		//Debug.Log(canSpawnSwordProjectile);
 
 
-		if (Input.GetKeyDown(KeyCode.Z) && canSpawnBattack)
+		if (Input.GetKeyDown(KeyCode.X) && canSpawnBattack)
 		{
 			StartCoroutine("spawnArrow");
+		} else if (Input.GetKeyDown(KeyCode.Q)) {
+			health.SubtractHealth (100f);
 		}
 	}
 
