@@ -17,7 +17,7 @@ public class Arrow : MonoBehaviour {
 		if (screenPosition.y > Screen.height || screenPosition.y < 0 || screenPosition.x > Screen.width || screenPosition.x < 0)
 		{
 			//attack.SetCanSpawnSwordProjectile(true);
-			Destroy(gameObject);
+			//Destroy(gameObject);
 		}
 	}
 
@@ -30,6 +30,10 @@ public class Arrow : MonoBehaviour {
 			enemy_hp.SubtractHealth(2f);
 			Debug.Log(enemy_hp.GetHealth());
 			//attack.SetCanSpawnSwordProjectile(true);
+			Destroy(gameObject);
+		}
+		if (other.gameObject.tag == "wall")
+		{
 			Destroy(gameObject);
 		}
 

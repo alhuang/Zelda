@@ -47,9 +47,9 @@ public class Sword : MonoBehaviour
 
 	IEnumerator DestroySelf() {
 		GetComponent<Rigidbody> ().velocity = Vector3.zero;
-		GetComponent<SpriteRenderer> ().sprite = smallBoom;
+		//GetComponent<SpriteRenderer> ().sprite = smallBoom;
 		yield return new WaitForSeconds (.1f);
-		GetComponent<SpriteRenderer> ().sprite = bigBoom;
+		//GetComponent<SpriteRenderer> ().sprite = bigBoom;
 		yield return new WaitForSeconds (.1f);
 
 

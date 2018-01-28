@@ -10,6 +10,7 @@ TagManager:
   - rupee
   - heart
   - enemy
+  - wall
   layers:
   - Default
   - TransparentFX

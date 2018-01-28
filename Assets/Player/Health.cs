@@ -99,7 +99,7 @@ public class Health : MonoBehaviour {
 
 			if (GetComponent<AquamentusMovement> () != null) {
 				AudioSource.PlayClipAtPoint (DeadBoss, Camera.main.transform.position);
-			} else {
+			} else if (gameObject.name == "Link") {
 				AudioSource.PlayClipAtPoint (DeadAudio, Camera.main.transform.position);
 			}
 			Destroy(gameObject);
