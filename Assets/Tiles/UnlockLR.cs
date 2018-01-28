@@ -7,7 +7,7 @@ public class UnlockLR : MonoBehaviour {
 	public AudioClip doorOpen;
 	public Sprite sprite;
 
-	void OnTriggerEnter(Collider other) {
+	void OnTriggerStay(Collider other) {
 		if (other.tag == "Link") {
 			if (other.GetComponent<ArrowKeyMovement> ().GetDirection () == "West" ||
 			   other.GetComponent<ArrowKeyMovement> ().GetDirection () == "East") {
