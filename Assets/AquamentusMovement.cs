@@ -9,6 +9,7 @@ public class AquamentusMovement : MonoBehaviour {
 	public float beam_speed = .5f;
 	public GameObject beam;
 	public AudioClip RoarBeamsSound;
+	private string linksPosition = "Bottom3rd";
 
 	Rigidbody rb;
 	bool move = true;
@@ -49,16 +50,42 @@ public class AquamentusMovement : MonoBehaviour {
 	IEnumerator Attack()
 	{
 		attacking = true;
-		//AudioSource.PlayClipAtPoint(RoarBeamsSound, Camera.main.transform.position);
+		AudioSource.PlayClipAtPoint(RoarBeamsSound, Camera.main.transform.position);
+		//GameObject beam1 = null;
+		//GameObject beam2 = null;
+		//GameObject beam3 = null;
+
+
 		GameObject beam1 = (GameObject)Instantiate(beam, new Vector3(this.transform.position.x, this.transform.position.y + .25f), Quaternion.identity);
 		GameObject beam2 = (GameObject)Instantiate(beam, new Vector3(this.transform.position.x, this.transform.position.y + .25f), Quaternion.identity);
 		GameObject beam3 = (GameObject)Instantiate(beam, new Vector3(this.transform.position.x, this.transform.position.y + .25f), Quaternion.identity);
 
-		beam1.GetComponent<Rigidbody>().velocity = new Vector2(-1f, .33f) * beam_speed;
-		beam2.GetComponent<Rigidbody>().velocity = new Vector2(-1f, 0f) * beam_speed;
-		beam3.GetComponent<Rigidbody>().velocity = new Vector2(-1f, -.33f) * beam_speed;
+		if (linksPosition == "Middle3rd")
+		{
+
+			beam1.GetComponent<Rigidbody>().velocity = new Vector2(-1f, .33f) * beam_speed;
+			beam2.GetComponent<Rigidbody>().velocity = new Vector2(-1f, 0f) * beam_speed;
+			beam3.GetComponent<Rigidbody>().velocity = new Vector2(-1f, -.33f) * beam_speed;
+		}
+		else if (linksPosition == "Top3rd")
+		{
+			beam1.GetComponent<Rigidbody>().velocity = new Vector2(-1f, .66f) * beam_speed;
+			beam2.GetComponent<Rigidbody>().velocity = new Vector2(-1f, .33f) * beam_speed;
+			beam3.GetComponent<Rigidbody>().velocity = new Vector2(-1f, 0f) * beam_speed;
+		}
+		else
+		{
+			beam1.GetComponent<Rigidbody>().velocity = new Vector2(-1f, 0f) * beam_speed;
+			beam2.GetComponent<Rigidbody>().velocity = new Vector2(-1f, -.33f) * beam_speed;
+			beam3.GetComponent<Rigidbody>().velocity = new Vector2(-1f, -.66f) * beam_speed;
+		}
 
 		yield return new WaitForSeconds(attackspeed);
 		attacking = false;
+	}
+
+	public void SetLinksPosition(string pos)
+	{
+		linksPosition = pos;
 	}
 }

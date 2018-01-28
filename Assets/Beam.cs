@@ -5,7 +5,7 @@ using UnityEngine;
 public class Beam : MonoBehaviour {
 
 	Rigidbody rb;
-
+	//public Sprite newSprite;
 
 	// Use this for initialization
 	void Start () {
@@ -41,4 +41,5 @@ public class Beam : MonoBehaviour {
 		yield return new WaitForSeconds(.5f);
 		rb.velocity = rb.velocity * 8;
 	}
+
 }
