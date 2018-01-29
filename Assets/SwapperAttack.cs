@@ -18,6 +18,9 @@ public class SwapperAttack : MonoBehaviour {
 	private bool canSpawnBattack = true;
 	private Animator anim;
 
+	public GameObject AWeaponUI;
+	public Sprite AWeaponSprite;
+
 	// Use this for initialization
 	void Start () {
 		arrowKeyMovement = GetComponent<ArrowKeyMovement>();
@@ -50,6 +53,7 @@ public class SwapperAttack : MonoBehaviour {
 			hasSwapper = true;
 			Destroy(other.gameObject);
 			AudioSource.PlayClipAtPoint(discovery, Camera.main.transform.position);
+			AWeaponUI.GetComponent<Image> ().sprite = AWeaponSprite;
 		}
 	}
 

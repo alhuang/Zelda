@@ -8905,6 +8905,7 @@ Prefab:
       objectReference: {fileID: 8300000, guid: e93cad8f27c22cb42b7bacba5ed55124, type: 3}
     m_RemovedComponents:
     - {fileID: 65675536914394698, guid: 35763c0df81b17846adf83f489d0de6d, type: 2}
+    - {fileID: 114066966114730402, guid: 35763c0df81b17846adf83f489d0de6d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 35763c0df81b17846adf83f489d0de6d, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &256361964
@@ -48670,11 +48671,16 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f64db4def58d02541a6d80ea0b7e7a58,
+      objectReference: {fileID: 21300000, guid: 318458ef93c624cf3bbe42d3c5532123,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fd89296fa260384ba516961cca7cce1, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1392926909 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1316583782206866, guid: 3fd89296fa260384ba516961cca7cce1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1392926908}
 --- !u!1001 &1396323721
 Prefab:
   m_ObjectHideFlags: 0
@@ -58606,6 +58612,8 @@ MonoBehaviour:
   arrowSpeed: 10
   hasSwapper: 0
   discovery: {fileID: 8300000, guid: d049519a826a76f489fd063e8ed4ba02, type: 3}
+  AWeaponUI: {fileID: 1392926909}
+  AWeaponSprite: {fileID: 21300040, guid: 4c3615e9a5b06134baea62e3069dd7c4, type: 3}
 --- !u!136 &1618737710
 CapsuleCollider:
   m_ObjectHideFlags: 0
