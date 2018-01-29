@@ -58242,7 +58242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 1018371029677606, guid: deef1159118276343bc9d58292d36323, type: 2}
-  spawnPosition: {x: 55.5, y: 7}
+  spawnPosition: {x: 73, y: 4}
   discovery: {fileID: 8300000, guid: 946b06ddcb14e934c827991a3ea1735a, type: 3}
 --- !u!1001 &1444585777
 Prefab:
