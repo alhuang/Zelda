@@ -13,10 +13,16 @@ public class Enemy_Movement : MonoBehaviour {
 	bool changeDirection = true;
 	bool canMove = true;
 	string direction = "South";
+	float timeToStop = 5f;
+	float restTime = 2f;
+	float timer = 0f;
+	Animator animator;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody>();
+		animator = GetComponent<Animator>();
+		timeToStop = Random.Range(3f, 7f);
 	}
 
 	public float GetMovementSpeed() {
@@ -25,9 +31,23 @@ public class Enemy_Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		timer += Time.deltaTime;
 		if (changeDirection && canMove)
 		{
 			StartCoroutine("Move");
+		}
+		if (is_Keese && timer >= timeToStop && timer <= timeToStop + restTime)
+		{
+			canMove = false;
+			animator.speed = 0.0f;
+		}
+		if (is_Keese && timer >= timeToStop + restTime)
+		{
+			canMove = true;
+			animator.speed = 1.0f;
+			timer = 0f;
+			timeToStop = Random.Range(3f, 7f);
+			restTime = Random.Range(1f, 3f);
 		}
 		if (!canMove)
 		{
