@@ -18,7 +18,7 @@ public class MenuScreen : MonoBehaviour {
 		}
 		else if (Input.GetKey(KeyCode.Alpha2))
 		{
-			SceneManager.LoadScene("LAB_Wallmaster");
+			SceneManager.LoadScene("CustomLevel");
 		}
 	}
 }
