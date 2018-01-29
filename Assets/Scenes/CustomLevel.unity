@@ -29085,12 +29085,12 @@ Prefab:
         type: 2}
       propertyPath: link
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1618737708}
     - target: {fileID: 114974951132109324, guid: 629d901fe203728439625183c7e40595,
         type: 2}
       propertyPath: camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1517399100}
     - target: {fileID: 114974951132109324, guid: 629d901fe203728439625183c7e40595,
         type: 2}
       propertyPath: topMapUI
@@ -34441,12 +34441,12 @@ Prefab:
         type: 2}
       propertyPath: link
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1618737708}
     - target: {fileID: 114974951132109324, guid: 629d901fe203728439625183c7e40595,
         type: 2}
       propertyPath: camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1517399100}
     - target: {fileID: 114974951132109324, guid: 629d901fe203728439625183c7e40595,
         type: 2}
       propertyPath: topMapUI
