@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114011917379989766}
   - component: {fileID: 135377101925805292}
   - component: {fileID: 135122193939418840}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BladeTrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,8 +38,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1517374353446230}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.8, y: -1.71, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 18.509998, y: 29.509998, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,8 +83,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40218aee8f49f1e4296938da9fd47d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rayCastOne: {x: 11.5, y: 0, z: 0}
-  rayCastTwo: {x: 0, y: 6.5, z: 0}
+  rayCastOne: {x: 3, y: 0, z: 0}
+  rayCastTwo: {x: 0, y: -3, z: 0}
   movement_speed: 3
   speedIncrease: 1.2
 --- !u!135 &135122193939418840
