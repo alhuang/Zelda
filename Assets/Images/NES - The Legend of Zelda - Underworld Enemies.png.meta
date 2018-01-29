@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 4c3615e9a5b06134baea62e3069dd7c4
-timeCreated: 1517174657
+timeCreated: 1517189657
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -24,6 +24,7 @@ TextureImporter:
     21300034: Goriya_up_1
     21300036: NES - The Legend of Zelda - Underworld Enemies_0
     21300038: Beam_1
+    21300040: Swapper
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -394,7 +395,7 @@ TextureImporter:
         width: 8
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -404,6 +405,20 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 220
+        y: 99
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Swapper
+      rect:
+        serializedVersion: 2
+        x: 332
         y: 99
         width: 8
         height: 10
