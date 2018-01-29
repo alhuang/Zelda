@@ -20,6 +20,7 @@ public class DropItem : MonoBehaviour {
 		if (value < RupeeChance) {
 			GameObject rupeeObj = Instantiate (Rupee);
 			rupeeObj.transform.position = this.transform.position;
+			Destroy(rupeeObj, 10f);
 		}
 	}
 
@@ -38,6 +39,7 @@ public class DropItem : MonoBehaviour {
 		if (value < HeartChance) {
 			GameObject heartObj = Instantiate (Heart);
 			heartObj.transform.position = this.transform.position;
+			Destroy(heartObj, 10f);
 		}
 	}
 
@@ -47,6 +49,7 @@ public class DropItem : MonoBehaviour {
 		if (value < BombChance) {
 			GameObject BombObj = Instantiate (Bomb);
 			BombObj.transform.position = this.transform.position;
+			Destroy(BombObj, 10f);
 		}
 	}
 }
