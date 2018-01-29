@@ -61,7 +61,7 @@ public class Inventory : MonoBehaviour {
 	public void MaxInventory() {
 		bomb_count = 99;
 		key_count = 99;
-		rupee_count = 9999;
+		rupee_count = 999;
 		bombDisplayer.UpdateBombs (key_count);
 		keyDisplayer.UpdateKeys (key_count);
 		rupeeDisplayer.UpdateRupees (rupee_count);

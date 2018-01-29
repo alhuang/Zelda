@@ -13,8 +13,8 @@ public class DoorTrigger : MonoBehaviour {
 	private static float CAMERA_UD_MOVE = 11f;
 	private static float LINK_LR_MOVE = 3f;
 	private static float LINK_UD_MOVE = 3f;
-	private static float MAP_LR_MOVE = 35f;
-	private static float MAP_UD_MOVE = 12f;
+	private static float MAP_LR_MOVE = 32f;
+	private static float MAP_UD_MOVE = 13.5f;
 
 	// Use this for initialization
 	void Start () {
