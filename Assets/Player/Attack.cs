@@ -18,6 +18,9 @@ public class Attack : MonoBehaviour {
 	public GameObject WeaponUI;
 	public bool hasBow = false;
 	public bool hasBoomerang = false;
+	public AudioClip swordFX;
+	public AudioClip normSwordSound;
+	public AudioClip boomerangSound;
 	//Bow, Boomerang, Bomb
 
 	private ArrowKeyMovement arrowKeyMovement;
@@ -57,20 +60,24 @@ public class Attack : MonoBehaviour {
 			health.GetHealth() == health.GetMaxHealth() &&
 			AWeapon == "Sword")
 		{
+			AudioSource.PlayClipAtPoint(swordFX, Camera.main.transform.position);
 			StartCoroutine("spawnSwordProjectile");
 		}
 		else if (Input.GetKeyDown(KeyCode.X) && canSpawnSword &&
 			AWeapon == "Sword")
 		{
+			AudioSource.PlayClipAtPoint(normSwordSound, Camera.main.transform.position);
 			StartCoroutine("spawnSword");
 		}
 		if (Input.GetKeyDown(KeyCode.Z) && canSpawnBattack && inventory.GetRupees() > 0 &&
 			BWeapon == weapons[0] && hasBow)
 		{
+			
 			StartCoroutine("spawnArrow");
 		}
 		else if (Input.GetKeyDown(KeyCode.Z) && canSpawnBattack && BWeapon == weapons[1] && hasBoomerang)
 		{
+			AudioSource.PlayClipAtPoint(boomerangSound, Camera.main.transform.position);
 			Debug.Log("Boomerang");
 			StartCoroutine(spawnBoomerang());
 
