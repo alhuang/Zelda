@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SwapperAttack : MonoBehaviour {
 
@@ -42,7 +43,7 @@ public class SwapperAttack : MonoBehaviour {
 		{
 			StartCoroutine("spawnArrow");
 		} else if (Input.GetKeyDown(KeyCode.Q)) {
-			health.SubtractHealth (100f);
+			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
 		}
 	}
 
