@@ -14,6 +14,7 @@ public class Health : MonoBehaviour {
 	public AudioClip PlayerHurt;
 	public AudioClip DeadAudio;
 	public AudioClip DeadBoss;
+	public AudioClip lowHP;
 
 	private SpriteRenderer spriteRenderer;
 	private Rigidbody rb;
@@ -25,6 +26,10 @@ public class Health : MonoBehaviour {
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		rb = GetComponent<Rigidbody> ();
 		dropItem = GetComponent<DropItem> ();
+		if (gameObject.name == "Link")
+		{
+			StartCoroutine(lowHealth());
+		}
 	}
 
 	public void SubtractHealth(float num_health) {
@@ -104,6 +109,19 @@ public class Health : MonoBehaviour {
 			}
 			Destroy(gameObject);
 		}
+	}
+
+	IEnumerator lowHealth()
+	{
+		while (true)
+		{
+			if (health_count <= 1)
+			{
+				AudioSource.PlayClipAtPoint(lowHP, Camera.main.transform.position);
+			}
+			yield return new WaitForSeconds(0.3f);
+		}
+
 	}
 
 	public IEnumerator PushBackDir(Vector3 directionVector) {
