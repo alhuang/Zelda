@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Zelda_etchill.unity
     guid: 1364881d0aa03fc44a7e7756b97a4128
   - enabled: 1
-    path: Assets/Scenes/Alpha.unity
-    guid: a8e0bbd4447a2d84281bca8c41b3b3cd
-  - enabled: 1
     path: Assets/Scenes/MenuScreen.unity
     guid: b5cfd040e2981524295433288236d3e2
+  - enabled: 1
+    path: Assets/Scenes/Alpha.unity
+    guid: a8e0bbd4447a2d84281bca8c41b3b3cd
   - enabled: 0
     path: Assets/Scenes/LAB_Wallmaster.unity
     guid: f21c45a4aeed9614ea1f30f4a2baac66
