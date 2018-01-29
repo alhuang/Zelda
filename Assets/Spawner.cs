@@ -78,9 +78,11 @@ public class Spawner : MonoBehaviour {
 	//spaghetti code
 	IEnumerator SetLocations(Transform trans, Vector3 Loc) {
 		setLocBool = true;
-		while (setLocBool) {
-			trans.position = Loc;
-			yield return null;
+		if (trans != null) {
+			while (setLocBool) {
+				trans.position = Loc;
+				yield return null;
+			}
 		}
 	}
 
