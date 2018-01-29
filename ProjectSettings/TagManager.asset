@@ -11,6 +11,8 @@ TagManager:
   - heart
   - enemy
   - wall
+  - SwapperStopper
+  - swapper
   layers:
   - Default
   - TransparentFX

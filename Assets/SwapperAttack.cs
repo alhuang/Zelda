@@ -8,6 +8,8 @@ public class SwapperAttack : MonoBehaviour {
 	public GameObject arrow;
 	public float arrowSpeed = 5;
 	//Bow, Boomerang, Bomb
+	public bool hasSwapper = false;
+	public AudioClip discovery;
 
 	private ArrowKeyMovement arrowKeyMovement;
 	private Health health;
@@ -33,11 +35,21 @@ public class SwapperAttack : MonoBehaviour {
 		//Debug.Log(canSpawnSwordProjectile);
 
 
-		if (Input.GetKeyDown(KeyCode.X) && canSpawnBattack)
+		if (Input.GetKeyDown(KeyCode.X) && canSpawnBattack && hasSwapper)
 		{
 			StartCoroutine("spawnArrow");
 		} else if (Input.GetKeyDown(KeyCode.Q)) {
 			health.SubtractHealth (100f);
+		}
+	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.tag == "swapper")
+		{
+			hasSwapper = true;
+			Destroy(other.gameObject);
+			AudioSource.PlayClipAtPoint(discovery, Camera.main.transform.position);
 		}
 	}
 
